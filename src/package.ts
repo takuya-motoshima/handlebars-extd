@@ -1,0 +1,17 @@
+export var name = "handlebars-extd";
+export var version = "1.0.0";
+export var description = "This is an extended handlebars package with helpers.";
+export var main = "dist/build.common.js";
+export var module = "dist/build.esm.js";
+export var browser = "dist/build.js";
+export var types = "types/index.d.ts";
+export var scripts = {"watch":"rollup -c --watch","prewatch":"rm -rf dist types && json2module package.json > src/package.ts","build":"rollup -c","prebuild":"rm -rf dist types && json2module package.json > src/package.ts","test":"jest","start":"ts-node -r tsconfig-paths/register -P tsconfig.json -O '{\"module\":\"commonjs\"}' -e \"import * as index from '~/index';console.log(index);\"","prestart":"json2module package.json > src/package.ts"};
+export var repository = {"type":"git","url":"git+https://github.com/takuya-motoshima/handlebars-extd.git"};
+export var files = ["dist/*.js","types/*.d.ts","package.json","README.md","CHANGELOG.md","examples"];
+export var keywords = ["browser","javascript","js","library","lib","module","typescript","ts","esm","es6","handlebars","hbs","template","html"];
+export var author = "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)";
+export var license = "MIT";
+export var bugs = {"url":"https://github.com/takuya-motoshima/handlebars-extd/issues","email":"developer.takuyamotoshima@gmail.com"};
+export var homepage = "https://github.com/takuya-motoshima/handlebars-extd#readme";
+export var devDependencies = {"@rollup/plugin-alias":"^3.0.1","@rollup/plugin-replace":"^2.3.1","@types/jest":"^24.0.23","@types/js-cookie":"^2.2.6","@types/sprintf-js":"^1.1.2","fetch-mock":"^8.0.0","jest":"^24.9.0","json2module":"0.0.3","rollup":"^1.27.2","rollup-plugin-commonjs":"^10.1.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-terser":"^5.3.0","rollup-plugin-typescript2":"^0.25.2","ts-jest":"^24.1.0","ts-node":"^8.5.2","tsconfig-paths":"^3.9.0","typescript":"^3.7.2"};
+export var dependencies = {"handlebars":"^4.7.7","moment":"^2.29.1","sprintf-js":"^1.1.2"};
