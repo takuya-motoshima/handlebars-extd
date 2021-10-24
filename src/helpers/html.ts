@@ -96,4 +96,20 @@ function options(data: {[key: string]: string}[], opts: {hash: {[key: string]: s
     return `<option value="${val}"${selected}>${text}</option>`;
   }).join('\n');
 }
-export {showIf, hideIf, selectedIf, checkedIf, options}
+
+/**
+ * ClassIf helper for setting CSS classes.
+ *
+ * @example
+ * // Output: foo
+ * hbs.compile("{{classIf expr 'foo'}}")({"expr":true});
+ *
+ * @param {boolean} expr
+ * @param {string} cls CSS class to set if the condition is true.
+ * @returns {string}
+ */
+ function classIf(expr: boolean, cls: string): string {
+  return expr ? cls : '';
+}
+
+export {showIf, hideIf, selectedIf, checkedIf, options, classIf}

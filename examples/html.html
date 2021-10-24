@@ -25,6 +25,7 @@
           {code: 840, name: 'UNITED STATES'}
         ]
       }],
+      ["{{classIf expr 'foo'}}", {expr: true}]
     ]) {
       console.log("\n");
       const compiled = hbs.compile(tpl)(opts);
