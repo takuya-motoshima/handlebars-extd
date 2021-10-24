@@ -3,28 +3,28 @@
  *
  * @example
  * // Output: false
- * hbs.compile({{cf a '===' b}})({"a":"3","b":3});
+ * hbs.compile("{{cf a '===' b}}")({"a":"3","b":3});
  *
  * // Output: true
- * hbs.compile({{cf a '==' b}})({"a":"3","b":3});
+ * hbs.compile("{{cf a '==' b}}")({"a":"3","b":3});
  *
  * // Output: true
- * hbs.compile({{cf a '!==' b}})({"a":4,"b":3});
+ * hbs.compile("{{cf a '!==' b}}")({"a":4,"b":3});
  *
  * // Output: false
- * hbs.compile({{cf a '!=' b}})({"a":"3","b":3});
+ * hbs.compile("{{cf a '!=' b}}")({"a":"3","b":3});
  *
  * // Output: true
- * hbs.compile({{cf a '<' b}})({"a":2,"b":3});
+ * hbs.compile("{{cf a '<' b}}")({"a":2,"b":3});
  *
  * // Output: false
- * hbs.compile({{cf a '>' b}})({"a":2,"b":3});
+ * hbs.compile("{{cf a '>' b}}")({"a":2,"b":3});
  *
  * // Output: true
- * hbs.compile({{cf a '<=' b}})({"a":2,"b":3});
+ * hbs.compile("{{cf a '<=' b}}")({"a":2,"b":3});
  *
  * // Output: true
- * hbs.compile({{cf a '>=' b}})({"a":3,"b":3});
+ * hbs.compile("{{cf a '>=' b}}")({"a":3,"b":3});
  *
  * @param {any} val1
  * @param {'=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>='} opr  The operator to use. Operators must be enclosed in quotes: `">"`, `"="`, `"<="`, and so on.
@@ -37,7 +37,7 @@ declare function cf(val1: any, opr: '==' | '===' | '!=' | '!==' | '<' | '>' | '<
  *
  * @example
  * // Output: false
- * hbs.compile({{eq a b}})({"a":"3","b":3});
+ * hbs.compile("{{eq a b}}")({"a":"3","b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -49,7 +49,7 @@ declare function eq(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: true
- * hbs.compile({{eqw a b}})({"a":"3","b":3});
+ * hbs.compile("{{eqw a b}}")({"a":"3","b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -61,7 +61,7 @@ declare function eqw(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: true
- * hbs.compile({{neq a b}})({"a":4,"b":3});
+ * hbs.compile("{{neq a b}}")({"a":4,"b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -73,7 +73,7 @@ declare function neq(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: false
- * hbs.compile({{neqw a b}})({"a":"3","b":3});
+ * hbs.compile("{{neqw a b}}")({"a":"3","b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -85,7 +85,7 @@ declare function neqw(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: true
- * hbs.compile({{lt a b}})({"a":2,"b":3});
+ * hbs.compile("{{lt a b}}")({"a":2,"b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -97,7 +97,7 @@ declare function lt(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: false
- * hbs.compile({{gt a b}})({"a":2,"b":3});
+ * hbs.compile("{{gt a b}}")({"a":2,"b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -109,7 +109,7 @@ declare function gt(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: false
- * hbs.compile({{lte a '<=' b}})({"a":2,"b":3});
+ * hbs.compile("{{lte a '<=' b}}")({"a":2,"b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -121,7 +121,7 @@ declare function lte(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: false
- * hbs.compile({{gte a '>=' b}})({"a":3,"b":3});
+ * hbs.compile("{{gte a '>=' b}}")({"a":3,"b":3});
  *
  * @param {any} val1
  * @param {any} val2
@@ -133,10 +133,10 @@ declare function gte(val1: any, val2: any): boolean;
  *
  * @example
  * // Output: foo
- * hbs.compile({{ifx true a b}})({"a":"foo","b":"bar"});
+ * hbs.compile("{{ifx true a b}}")({"a":"foo","b":"bar"});
  *
  * // Output: bar
- * hbs.compile({{ifx false a b}})({"a":"foo","b":"bar"});
+ * hbs.compile("{{ifx false a b}}")({"a":"foo","b":"bar"});
  *
  * @param {boolean} cond
  * @param {any} val1 Value to return when the condition holds true.
@@ -149,10 +149,10 @@ declare function ifx(cond: boolean, val1: any, val2: any): any;
  *
  * @example
  * // Output: false
- * hbs.compile({{not true}})();
+ * hbs.compile("{{not true}}")();
  *
  * // Output: true
- * hbs.compile({{not false}})();
+ * hbs.compile("{{not false}}")();
  *
  * @param {any} expr
  * @returns {boolean}
@@ -163,10 +163,10 @@ declare function not(expr: any): boolean;
  *
  * @example
  * // Output: true
- * hbs.compile({{empty coll}})({"coll":[]});
+ * hbs.compile("{{empty coll}}")({"coll":[]});
  *
  * // Output: false
- * hbs.compile({{empty coll}})({"coll":["foo"]});
+ * hbs.compile("{{empty coll}}")({"coll":["foo"]});
  *
  * @param {any[]} coll
  * @returns {boolean}
@@ -177,7 +177,7 @@ declare function empty(coll: any[]): boolean;
  *
  * @example
  * // Output: 2
- * hbs.compile({{count coll}})({"coll":["foo","bar"]});
+ * hbs.compile("{{count coll}}")({"coll":["foo","bar"]});
  *
  * @param {any[]} coll
  * @returns {number|false}
@@ -189,10 +189,10 @@ declare function count(coll: any[]): number | false;
  *
  * @example
  * // Output: true
- * hbs.compile({{and a b}})({"a":true,"b":true});
+ * hbs.compile("{{and a b}}")({"a":true,"b":true});
  *
  * // Output: false
- * hbs.compile({{and a b}})({"a":false,"b":true});
+ * hbs.compile("{{and a b}}")({"a":false,"b":true});
  *
  * @param {...any} args
  * @returns {boolean}
@@ -204,10 +204,10 @@ declare function and(...args: any[]): boolean;
  *
  * @example
  * // Output: true
- * hbs.compile({{or a b}})({"a":true,"b":false});
+ * hbs.compile("{{or a b}}")({"a":true,"b":false});
  *
  * // Output: false
- * hbs.compile({{or a b}})({"a":false,"b":false});
+ * hbs.compile("{{or a b}}")({"a":false,"b":false});
  *
  * @param {...any} args
  * @returns {boolean}
@@ -219,10 +219,10 @@ declare function or(...args: any[]): boolean;
  *
  * @example
  * // Output: foo
- * hbs.compile({{coalesce a b c}})({"a":"foo","b":"bar","c":"baz"});
+ * hbs.compile("{{coalesce a b c}}")({"a":"foo","b":"bar","c":"baz"});
  *
  * // Output: bar
- * hbs.compile({{coalesce a b c}})({"a":"","b":"bar","c":"baz"});
+ * hbs.compile("{{coalesce a b c}}")({"a":"","b":"bar","c":"baz"});
  *
  * @param {...any} args
  * @returns {any}
@@ -233,16 +233,16 @@ declare function coalesce(...args: any[]): any;
  *
  * @example
  * // Output: true
- * hbs.compile({{includes coll a}})({"coll":[1,2,3,4],"a":2});
+ * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":2});
  *
  * // Output: false
- * hbs.compile({{includes coll a}})({"coll":[1,2,3,4],"a":10});
+ * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":10});
  *
  * // Output: false
- * hbs.compile({{includes coll a}})({"coll":[1,2,3,4],"a":"3"});
+ * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":"3"});
  *
  * // Output: true
- * hbs.compile({{includes coll a strict}})({"coll":[1,2,3,4],"a":"3","strict":false});
+ * hbs.compile("{{includes coll a strict}}")({"coll":[1,2,3,4],"a":"3","strict":false});
  *
  * @param {any[]} coll
  * @param {any} val

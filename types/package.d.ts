@@ -51,4 +51,5 @@ export declare var dependencies: {
     handlebars: string;
     moment: string;
     "sprintf-js": string;
+    striptags: string;
 };

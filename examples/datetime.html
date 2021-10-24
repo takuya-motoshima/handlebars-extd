@@ -15,7 +15,7 @@
     ]) {
       console.log("\n");
       const compiled = hbs.compile(tpl)(opts);
-      console.log(`// Output: ${compiled}\nhbs.compile(${tpl})(${opts ? JSON.stringify(opts) : ''});`);
+      console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});`);
     }
   </script>
 </body>

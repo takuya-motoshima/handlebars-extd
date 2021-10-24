@@ -2,8 +2,8 @@
  * A showIf helper for showing any html element.
  *
  * @example
- * // Output: ''
- * {{showIf true}}
+ * // Output:
+ * hbs.compile("{{showIf expr}}")({"expr":true});
  *
  * @param {boolean} expr
  * @returns {string}
@@ -13,8 +13,8 @@ declare function showIf(expr: boolean): string;
  * A hideIf helper for hiding any html element.
  *
  * @example
- * // Output: 'hidden'
- * {{hideIf true}}
+ * // Output: hidden
+ * hbs.compile("{{hideIf expr}}")({"expr":true});
  *
  * @param {boolean} expr
  * @returns {string}
@@ -24,8 +24,8 @@ declare function hideIf(expr: boolean): string;
  * A selectedIf helper for dropdown and radio boxes.
  *
  * @example
- * // Output: 'selected'
- * {{selectedIf true}}
+ * // Output: selected
+ * hbs.compile("{{selectedIf expr}}")({"expr":true});
  *
  * @param {boolean} expr
  * @returns {string}
@@ -35,8 +35,8 @@ declare function selectedIf(expr: boolean): string;
  * A checkedIf helper for checkboxes.
  *
  * @example
- * // Output: 'checked'
- * {{checkedIf true}}
+ * // Output: checked
+ * hbs.compile("{{checkedIf expr}}")({"expr":true});
  *
  * @param {boolean} expr
  * @returns {string}
@@ -46,28 +46,24 @@ declare function checkedIf(expr: boolean): string;
  * An options helper for generating <option> list for <select> dropdowns.
  *
  * @example
- * // A simple example:
+ * A simple example:
  * // Output: <option value="1">foo</option>
  * //         <option value="2" selected>bar</option>
- * //         <option value="3">foo bar</option>
- * const data = [
- *   {id: 1, description: 'foo'},
- *   {id: 2, description: 'bar'},
- *   {id: 3, description: 'foo bar'}
- * ];
- * {{{options data selected="2"}}}
+ * hbs.compile("{{{options data selected='2'}}}")({
+ *   "data":[
+ *     {"value":1,"text":"foo"},
+ *     {"value":2,"text":"bar"}
+ *   ]
+ * });
  *
- * // You can also override the default key names for 'id' & 'description' using the 'id' & 'text' options in the helper.
- * // Output: <option value="1" selected>New York</option>
- * //         <option value="2">London</option>
- * const data = [
- *   {value: 1, text: 'New York'},
- *   {value: 2, text: 'London'}
- * ];
- * {{{options data selected="1" id="value" text="text"}}}
+ * You can also override the default key names for 'value' & 'text' using the 'value' & 'text' options in the helper.
+ * // Output: <option value="392" selected>JAPAN</option>
+ *            <option value="840">UNITED STATES</option>
+ * hbs.compile("{{{options data selected='392' value='code' text='name'}}}")({
+ *   "data":[{"code":392,"name":"JAPAN"},{"code":840,"name":"UNITED STATES"}]});
  *
  * @param {{[key: string]: string}[]} data
- * @param {object} opts Object of options that includes id, text and selected attribute.
+ * @param {object} opts Object of options that includes value, text and selected attribute.
  * @returns {string}
  */
 declare function options(data: {
