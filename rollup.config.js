@@ -1,8 +1,8 @@
 import typescript from 'rollup-plugin-typescript2';
-import { terser } from "rollup-plugin-terser";
-import json from 'rollup-plugin-json';
-import commonjs from 'rollup-plugin-commonjs'
-import resolve from 'rollup-plugin-node-resolve';
+import {terser} from "rollup-plugin-terser";
+import json from '@rollup/plugin-json';
+import commonjs from '@rollup/plugin-commonjs';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
@@ -17,23 +17,24 @@ export default {
         'sprintf-js': 'sprintf-js/dist/sprintf.min.js'
       }
     }),
-    replace({
-      // When you "each" an object in handlebars.js, "global.Symbol" is an undefined error because there is no reference to the "window" object in "global".So replace global with window.
-      include: '**/handlebars.*',
-      values: {
-        'global.Symbol': 'window.Symbol'
-      }
-    }),
+    // replace({
+    //   // When you "each" an object in handlebars.js, "global.Symbol" is an undefined error because there is no reference to the "window" object in "global".So replace global with window.
+    //   include: '**/handlebars.*',
+    //   values: {
+    //     'global.Symbol': 'window.Symbol'
+    //   }
+    // }),
     typescript({
-      tsconfigDefaults: { compilerOptions: {} },
-      tsconfig: "tsconfig.json",
-      tsconfigOverride: { compilerOptions: {} },
-      useTsconfigDeclarationDir: true
+      tsconfigDefaults: {compilerOptions: {}},
+      tsconfig: 'tsconfig.json',
+      tsconfigOverride: {compilerOptions: {}},
+      useTsconfigDeclarationDir: true,
+      objectHashIgnoreUnknownHack: true
     }),
     terser(),
     json(),
     commonjs(),
-    resolve({
+    nodeResolve({
       mainFields: ['module', 'main']
     })
   ],

@@ -43,9 +43,8 @@
       ["{{includes coll a}}", {coll: [1, 2, 3, 4], a: '3'}],
       ["{{includes coll a strict}}", {coll: [1, 2, 3, 4], a: '3', strict: false}],
     ]) {
-      console.log("\n");
       const compiled = hbs.compile(tpl)(opts);
-      console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});`);
+      console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});\n`);
     }
   </script>
 </body>

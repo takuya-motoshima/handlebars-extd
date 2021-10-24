@@ -13,9 +13,8 @@
       ["{{formatDate 'YYYY/MM/DD' date 'jp'}}", {date: new Date()}],
       ["{{formatDate 'YYYY/MM/DD' date 'es'}}", {date: new Date()}]
     ]) {
-      console.log("\n");
       const compiled = hbs.compile(tpl)(opts);
-      console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});`);
+      console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});\n`);
     }
   </script>
 </body>
