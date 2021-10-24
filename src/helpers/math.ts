@@ -5,12 +5,12 @@
  * // Output: 3
  * {{sum 1 2}}
  *
- * @param {number|string} value1
- * @param {number|string} value2
+ * @param {number|string} val1
+ * @param {number|string} val2
  * @returns {number}
  */
-function sum(value1: number|string, value2: number|string): number {
-  return Number(value1) + Number(value2);
+function sum(val1: number|string, val2: number|string): number {
+  return Number(val1) + Number(val2);
 }
 
 /**
@@ -20,12 +20,12 @@ function sum(value1: number|string, value2: number|string): number {
  * // Output: 3
  * {{difference 5 2}}
  *
- * @param {number|string} value1
- * @param {number|string} value2
+ * @param {number|string} val1
+ * @param {number|string} val2
  * @returns {number}
  */
-function difference(value1: number|string, value2: number|string): number {
-  return Number(value1) - Number(value2);
+function difference(val1: number|string, val2: number|string): number {
+  return Number(val1) - Number(val2);
 }
 
 /**
@@ -35,11 +35,11 @@ function difference(value1: number|string, value2: number|string): number {
  * // Output: 6
  * {{ceil 5.6}}
  *
- * @param {number|string} value
+ * @param {number|string} val
  * @returns {number}
  */
-function ceil(value: number|string): number {
-  return Math.ceil(Number(value));
+function ceil(val: number|string): number {
+  return Math.ceil(Number(val));
 }
 
 /**
@@ -49,11 +49,11 @@ function ceil(value: number|string): number {
  * // Output: 5
  * {{floor 5.6}}
  *
- * @param {number|string} value
+ * @param {number|string} val
  * @returns {number}
  */
-function floor(value: number|string): number {
-  return Math.floor(Number(value));
+function floor(val: number|string): number {
+  return Math.floor(Number(val));
 }
 
 /**
@@ -63,11 +63,11 @@ function floor(value: number|string): number {
  * // Output: 5.6
  * {{abs -5.6}}
  *
- * @param {number} value
+ * @param {number} val
  * @returns {number}
  */
-function abs(value: number|string): number {
-  return Math.abs(Number(value));
+function abs(val: number|string): number {
+  return Math.abs(Number(val));
 }
 
 export {sum, difference, ceil, floor, abs}

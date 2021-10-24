@@ -47,13 +47,13 @@ declare function checkedIf(expr: boolean): string;
  *
  * @example
  * // A simple example:
- * // Output: <option value="1">Foo</option>
- * //         <option value="2" selected>Bar</option>
- * //         <option value="3">Foo Bar</option>
+ * // Output: <option value="1">foo</option>
+ * //         <option value="2" selected>bar</option>
+ * //         <option value="3">foo bar</option>
  * const data = [
- *   {id: 1, description: 'Foo'},
- *   {id: 2, description: 'Bar'},
- *   {id: 3, description: 'Foo Bar'}
+ *   {id: 1, description: 'foo'},
+ *   {id: 2, description: 'bar'},
+ *   {id: 3, description: 'foo bar'}
  * ];
  * {{{options data selected="2"}}}
  *

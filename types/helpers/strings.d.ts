@@ -5,11 +5,11 @@
  * // Output: 'Just'
  * {{excerpt 'Just Wow' 4}}
  *
- * @param {string} value
+ * @param {string} val
  * @param {number} len
  * @returns {string}
  */
-declare function excerpt(value: string, len: number | string): string;
+declare function excerpt(val: string, len: number | string): string;
 /**
  * Convert a string to url friendly dash-case string removing special characters.
  *
@@ -17,10 +17,10 @@ declare function excerpt(value: string, len: number | string): string;
  * // Output: 'just-wow'
  * {{sanitize 'JuSt #Wow'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-declare function sanitize(value: string): string;
+declare function sanitize(val: string): string;
 /**
  * Replace \n with <br> tags.
  *
@@ -28,10 +28,10 @@ declare function sanitize(value: string): string;
  * // Output: 'nlToBr helper <br> is very <br> useful.'
  * {{nlToBr 'nlToBr helper \n is very \n useful.'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-declare function nlToBr(value: string): string;
+declare function nlToBr(val: string): string;
 /**
  * Capitalize each letter of a string.
  *
@@ -39,10 +39,10 @@ declare function nlToBr(value: string): string;
  * // Output: 'Just Wow'
  * {{capitalizeEach 'just wow'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-declare function capitalizeEach(value: string): string;
+declare function capitalizeEach(val: string): string;
 /**
  * Capitalize the first letter of a string.
  *
@@ -50,10 +50,10 @@ declare function capitalizeEach(value: string): string;
  * // Output: 'Just wow'
  * {{capitalizeFirst 'just wow'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-declare function capitalizeFirst(value: string): string;
+declare function capitalizeFirst(val: string): string;
 /**
  * A sprintf helper to be used in the handlebars templates that supports arbitrary parameters.
  * Make sure you have the sprintf-js (https://github.com/alexei/sprintf.js) package is available
@@ -67,8 +67,8 @@ declare function capitalizeFirst(value: string): string;
  * // Output: 'Hello Dolly'
  * {{sprintf '%s %s!' 'Hello' 'Dolly' }}
  *
- * // Output: 'Foo Bar 55 Baz 20'
- * {{sprintf '%s %s %d %s %d' 'Foo' 'Bar' 55 'Baz' '20'}}
+ * // Output: 'foo bar 55 baz 20'
+ * {{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}
  *
  * // Named arguments:
  * // Output: 'Hello Dolly'
@@ -90,10 +90,10 @@ declare function sprintf(format: string, ...args: any[]): string;
  * // Output: 'just wow!!!'
  * {{lowercase 'JUST WOW!!!'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-declare function lowercase(value: string): string;
+declare function lowercase(val: string): string;
 /**
  * Changes the string to uppercase.
  *
@@ -101,10 +101,10 @@ declare function lowercase(value: string): string;
  * // Output: 'JUST WOW!!!'
  * {{uppercase 'just wow!!!'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-declare function uppercase(value: string): string;
+declare function uppercase(val: string): string;
 /**
  * Get the first element of a collection/array.
  *

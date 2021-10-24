@@ -8,17 +8,17 @@ import {vsprintf} from 'sprintf-js';
  * // Output: 'Just'
  * {{excerpt 'Just Wow' 4}}
  *
- * @param {string} value
+ * @param {string} val
  * @param {number} len
  * @returns {string}
  */
-function excerpt(value: string, len: number|string) {
+function excerpt(val: string, len: number|string) {
   len = parseInt(len as string, 10) || 50;
-  if (typeof value !== 'string' || typeof len !== 'number')
-    return value;
-  if (value.length < len)
-    return value;
-  return `${value.slice(0, len)}...`;
+  if (typeof val !== 'string' || typeof len !== 'number')
+    return val;
+  if (val.length < len)
+    return val;
+  return `${val.slice(0, len)}`;
 }
 
 /**
@@ -28,12 +28,12 @@ function excerpt(value: string, len: number|string) {
  * // Output: 'just-wow'
  * {{sanitize 'JuSt #Wow'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-function sanitize(value: string): string {
-  value = value.replace(/[^\w\s]/gi, '').trim();
-  return value.replace(/\s+/, '-').toLowerCase();
+function sanitize(val: string): string {
+  val = val.replace(/[^\w\s]/gi, '').trim();
+  return val.replace(/\s+/, '-').toLowerCase();
 }
 
 /**
@@ -43,11 +43,11 @@ function sanitize(value: string): string {
  * // Output: 'nlToBr helper <br> is very <br> useful.'
  * {{nlToBr 'nlToBr helper \n is very \n useful.'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-function nlToBr(value: string): string {
-  return value.replace(/\r?\n|\r/g, '<br>');
+function nlToBr(val: string): string {
+  return val.replace(/\r?\n|\r/g, '<br>');
 }
 
 /**
@@ -57,13 +57,13 @@ function nlToBr(value: string): string {
  * // Output: 'Just Wow'
  * {{capitalizeEach 'just wow'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-function capitalizeEach(value: string): string {
-  if (typeof value !== 'string')
-    return value;
-  return value.toLowerCase().replace(/\w\S*/g, function (match) {
+function capitalizeEach(val: string): string {
+  if (typeof val !== 'string')
+    return val;
+  return val.toLowerCase().replace(/\w\S*/g, function (match) {
     return `${match.charAt(0).toUpperCase()}${match.substr(1)}`;
   });
 }
@@ -75,13 +75,13 @@ function capitalizeEach(value: string): string {
  * // Output: 'Just wow'
  * {{capitalizeFirst 'just wow'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-function capitalizeFirst(value: string): string {
-  if (typeof value !== 'string')
-    return value;
-  return `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
+function capitalizeFirst(val: string): string {
+  if (typeof val !== 'string')
+    return val;
+  return `${val.charAt(0).toUpperCase()}${val.slice(1)}`;
 }
 
 /**
@@ -97,8 +97,8 @@ function capitalizeFirst(value: string): string {
  * // Output: 'Hello Dolly'
  * {{sprintf '%s %s!' 'Hello' 'Dolly' }} 
  * 
- * // Output: 'Foo Bar 55 Baz 20'
- * {{sprintf '%s %s %d %s %d' 'Foo' 'Bar' 55 'Baz' '20'}}
+ * // Output: 'foo bar 55 baz 20'
+ * {{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}
  * 
  * // Named arguments:
  * // Output: 'Hello Dolly'
@@ -130,11 +130,11 @@ function sprintf(format: string, ...args: any[]): string {
  * // Output: 'just wow!!!'
  * {{lowercase 'JUST WOW!!!'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-function lowercase(value: string): string {
-  return utils.isString(value) ? value.toLowerCase() : value;
+function lowercase(val: string): string {
+  return utils.isString(val) ? val.toLowerCase() : val;
 }
 
 /**
@@ -144,11 +144,11 @@ function lowercase(value: string): string {
  * // Output: 'JUST WOW!!!'
  * {{uppercase 'just wow!!!'}}
  *
- * @param {string} value
+ * @param {string} val
  * @returns {string}
  */
-function uppercase(value: string): string {
-  return utils.isString(value) ? value.toUpperCase() : value;
+function uppercase(val: string): string {
+  return utils.isString(val) ? val.toUpperCase() : val;
 }
 
 /**
