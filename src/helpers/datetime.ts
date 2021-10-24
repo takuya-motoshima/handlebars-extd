@@ -5,8 +5,14 @@ import moment from 'moment';
  * A formatDate helper to format date using moment js with optional locale designation.
  *
  * @example
- * // Output: 2021/10/23
- * {{formatDate 'YYYY/MM/DD' date 'es'}}
+ * // Output: 2021/10/24
+ * hbs.compile({{formatDate 'YYYY/MM/DD' date}})({"date":"2021-10-24T02:13:06.610Z"});
+ * 
+ * // Output: 2021/10/24
+ * hbs.compile({{formatDate 'YYYY/MM/DD' date 'jp'}})({"date":"2021-10-24T02:13:06.610Z"});
+ * 
+ * // Output: 2021/10/24
+ * hbs.compile({{formatDate 'YYYY/MM/DD' date 'es'}})({"date":"2021-10-24T02:13:06.610Z"});
  *
  * @param {string} format Based on moment.js.
  * @param {string} date
