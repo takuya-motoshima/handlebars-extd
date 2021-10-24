@@ -60,7 +60,11 @@ declare function checkedIf(expr: boolean): string;
  * // Output: <option value="392" selected>JAPAN</option>
  *            <option value="840">UNITED STATES</option>
  * hbs.compile("{{{options data selected='392' value='code' text='name'}}}")({
- *   "data":[{"code":392,"name":"JAPAN"},{"code":840,"name":"UNITED STATES"}]});
+ *   "data":[
+ *     {"code":392,"name":"JAPAN"},
+ *     {"code":840,"name":"UNITED STATES"}
+ *   ]
+ * });
  *
  * @param {{[key: string]: string}[]} data
  * @param {object} opts Object of options that includes value, text and selected attribute.
