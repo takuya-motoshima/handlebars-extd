@@ -5,35 +5,35 @@ import * as utils from '../utils';
  * 
  * @example
  * // Output: false
- * hbs.compile("{{cf a '===' b}}")({"a":"3","b":3});
+ * hbs.compile("{{opr a '===' b}}")({"a":"3","b":3});
  * 
  * // Output: true
- * hbs.compile("{{cf a '==' b}}")({"a":"3","b":3});
+ * hbs.compile("{{opr a '==' b}}")({"a":"3","b":3});
  * 
  * // Output: true
- * hbs.compile("{{cf a '!==' b}}")({"a":4,"b":3});
+ * hbs.compile("{{opr a '!==' b}}")({"a":4,"b":3});
  * 
  * // Output: false
- * hbs.compile("{{cf a '!=' b}}")({"a":"3","b":3});
+ * hbs.compile("{{opr a '!=' b}}")({"a":"3","b":3});
  * 
  * // Output: true
- * hbs.compile("{{cf a '<' b}}")({"a":2,"b":3});
+ * hbs.compile("{{opr a '<' b}}")({"a":2,"b":3});
  * 
  * // Output: false
- * hbs.compile("{{cf a '>' b}}")({"a":2,"b":3});
+ * hbs.compile("{{opr a '>' b}}")({"a":2,"b":3});
  * 
  * // Output: true
- * hbs.compile("{{cf a '<=' b}}")({"a":2,"b":3});
+ * hbs.compile("{{opr a '<=' b}}")({"a":2,"b":3});
  * 
  * // Output: true
- * hbs.compile("{{cf a '>=' b}}")({"a":3,"b":3});
+ * hbs.compile("{{opr a '>=' b}}")({"a":3,"b":3});
  * 
- * @param {any} val1 
+ * @param {any} val1 First value to be compared with second.
  * @param {'=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>='} opr  The operator to use. Operators must be enclosed in quotes: `">"`, `"="`, `"<="`, and so on.
- * @param {any} val2 
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
-function cf(val1: any, opr: '=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>=', val2: any): boolean {
+function opr(val1: any, opr: '=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>=', val2: any): boolean {
   if (opr === '==')
     return val1 == val2;
   else if (opr === '===')
@@ -51,7 +51,7 @@ function cf(val1: any, opr: '=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>=', val2: any):
   else if (opr === '>=')
     return val1 >= val2;
   else
-    throw new Error(`cf helper operator: ${opr} is invalid`);
+    throw new Error(`opr helper operator: ${opr} is invalid`);
 }
 
 /**
@@ -61,8 +61,8 @@ function cf(val1: any, opr: '=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>=', val2: any):
  * // Output: false
  * hbs.compile("{{eq a b}}")({"a":"3","b":3});
  *
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
 function eq(val1: any, val2: any): boolean {
@@ -76,8 +76,8 @@ function eq(val1: any, val2: any): boolean {
  * // Output: true
  * hbs.compile("{{eqw a b}}")({"a":"3","b":3});
  *
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
 function eqw(val1: any, val2: any): boolean {
@@ -91,8 +91,8 @@ function eqw(val1: any, val2: any): boolean {
  * // Output: true
  * hbs.compile("{{neq a b}}")({"a":4,"b":3});
  *
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
 function neq(val1 :any, val2 :any): boolean {
@@ -121,8 +121,8 @@ function neqw(val1: any, val2: any): boolean {
  * // Output: true
  * hbs.compile("{{lt a b}}")({"a":2,"b":3});
  *
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
 function lt(val1: any, val2: any): boolean {
@@ -136,8 +136,8 @@ function lt(val1: any, val2: any): boolean {
  * // Output: false
  * hbs.compile("{{gt a b}}")({"a":2,"b":3});
  *
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
 function gt(val1: any, val2: any): boolean {
@@ -151,8 +151,8 @@ function gt(val1: any, val2: any): boolean {
  * // Output: false
  * hbs.compile("{{lte a '<=' b}}")({"a":2,"b":3});
  *
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
  function lte(val1: any, val2: any): boolean {
@@ -166,8 +166,8 @@ function gt(val1: any, val2: any): boolean {
  * // Output: false
  * hbs.compile("{{gte a '>=' b}}")({"a":3,"b":3});
  *  
- * @param {any} val1
- * @param {any} val2
+ * @param {any} val1 First value to be compared with second.
+ * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
 function gte(val1: any, val2: any): boolean {
@@ -210,7 +210,7 @@ function ifx(cond: boolean, val1: any, val2: any): any {
  * // Output: true
  * hbs.compile("{{not false}}")();
  *
- * @param {any} expr
+ * @param {any} expr Any expression.
  * @returns {boolean}
  */
 function not(expr: any): boolean {
@@ -227,7 +227,7 @@ function not(expr: any): boolean {
  * // Output: false
  * hbs.compile("{{empty coll}}")({"coll":["foo"]});
  *
- * @param {any[]} coll
+ * @param {any[]} coll Array/object to be checked.
  * @returns {boolean}
  */
 function empty(coll: any[]): boolean {
@@ -243,7 +243,7 @@ function empty(coll: any[]): boolean {
  * // Output: 2
  * hbs.compile("{{count coll}}")({"coll":["foo","bar"]});
  *
- * @param {any[]} coll
+ * @param {any[]} coll Array whose elements to be counted.
  * @returns {number|false}
  */
 function count(coll: any[]): number|false {
@@ -253,8 +253,7 @@ function count(coll: any[]): number|false {
 }
 
 /**
- * Returns the boolean AND of two or more parameters passed i.e
- * it is true iff all the parameters are true.
+ * Returns the boolean AND of two or more parameters passed i.e it is true iff all the parameters are true.
  *
  * @example
  * // Output: true
@@ -263,7 +262,7 @@ function count(coll: any[]): number|false {
  * // Output: false
  * hbs.compile("{{and a b}}")({"a":false,"b":true});
  *
- * @param {...any} args
+ * @param {...any} args Any number of boolean parameters.
  * @returns {boolean}
  */
 function and(...args: any[]): boolean {
@@ -277,8 +276,7 @@ function and(...args: any[]): boolean {
 }
 
 /**
- * Returns the boolean OR of two or more parameters passed i.e
- * it is true if any of the parameters is true.
+ * Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.
  *
  * @example
  * // Output: true
@@ -287,7 +285,7 @@ function and(...args: any[]): boolean {
  * // Output: false
  * hbs.compile("{{or a b}}")({"a":false,"b":false});
  * 
- * @param {...any} args
+ * @param {...any} args Any number of boolean parameters.
  * @returns {boolean}
  */
 function or(...args: any[]): boolean {
@@ -311,7 +309,7 @@ function or(...args: any[]): boolean {
  * // Output: bar
  * hbs.compile("{{coalesce a b c}}")({"a":"","b":"bar","c":"baz"});
  *
- * @param {...any} args
+ * @param {...any} args Any number of parameters.
  * @returns {any}
  */
 function coalesce(...args: any[]): any {
@@ -325,7 +323,7 @@ function coalesce(...args: any[]): any {
 }
 
 /**
- * Returns boolean if the array contains the element strictly or non-strictly.
+ * Returns true if the array contains a particular value, false if it does not.
  *
  * @example
  * // Output: true
@@ -340,9 +338,9 @@ function coalesce(...args: any[]): any {
  * // Output: true
  * hbs.compile("{{includes coll a strict}}")({"coll":[1,2,3,4],"a":"3","strict":false});
  * 
- * @param {any[]} coll
- * @param {any} val
- * @param {boolean} strict
+ * @param {any[]} coll The array.
+ * @param {any} val The value to search for.
+ * @param {boolean} strict FALSE for non-strict checking. TRUE by default.
  * @returns {boolean}
  */
 function includes(coll: any[], val: any, strict: boolean = true): boolean {
@@ -354,4 +352,4 @@ function includes(coll: any[], val: any, strict: boolean = true): boolean {
   return false;
 }
 
-export {cf, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, count, and, or, coalesce, includes}
+export {opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, count, and, or, coalesce, includes}

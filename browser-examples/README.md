@@ -61,9 +61,7 @@
 * You should change your build scripts to use this build command.
   ```json
   "scripts": {
-    ...
     "build": "node ./build.js"
-    ...
   },
   ```
 
