@@ -4,7 +4,7 @@ import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
 import alias from '@rollup/plugin-alias';
-import replace from '@rollup/plugin-replace';
+// import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
 
 export default {
