@@ -42,7 +42,6 @@
   </nav>
 </header>
 <div class="container-xxl my-md-4 layout">
-
   <aside class="sidebar" id="sidebar">
     <nav class="sidenav align-items-start navbar navbar-light py-0" id="sidenav">
       <nav class="nav nav-pills flex-column flex-nowrap mb-0 py-3 pt-md-1">
@@ -259,8 +258,8 @@ hbs.compile(&quot;{{#if (opr a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&qu
     <p>Determine whether or not two values are equal (===).</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: false
@@ -275,8 +274,8 @@ hbs.compile(&quot;{{#if (eq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
     <p>Determine whether or not two values are equal (==) i.e weak checking.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -291,8 +290,8 @@ hbs.compile(&quot;{{#if (eqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
     <p>Determine whether or not two values are not equal (!==).</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -307,8 +306,8 @@ hbs.compile(&quot;{{#if (neq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
     <p>Determine whether or not two values are not equal (!=) weak checking.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: false
@@ -323,8 +322,8 @@ hbs.compile(&quot;{{#if (neqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quo
     <p>Check for less than condition (a &lt; b).</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -339,8 +338,8 @@ hbs.compile(&quot;{{#if (lt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
     <p>Check for greater than condition (a &gt; b).</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: false
@@ -355,8 +354,8 @@ hbs.compile(&quot;{{#if (gt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
     <p>Check for less than or equals condition (a &lt;= b).</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: false
@@ -371,8 +370,8 @@ hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&qu
     <p>Check for greater than or equals condition (a &gt;= b).</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> First value to be compared with second.</li>
-      <li><coce>any</coce> <strong>val2</strong> Second value to be compared with first.</li>
+      <li><code>any</code> <strong>val1</strong> First value to be compared with second.</li>
+      <li><code>any</code> <strong>val2</strong> Second value to be compared with first.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: false
@@ -387,8 +386,8 @@ hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&qu
     <p>Helper to imitate the ternary &#039;?:&#039; conditional operator.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>val1</strong> Value to return when the condition holds true.</li>
-      <li><coce>any</coce> <strong>val2</strong> Value to return when the condition is false (Optional).</li>
+      <li><code>any</code> <strong>val1</strong> Value to return when the condition holds true.</li>
+      <li><code>any</code> <strong>val2</strong> Value to return when the condition is false (Optional).</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: foo
@@ -403,7 +402,7 @@ hbs.compile(&quot;{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;
     <p>Logical NOT of any expression.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any</coce> <strong>expr</strong> Any expression.</li>
+      <li><code>any</code> <strong>expr</strong> Any expression.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: false
@@ -424,7 +423,7 @@ hbs.compile(&quot;{{#if (not false)}}true{{else}}false{{/if}}&quot;)();</code></
     <p>Check if an array is empty.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any[]</coce> <strong>coll</strong> Array/object to be checked.</li>
+      <li><code>any[]</code> <strong>coll</strong> Array/object to be checked.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -445,7 +444,7 @@ hbs.compile(&quot;{{#if (empty coll)}}true{{else}}false{{/if}}&quot;)({&quot;col
     <p>Determine the length of an array.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any[]</coce> <strong>coll</strong> Array whose elements to be counted.</li>
+      <li><code>any[]</code> <strong>coll</strong> Array whose elements to be counted.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: 2
@@ -457,7 +456,7 @@ hbs.compile(&quot;{{count coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;,&quot
     <p>Returns the boolean AND of two or more parameters passed i.e it is true iff all the parameters are true.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>...any</coce> <strong>args</strong> Any number of boolean parameters.</li>
+      <li><code>...any</code> <strong>args</strong> Any number of boolean parameters.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -478,7 +477,7 @@ hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
     <p>Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>...any</coce> <strong>args</strong> Any number of boolean parameters.</li>
+      <li><code>...any</code> <strong>args</strong> Any number of boolean parameters.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -499,7 +498,7 @@ hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
     <p>Returns the first non-falsy value from the parameter list.<br>Checks for the first non-false parameter.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>...any</coce> <strong>args</strong> Any number of parameters.</li>
+      <li><code>...any</code> <strong>args</strong> Any number of parameters.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: foo
@@ -515,9 +514,9 @@ hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&
     <p>Returns true if the array contains a particular value, false if it does not.</p>
     <p class="fw-bolder mb-0">Params:</p>
     <ul>
-      <li><coce>any[]</coce> <strong>coll</strong> The array.</li>
-      <li><coce>any</coce> <strong>val</strong> The value to search for.</li>
-      <li><coce>boolean</coce> <strong>strict</strong> FALSE for non-strict checking. TRUE by default.</li>
+      <li><code>any[]</code> <strong>coll</strong> The array.</li>
+      <li><code>any</code> <strong>val</strong> The value to search for.</li>
+      <li><code>boolean</code> <strong>strict</strong> FALSE for non-strict checking. TRUE by default.</li>
     </ul>
     <p class="fw-bolder mb-0">Example:</p>
     <pre><code class="js">// Output: true
@@ -545,6 +544,47 @@ hbs.compile(&quot;{{includes coll a strict}}&quot;)({&quot;coll&quot;:[1,2,3,4],
 hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});</code></pre>
     <!--end::includes-->
     <!--end::Comparison helper-->
+
+    <!--begin::Date helper-->
+    <h1 id="date-helper">Date helper</h1>
+
+    <!--begin::Summary-->
+    <h2 id="date-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#date-helper-format-date">formatDate</a></td>
+          <td class="min-w-200px w-100">Use moment to format the date.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+    <!--begin::includes-->
+    <h2 id="date-helper-format-date" class="text-primary">{{formatDate}}</h2>
+    <p>Use moment to format the date.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>string</code> <strong>format</strong> A format string based on <a href="https://momentjs.com/docs/#/parsing/string-format/" target="_blank">moment</a>.</li>
+      <li><code>string</code> <strong>date</strong> Date string to format.</li>
+      <li><code>string|string[]</code> <strong>locale</strong> Language or language-country locale string (or array of strings) available in <a href="https://github.com/moment/moment/tree/develop/locale" target="_blank">https://github.com/moment/moment/tree/develop/locale</a>.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 2021/10/25
+hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
+
+// Output: 2021/10/25
+hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;jp&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
+
+// Output: 2021/10/25
+hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});</code></pre>
+    <!--end::includes-->
+    <!--begin::Date helper-->
   </main>
 </div>
 
