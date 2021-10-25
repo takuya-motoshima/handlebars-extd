@@ -19,12 +19,13 @@
     "url": "git+https://github.com/takuya-motoshima/handlebars-extd.git"
   },
   "files": [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
     "dist/*.js",
     "types/*.d.ts",
     "package.json",
-    "README.md",
-    "CHANGELOG.md",
-    "examples"
+    "browser-examples"
   ],
   "keywords": [
     "browser",
