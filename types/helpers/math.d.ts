@@ -1,57 +1,57 @@
 /**
- * A sum helper calculating the sum of two numbers.
+ * Calculates the sum of two numbers.
  *
  * @example
  * // Output: 3
  * hbs.compile("{{add a b}}")({"a":1,"b":2});
  *
- * @param {number|string} val1
- * @param {number|string} val2
+ * @param {number|string} val1 The first number.
+ * @param {number|string} val2 The second number.
  * @returns {number}
  */
 declare function add(val1: number | string, val2: number | string): number;
 /**
- * A difference helper calculating the difference of two numbers.
+ * Calculates the difference of the given values.
  *
  * @example
  * // Output: 3
  * hbs.compile("{{sub a b}}")({"a":5,"b":2});
  *
- * @param {number|string} val1
- * @param {number|string} val2
+ * @param {number|string} val1 The first number.
+ * @param {number|string} val2 The second number.
  * @returns {number}
  */
 declare function sub(val1: number | string, val2: number | string): number;
 /**
- * A ceil helper to find the ceil value of the number.
+ * Round up the value.
  *
  * @example
  * // Output: 6
  * hbs.compile("{{ceil a}}")({"a":5.6});
  *
- * @param {number|string} val
+ * @param {number|string} val Number to be rounded to nearest greater integer.
  * @returns {number}
  */
 declare function ceil(val: number | string): number;
 /**
- * A floor helper to find the floor value of the number.
+ * Rounds down a number.
  *
  * @example
  * // Output: 5
  * hbs.compile("{{floor a}}")({"a":5.6});
  *
- * @param {number|string} val
+ * @param {number|string} val Number to be rounded to nearest lower integer.
  * @returns {number}
  */
 declare function floor(val: number | string): number;
 /**
- * An abs helper to find the absolute value of the number.
+ * Returns an absolute value.
  *
  * @example
  * // Output: 5.6
  * hbs.compile("{{abs a b}}")({"a":-5.6});
  *
- * @param {number} val
+ * @param {number} val Number to perform absolute value operation on.
  * @returns {number}
  */
 declare function abs(val: number | string): number;

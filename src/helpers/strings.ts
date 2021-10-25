@@ -2,114 +2,69 @@ import * as utils from '../utils';
 import {vsprintf} from 'sprintf-js';
 
 /**
- * Extract a few characters from a string. Default number of characters is 50.
+ * Extract a portion of a string.
  *
  * @example
- * // Output: 'Just'
- * {{excerpt 'Just Wow' 4}}
+ * // Output: Just
+ * hbs.compile("{{slice str 0 4}}")({"str":"Just Wow"});
+ * 
+ * // Output: Wow
+ * hbs.compile("{{slice str 5}}")({"str":"Just Wow"});
+ * 
+ * // Output:  Wow
+ * hbs.compile("{{slice str -4}}")({"str":"Just Wow"});
  *
- * @param {string} val
- * @param {number} len
+ * @param {string} val Target string.
+ * @param {number} beginIdx The zero-based index at which to begin extraction.
+ * @param {number} endIdx The zero-based index before which to end extraction. The character at this index will not be included.
  * @returns {string}
  */
-function excerpt(val: string, len: number|string) {
-  len = parseInt(len as string, 10) || 50;
-  if (typeof val !== 'string' || typeof len !== 'number')
+function slice(val: string, beginIdx: number, endIdx?: number) {
+  if (typeof val !== 'string' || typeof beginIdx !== 'number')
     return val;
-  if (val.length < len)
+  if (val.length < beginIdx)
     return val;
-  return `${val.slice(0, len)}`;
-}
-
-/**
- * Convert a string to url friendly dash-case string removing special characters.
- *
- * @example
- * // Output: 'just-wow'
- * {{sanitize 'JuSt #Wow'}}
- *
- * @param {string} val
- * @returns {string}
- */
-function sanitize(val: string): string {
-  val = val.replace(/[^\w\s]/gi, '').trim();
-  return val.replace(/\s+/, '-').toLowerCase();
+  if (typeof endIdx !== 'number')
+    return val.slice(beginIdx);
+  return val.slice(beginIdx, endIdx as number);
 }
 
 /**
  * Replace \n with <br> tags.
  *
  * @example
- * // Output: 'nlToBr helper <br> is very <br> useful.'
- * {{nlToBr 'nlToBr helper \n is very \n useful.'}}
- *
- * @param {string} val
+ * // Output: It's<br>just<br>now
+ * hbs.compile("{{{nltobr str}}}")({"str":"It's\njust\nnow"});
+ * 
+ * @param {string} val Target string.
  * @returns {string}
  */
-function nlToBr(val: string): string {
+function nltobr(val: string): string {
   return val.replace(/\r?\n|\r/g, '<br>');
 }
 
 /**
- * Capitalize each letter of a string.
- *
- * @example
- * // Output: 'Just Wow'
- * {{capitalizeEach 'just wow'}}
- *
- * @param {string} val
- * @returns {string}
- */
-function capitalizeEach(val: string): string {
-  if (typeof val !== 'string')
-    return val;
-  return val.toLowerCase().replace(/\w\S*/g, function (match) {
-    return `${match.charAt(0).toUpperCase()}${match.substr(1)}`;
-  });
-}
-
-/**
- * Capitalize the first letter of a string.
- *
- * @example
- * // Output: 'Just wow'
- * {{capitalizeFirst 'just wow'}}
- *
- * @param {string} val
- * @returns {string}
- */
-function capitalizeFirst(val: string): string {
-  if (typeof val !== 'string')
-    return val;
-  return `${val.charAt(0).toUpperCase()}${val.slice(1)}`;
-}
-
-/**
- * A sprintf helper to be used in the handlebars templates that supports arbitrary parameters.
- * Make sure you have the sprintf-js (https://github.com/alexei/sprintf.js) package is available
- * either as a node module or you have sprintf/vsprintf functions available in the global scope
- * from that package.
- *
+ * Returns a string produced according to the formatting string format.
+ * It uses sprintf-js internally.
  * Check https://github.com/alexei/sprintf.js for more information.
  *
  * @example
  * // Argument swapping:
- * // Output: 'Hello Dolly'
- * {{sprintf '%s %s!' 'Hello' 'Dolly' }} 
+ * // Output: Hello Dolly!
+ * hbs.compile("{{sprintf '%s %s!' str1 str2}}")({"str1":"Hello","str2":"Dolly"});
  * 
- * // Output: 'foo bar 55 baz 20'
- * {{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}
+ * // Output: foo bar 55 baz 20
+ * hbs.compile("{{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}")();
  * 
  * // Named arguments:
- * // Output: 'Hello Dolly'
- * const user = {name: 'Dolly'};
- * {{sprintf 'Hello %(name)s' user }}
+ * // Output: Hello Dolly
+ * hbs.compile("{{sprintf 'Hello %(name)s' user}}")({"user":{"name":"Dolly"}});
  * 
- * // Output: 'Hello Dolly'
- * {{sprintf 'Hello %(name)s' name='Dolly'}}
+ * // Output: Hello Dolly
+ * hbs.compile("{{sprintf 'Hello %(name)s' name=str}}")({"str":"Dolly"});
  *
- * @param {string} format
- * @param {...any} args
+ * @param {string} format Format string.
+ * @param {...any} args Any number of parameters/values.
  * @returns {string}
  */
 function sprintf(format: string, ...args: any[]): string {
@@ -127,10 +82,10 @@ function sprintf(format: string, ...args: any[]): string {
  * Changes the string to lowercase.
  *
  * @example
- * // Output: 'just wow!!!'
- * {{lowercase 'JUST WOW!!!'}}
+ * // Output: just wow
+ * hbs.compile("{{lowercase str}}")({"str":"JUST WOW"});
  *
- * @param {string} val
+ * @param {string} val Target string.
  * @returns {string}
  */
 function lowercase(val: string): string {
@@ -141,10 +96,10 @@ function lowercase(val: string): string {
  * Changes the string to uppercase.
  *
  * @example
- * // Output: 'JUST WOW!!!'
- * {{uppercase 'just wow!!!'}}
+ * // Output: JUST WOW
+ * hbs.compile("{{uppercase str}}")({"str":"just wow"});
  *
- * @param {string} val
+ * @param {string} val Target string.
  * @returns {string}
  */
 function uppercase(val: string): string {
@@ -152,50 +107,16 @@ function uppercase(val: string): string {
 }
 
 /**
- * Get the first element of a collection/array.
- *
- * @example
- * // Output: 'David'
- * const someArray = ['David', 'Miller', 'Jones'];
- * {{first someArray}}
- *
- * @param {string[]} coll
- * @returns {string}
- */
-function first(coll: string[]): string {
-  if (!utils.isArray(coll) || coll.length === 0)
-    return '';
-  return coll[0];
-}
-
-/**
- * Get the last element of a collection/array.
- *
- * @example
- * // Output: 'Jones'
- * const someArray = ['David', 'Miller', 'Jones'];
- * {{last someArray}}
- *
- * @param {string[]} coll
- * @returns {string}
- */
-function last(coll: string[]): string {
-  if (!utils.isArray(coll) || coll.length === 0)
-    return '';
-  return coll[coll.length - 1];
-}
-
-/**
  * Concat two or more strings.
  *
  * @example
- * // Output: 'Hello world!!!'
- * {{concat 'Hello' ' world' '!!!'}}
+ * // Output: Hello world!
+ * hbs.compile("{{concat 'Hello' ' world' '!'}}")();
  *
- * @param {...any} args
+ * @param {...string} args Any number of string arguments.
  * @returns {string}
  */
-function concat(...args: any[]) {
+function concat(...args: string[]) {
   // Ignore the object appended by handlebars.
   if (utils.isObject(args[args.length - 1]))
     args.pop();
@@ -206,12 +127,11 @@ function concat(...args: any[]) {
  * Join the elements of an array using a delimeter.
  *
  * @example
- * // Output: 'Hands & legs & feet'
- * const someArray = ['Hands', 'legs', 'feet'];
- * {{join someArray ' & '}}
- *
- * @param  {array} coll
- * @param  {string} delim
+ * // Output: Hands & legs & feet
+ * hbs.compile("{{{join coll ' & '}}}")({"coll":["Hands","legs","feet"]});
+ * 
+ * @param {string[]} coll An array of elements to be joined.
+ * @param {string} delim A delimiter that joins array elements.
  * @returns {string|boolean}
  */
 function join(coll: string[], delim: string): string|boolean {
@@ -222,4 +142,4 @@ function join(coll: string[], delim: string): string|boolean {
   return coll.join(delim);
 }
 
-export {excerpt, sanitize, nlToBr, capitalizeEach, capitalizeFirst, sprintf, lowercase, uppercase, first, last, concat, join};
+export {slice, nltobr, sprintf, lowercase, uppercase, concat, join};

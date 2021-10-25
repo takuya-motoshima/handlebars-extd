@@ -1,85 +1,55 @@
 /**
- * Extract a few characters from a string. Default number of characters is 50.
+ * Extract a portion of a string.
  *
  * @example
- * // Output: 'Just'
- * {{excerpt 'Just Wow' 4}}
+ * // Output: Just
+ * hbs.compile("{{slice str 0 4}}")({"str":"Just Wow"});
  *
- * @param {string} val
- * @param {number} len
+ * // Output: Wow
+ * hbs.compile("{{slice str 5}}")({"str":"Just Wow"});
+ *
+ * // Output:  Wow
+ * hbs.compile("{{slice str -4}}")({"str":"Just Wow"});
+ *
+ * @param {string} val Target string.
+ * @param {number} beginIdx The zero-based index at which to begin extraction.
+ * @param {number} endIdx The zero-based index before which to end extraction. The character at this index will not be included.
  * @returns {string}
  */
-declare function excerpt(val: string, len: number | string): string;
-/**
- * Convert a string to url friendly dash-case string removing special characters.
- *
- * @example
- * // Output: 'just-wow'
- * {{sanitize 'JuSt #Wow'}}
- *
- * @param {string} val
- * @returns {string}
- */
-declare function sanitize(val: string): string;
+declare function slice(val: string, beginIdx: number, endIdx?: number): string;
 /**
  * Replace \n with <br> tags.
  *
  * @example
- * // Output: 'nlToBr helper <br> is very <br> useful.'
- * {{nlToBr 'nlToBr helper \n is very \n useful.'}}
+ * // Output: It's<br>just<br>now
+ * hbs.compile("{{{nltobr str}}}")({"str":"It's\njust\nnow"});
  *
- * @param {string} val
+ * @param {string} val Target string.
  * @returns {string}
  */
-declare function nlToBr(val: string): string;
+declare function nltobr(val: string): string;
 /**
- * Capitalize each letter of a string.
- *
- * @example
- * // Output: 'Just Wow'
- * {{capitalizeEach 'just wow'}}
- *
- * @param {string} val
- * @returns {string}
- */
-declare function capitalizeEach(val: string): string;
-/**
- * Capitalize the first letter of a string.
- *
- * @example
- * // Output: 'Just wow'
- * {{capitalizeFirst 'just wow'}}
- *
- * @param {string} val
- * @returns {string}
- */
-declare function capitalizeFirst(val: string): string;
-/**
- * A sprintf helper to be used in the handlebars templates that supports arbitrary parameters.
- * Make sure you have the sprintf-js (https://github.com/alexei/sprintf.js) package is available
- * either as a node module or you have sprintf/vsprintf functions available in the global scope
- * from that package.
- *
+ * Returns a string produced according to the formatting string format.
+ * It uses sprintf-js internally.
  * Check https://github.com/alexei/sprintf.js for more information.
  *
  * @example
  * // Argument swapping:
- * // Output: 'Hello Dolly'
- * {{sprintf '%s %s!' 'Hello' 'Dolly' }}
+ * // Output: Hello Dolly!
+ * hbs.compile("{{sprintf '%s %s!' str1 str2}}")({"str1":"Hello","str2":"Dolly"});
  *
- * // Output: 'foo bar 55 baz 20'
- * {{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}
+ * // Output: foo bar 55 baz 20
+ * hbs.compile("{{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}")();
  *
  * // Named arguments:
- * // Output: 'Hello Dolly'
- * const user = {name: 'Dolly'};
- * {{sprintf 'Hello %(name)s' user }}
+ * // Output: Hello Dolly
+ * hbs.compile("{{sprintf 'Hello %(name)s' user}}")({"user":{"name":"Dolly"}});
  *
- * // Output: 'Hello Dolly'
- * {{sprintf 'Hello %(name)s' name='Dolly'}}
+ * // Output: Hello Dolly
+ * hbs.compile("{{sprintf 'Hello %(name)s' name=str}}")({"str":"Dolly"});
  *
- * @param {string} format
- * @param {...any} args
+ * @param {string} format Format string.
+ * @param {...any} args Any number of parameters/values.
  * @returns {string}
  */
 declare function sprintf(format: string, ...args: any[]): string;
@@ -87,10 +57,10 @@ declare function sprintf(format: string, ...args: any[]): string;
  * Changes the string to lowercase.
  *
  * @example
- * // Output: 'just wow!!!'
- * {{lowercase 'JUST WOW!!!'}}
+ * // Output: just wow
+ * hbs.compile("{{lowercase str}}")({"str":"JUST WOW"});
  *
- * @param {string} val
+ * @param {string} val Target string.
  * @returns {string}
  */
 declare function lowercase(val: string): string;
@@ -98,59 +68,34 @@ declare function lowercase(val: string): string;
  * Changes the string to uppercase.
  *
  * @example
- * // Output: 'JUST WOW!!!'
- * {{uppercase 'just wow!!!'}}
+ * // Output: JUST WOW
+ * hbs.compile("{{uppercase str}}")({"str":"just wow"});
  *
- * @param {string} val
+ * @param {string} val Target string.
  * @returns {string}
  */
 declare function uppercase(val: string): string;
 /**
- * Get the first element of a collection/array.
- *
- * @example
- * // Output: 'David'
- * const someArray = ['David', 'Miller', 'Jones'];
- * {{first someArray}}
- *
- * @param {string[]} coll
- * @returns {string}
- */
-declare function first(coll: string[]): string;
-/**
- * Get the last element of a collection/array.
- *
- * @example
- * // Output: 'Jones'
- * const someArray = ['David', 'Miller', 'Jones'];
- * {{last someArray}}
- *
- * @param {string[]} coll
- * @returns {string}
- */
-declare function last(coll: string[]): string;
-/**
  * Concat two or more strings.
  *
  * @example
- * // Output: 'Hello world!!!'
- * {{concat 'Hello' ' world' '!!!'}}
+ * // Output: Hello world!
+ * hbs.compile("{{concat 'Hello' ' world' '!'}}")();
  *
- * @param {...any} args
+ * @param {...string} args Any number of string arguments.
  * @returns {string}
  */
-declare function concat(...args: any[]): string;
+declare function concat(...args: string[]): string;
 /**
  * Join the elements of an array using a delimeter.
  *
  * @example
- * // Output: 'Hands & legs & feet'
- * const someArray = ['Hands', 'legs', 'feet'];
- * {{join someArray ' & '}}
+ * // Output: Hands & legs & feet
+ * hbs.compile("{{{join coll ' & '}}}")({"coll":["Hands","legs","feet"]});
  *
- * @param  {array} coll
- * @param  {string} delim
+ * @param {string[]} coll An array of elements to be joined.
+ * @param {string} delim A delimiter that joins array elements.
  * @returns {string|boolean}
  */
 declare function join(coll: string[], delim: string): string | boolean;
-export { excerpt, sanitize, nlToBr, capitalizeEach, capitalizeFirst, sprintf, lowercase, uppercase, first, last, concat, join };
+export { slice, nltobr, sprintf, lowercase, uppercase, concat, join };
