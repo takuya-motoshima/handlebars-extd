@@ -72,14 +72,25 @@
         </nav>
         <a class="nav-link" href="#date-helper">Date helper</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#date-helper-summary">Summary</a>
           <a class="nav-link" href="#date-helper-format-date">{{formatDate}}</a>
         </nav>
         <a class="nav-link" href="#html-helper">HTML helper</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#html-helper-summary">Summary</a>
           <a class="nav-link" href="#html-helper-class-if">{{classIf}}</a>
           <a class="nav-link" href="#html-helper-selected-if">{{selectedIf}}</a>
           <a class="nav-link" href="#html-helper-checked-if">{{checkedIf}}</a>
           <a class="nav-link" href="#html-helper-options">{{options}}</a>
+        </nav>
+        <a class="nav-link" href="#math-helper">Math helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#math-helper-summary">Summary</a>
+          <a class="nav-link" href="#math-helper-add">{{add}}</a>
+          <a class="nav-link" href="#math-helper-sub">{{sub}}</a>
+          <a class="nav-link" href="#math-helper-ceil">{{ceil}}</a>
+          <a class="nav-link" href="#math-helper-floor">{{floor}}</a>
+          <a class="nav-link" href="#math-helper-abs">{{abs}}</a>
         </nav>
       </nav>
     </nav>
@@ -597,7 +608,7 @@ hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot
     <!--begin::HTML helper-->
     <h1 id="html-helper">HTML helper</h1>
     <!--begin::Summary-->
-    <h2 id="date-helper-summary">Summary</h2>
+    <h2 id="html-helper-summary">Summary</h2>
     <table class="table table-bordered table-striped">
       <thead class="table-light">
         <tr class="text-nowrap">
@@ -682,12 +693,104 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
     <!--end::options-->
     <!--end::HTML helper-->
 
+    <!--begin::Math helper-->
+    <h1 id="math-helper">Math helper</h1>
+    <!--begin::Summary-->
+    <h2 id="math-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-add">add</a></td>
+          <td class="min-w-200px w-100">Calculates the sum of two numbers.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-sub">sub</a></td>
+          <td class="min-w-200px w-100">Calculates the difference of the given values.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-ceil">ceil</a></td>
+          <td class="min-w-200px w-100">Round up the value.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-floor">floor</a></td>
+          <td class="min-w-200px w-100">Rounds down a number.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#math-helper-abs">abs</a></td>
+          <td class="min-w-200px w-100">Returns an absolute value.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
 
+    <!--begin::add-->
+    <h2 id="math-helper-add" class="text-primary">{{add}}</h2>
+    <p>Calculates the sum of two numbers.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val1</strong> The first number.</li>
+      <li><code>number|string</code> <strong>val2</strong> The second number.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 3
+hbs.compile(&quot;{{add a b}}&quot;)({&quot;a&quot;:1,&quot;b&quot;:2});</code></pre>
+    <!--end::add-->
 
-  
-  
-  
-  
+    <!--begin::sub-->
+    <h2 id="math-helper-sub" class="text-primary">{{sub}}</h2>
+    <p>Calculates the difference of the given values.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val1</strong> The first number.</li>
+      <li><code>number|string</code> <strong>val2</strong> The second number.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 3
+hbs.compile(&quot;{{sub a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code></pre>
+    <!--end::sub-->
+
+    <!--begin::ceil-->
+    <h2 id="math-helper-ceil" class="text-primary">{{ceil}}</h2>
+    <p>Round up the value.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val</strong> Number to be rounded to nearest greater integer.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 6
+hbs.compile(&quot;{{ceil a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
+    <!--end::ceil-->
+
+    <!--begin::floor-->
+    <h2 id="math-helper-floor" class="text-primary">{{floor}}</h2>
+    <p>Rounds down a number.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val</strong> Number to be rounded to nearest lower integer.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 5
+hbs.compile(&quot;{{floor a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
+    <!--end::floor-->
+
+    <!--begin::abs-->
+    <h2 id="math-helper-abs" class="text-primary">{{abs}}</h2>
+    <p>Returns an absolute value.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>number|string</code> <strong>val</strong> Number to perform absolute value operation on.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: 5.6
+hbs.compile(&quot;{{abs a b}}&quot;)({&quot;a&quot;:-5.6});</code></pre>
+    <!--end::abs-->
+    <!--end::Math helper-->
   
   
   </main>
