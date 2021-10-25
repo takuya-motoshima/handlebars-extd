@@ -14,8 +14,5 @@
     "esbuild": "^0.13.9",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0"
-  },
-  "dependencies": {
-    "handlebars-extd": "^1.0.0"
   }
 }
