@@ -128,7 +128,6 @@ h4 {
     }
 
     .sidenav a:hover,
-    .sidenav a:focus,
     .sidenav .nav-link.active {
       font-weight: 600;
       color: #0d6efd;

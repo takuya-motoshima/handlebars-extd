@@ -1,39 +1,26 @@
 /**
- * A showIf helper for showing any html element.
+ * Set the CSS classes if the condition is true.
  *
  * @example
- * // Output: 
- * hbs.compile("{{showIf expr}}")({"expr":true});
+ * // Output: foo
+ * hbs.compile("{{classIf expr 'foo'}}")({"expr":true});
  *
- * @param {boolean} expr
+ * @param {boolean} expr Condition to be checked.
+ * @param {string} cls CSS class to set if the condition is true.
  * @returns {string}
  */
-function showIf(expr: boolean): string {
-  return expr ? '' : 'hidden';
+ function classIf(expr: boolean, cls: string): string {
+  return expr ? cls : '';
 }
 
 /**
- * A hideIf helper for hiding any html element.
- *
- * @example
- * // Output: hidden
- * hbs.compile("{{hideIf expr}}")({"expr":true});
- *
- * @param {boolean} expr
- * @returns {string}
- */
-function hideIf(expr: boolean): string {
-  return expr ? 'hidden' : '';
-}
-
-/**
- * A selectedIf helper for dropdown and radio boxes.
+ * Sets the selected attribute if the condition is true.
  *
  * @example
  * // Output: selected
  * hbs.compile("{{selectedIf expr}}")({"expr":true});
  *
- * @param {boolean} expr
+ * @param {boolean} expr Condition to be checked.
  * @returns {string}
  */
 function selectedIf(expr: boolean): string {
@@ -41,13 +28,13 @@ function selectedIf(expr: boolean): string {
 }
 
 /**
- * A checkedIf helper for checkboxes.
+ * Sets the checked attribute if the condition is true.
  *
  * @example
  * // Output: checked
  * hbs.compile("{{checkedIf expr}}")({"expr":true});
  *
- * @param {boolean} expr
+ * @param {boolean} expr Condition to be checked.
  * @returns {string}
  */
 function checkedIf(expr: boolean): string {
@@ -55,7 +42,7 @@ function checkedIf(expr: boolean): string {
 }
 
 /**
- * An options helper for generating <option> list for <select> dropdowns.
+ * Generates a select drop-down option list.
  *
  * @example
  * A simple example:
@@ -78,8 +65,8 @@ function checkedIf(expr: boolean): string {
  *   ]
  * });
  * 
- * @param {{[key: string]: string}[]} data
- * @param {object} opts Object of options that includes value, text and selected attribute.
+ * @param {{[key: string]: string}[]} data List of data.
+ * @param {object} opts Key names for the selected and displayed values of option in the data element (Optional).
  * @returns {string}
  */
 function options(data: {[key: string]: string}[], opts: {hash: {[key: string]: string}}): string {
@@ -97,19 +84,4 @@ function options(data: {[key: string]: string}[], opts: {hash: {[key: string]: s
   }).join('\n');
 }
 
-/**
- * ClassIf helper for setting CSS classes.
- *
- * @example
- * // Output: foo
- * hbs.compile("{{classIf expr 'foo'}}")({"expr":true});
- *
- * @param {boolean} expr
- * @param {string} cls CSS class to set if the condition is true.
- * @returns {string}
- */
- function classIf(expr: boolean, cls: string): string {
-  return expr ? cls : '';
-}
-
-export {showIf, hideIf, selectedIf, checkedIf, options, classIf}
+export {classIf, selectedIf, checkedIf, options}

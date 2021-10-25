@@ -51,28 +51,35 @@
         <a class="nav-link" href="#usage">Usage</a>
         <a class="nav-link" href="#comparison-helper">Comparison helper</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#comparison-helper-summary">Summary</a></li>
-          <a class="nav-link" href="#comparison-helper-opr">{{opr}}</a></li>
-          <a class="nav-link" href="#comparison-helper-eq">{{eq}}</a></li>
-          <a class="nav-link" href="#comparison-helper-eqw">{{eqw}}</a></li>
-          <a class="nav-link" href="#comparison-helper-neq">{{neq}}</a></li>
-          <a class="nav-link" href="#comparison-helper-neqw">{{neqw}}</a></li>
-          <a class="nav-link" href="#comparison-helper-lt">{{lt}}</a></li>
-          <a class="nav-link" href="#comparison-helper-gt">{{gt}}</a></li>
-          <a class="nav-link" href="#comparison-helper-lte">{{lte}}</a></li>
-          <a class="nav-link" href="#comparison-helper-gte">{{gte}}</a></li>
-          <a class="nav-link" href="#comparison-helper-ifx">{{ifx}}</a></li>
-          <a class="nav-link" href="#comparison-helper-not">{{not}}</a></li>
-          <a class="nav-link" href="#comparison-helper-empty">{{empty}}</a></li>
-          <a class="nav-link" href="#comparison-helper-count">{{count}}</a></li>
-          <a class="nav-link" href="#comparison-helper-and">{{and}}</a></li>
-          <a class="nav-link" href="#comparison-helper-or">{{or}}</a></li>
-          <a class="nav-link" href="#comparison-helper-coalesce">{{coalesce}}</a></li>
-          <a class="nav-link" href="#comparison-helper-includes">{{includes}}</a></li>
+          <a class="nav-link" href="#comparison-helper-summary">Summary</a>
+          <a class="nav-link" href="#comparison-helper-opr">{{opr}}</a>
+          <a class="nav-link" href="#comparison-helper-eq">{{eq}}</a>
+          <a class="nav-link" href="#comparison-helper-eqw">{{eqw}}</a>
+          <a class="nav-link" href="#comparison-helper-neq">{{neq}}</a>
+          <a class="nav-link" href="#comparison-helper-neqw">{{neqw}}</a>
+          <a class="nav-link" href="#comparison-helper-lt">{{lt}}</a>
+          <a class="nav-link" href="#comparison-helper-gt">{{gt}}</a>
+          <a class="nav-link" href="#comparison-helper-lte">{{lte}}</a>
+          <a class="nav-link" href="#comparison-helper-gte">{{gte}}</a>
+          <a class="nav-link" href="#comparison-helper-ifx">{{ifx}}</a>
+          <a class="nav-link" href="#comparison-helper-not">{{not}}</a>
+          <a class="nav-link" href="#comparison-helper-empty">{{empty}}</a>
+          <a class="nav-link" href="#comparison-helper-count">{{count}}</a>
+          <a class="nav-link" href="#comparison-helper-and">{{and}}</a>
+          <a class="nav-link" href="#comparison-helper-or">{{or}}</a>
+          <a class="nav-link" href="#comparison-helper-coalesce">{{coalesce}}</a>
+          <a class="nav-link" href="#comparison-helper-includes">{{includes}}</a>
         </nav>
         <a class="nav-link" href="#date-helper">Date helper</a>
         <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
-          <a class="nav-link" href="#date-helper-format-date">{{format-date}}</a></li>
+          <a class="nav-link" href="#date-helper-format-date">{{formatDate}}</a>
+        </nav>
+        <a class="nav-link" href="#html-helper">HTML helper</a>
+        <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+          <a class="nav-link" href="#html-helper-class-if">{{classIf}}</a>
+          <a class="nav-link" href="#html-helper-selected-if">{{selectedIf}}</a>
+          <a class="nav-link" href="#html-helper-checked-if">{{checkedIf}}</a>
+          <a class="nav-link" href="#html-helper-options">{{options}}</a>
         </nav>
       </nav>
     </nav>
@@ -565,6 +572,7 @@ hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;
       </tbody>
     </table>
     <!--end::Summary-->
+
     <!--begin::includes-->
     <h2 id="date-helper-format-date" class="text-primary">{{formatDate}}</h2>
     <p>Use moment to format the date.</p>
@@ -585,6 +593,103 @@ hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;jp&#039;}}&quot
 hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});</code></pre>
     <!--end::includes-->
     <!--begin::Date helper-->
+  
+    <!--begin::HTML helper-->
+    <h1 id="html-helper">HTML helper</h1>
+    <!--begin::Summary-->
+    <h2 id="date-helper-summary">Summary</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr class="text-nowrap">
+          <th>Helper</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-class-if">classIf</a></td>
+          <td class="min-w-200px w-100">Set the CSS classes if the condition is true.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-selected-if">selectedIf</a></td>
+          <td class="min-w-200px w-100">Sets the selected attribute if the condition is true.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-checked-if">checkedIf</a></td>
+          <td class="min-w-200px w-100">Sets the checked attribute if the condition is true.</td>
+        </tr>
+        <tr>
+          <td class="min-w-150px"><a href="#html-helper-options">options</a></td>
+          <td class="min-w-200px w-100">Generates a select drop-down option list.</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--end::Summary-->
+
+    <!--begin::classIf-->
+    <h2 id="html-helper-class-if" class="text-primary">{{classIf}}</h2>
+    <p>Set the CSS classes if the condition is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
+      <li><code>string</code> <strong>cls</strong> CSS class to set if the condition is true.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: foo
+hbs.compile(&quot;{{classIf expr &#039;foo&#039;}}&quot;)({&quot;expr&quot;:true});</code></pre>
+    <!--end::classIf-->
+
+    <!--begin::selectedIf-->
+    <h2 id="html-helper-selected-if" class="text-primary">{{selectedIf}}</h2>
+    <p>Sets the selected attribute if the condition is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: selected
+hbs.compile(&quot;{{selectedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
+    <!--end::selectedIf-->
+
+    <!--begin::checkedIf-->
+    <h2 id="html-helper-checked-if" class="text-primary">{{checkedIf}}</h2>
+    <p>Sets the checked attribute if the condition is true.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>boolean</code> <strong>expr</strong> Condition to be checked.</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: checked
+hbs.compile(&quot;{{checkedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
+    <!--end::checkedIf-->
+
+    <!--begin::options-->
+    <h2 id="html-helper-options" class="text-primary">{{options}}</h2>
+    <p>Generates a select drop-down option list.</p>
+    <p class="fw-bolder mb-0">Params:</p>
+    <ul>
+      <li><code>{[key: string]: string}[]</code> <strong>data</strong> List of data.</li>
+      <li><code>{value: string, text: string}</code> <strong>opts</strong> Key names for the selected and displayed values of option in the data element (Optional).</li>
+    </ul>
+    <p class="fw-bolder mb-0">Example:</p>
+    <pre><code class="js">// Output: &lt;option value=&quot;1&quot;&gt;foo&lt;/option&gt;
+//         &lt;option value=&quot;2&quot; selected&gt;bar&lt;/option&gt;
+hbs.compile(&quot;{{{options data selected=&#039;2&#039;}}}&quot;)({&quot;data&quot;:[{&quot;value&quot;:1,&quot;text&quot;:&quot;foo&quot;},{&quot;value&quot;:2,&quot;text&quot;:&quot;bar&quot;}]});
+
+// Output: &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
+//         &lt;option value=&quot;840&quot;&gt;UNITED STATES&lt;/option&gt;
+hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039; text=&#039;name&#039;}}}&quot;)({&quot;data&quot;:[{&quot;code&quot;:392,&quot;name&quot;:&quot;JAPAN&quot;},{&quot;code&quot;:840,&quot;name&quot;:&quot;UNITED STATES&quot;}]});</code></pre>
+    <!--end::options-->
+    <!--end::HTML helper-->
+
+
+
+  
+  
+  
+  
+  
+  
   </main>
 </div>
 

@@ -1,8 +1,7 @@
 import hbs from 'handlebars-extd';
 
 for (let [tpl, opts] of [
-  ["{{showIf expr}}", {expr: true}],
-  ["{{hideIf expr}}", {expr: true}],
+  ["{{classIf expr 'foo'}}", {expr: true}],
   ["{{selectedIf expr}}", {expr: true}],
   ["{{checkedIf expr}}", {expr: true}],
   ["{{{options data selected='2'}}}", {
@@ -16,8 +15,7 @@ for (let [tpl, opts] of [
       {code: 392, name: 'JAPAN'},
       {code: 840, name: 'UNITED STATES'}
     ]
-  }],
-  ["{{classIf expr 'foo'}}", {expr: true}]
+  }]
 ]) {
   const compiled = hbs.compile(tpl)(opts);
   console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});\n`);
