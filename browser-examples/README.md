@@ -12,7 +12,7 @@
 
 * Install handlebars-extd:
   ```bash
-  npm i -D handlebars-extd
+  npm i handlebars-extd
   ```
 
 * Create a "build.js" file on the root of your project: 
