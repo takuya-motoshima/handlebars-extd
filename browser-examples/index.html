@@ -4,13 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>handlebars-extd example</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      width: 100%;
+      margin: 0;
+    }
+
+      #tbl {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+        td, th {
+          text-align: left;
+          padding: .5rem;
+        }
+
+          pre {
+            white-space: pre;
+          }
+
+            code {
+              word-wrap: normal;
+              font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+            }
+  </style>
 </head>
 <body>
+  <table id="tbl" border="1">
+    <thead>
+      <tr>
+        <th>JS code</th>
+        <th>Output result</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
   <script src="dist/app.js"></script>
-  <script src="dist/comparison.js"></script>
-  <script src="dist/date.js"></script>
-  <script src="dist/html.js"></script>
-  <script src="dist/math.js"></script>
-  <script src="dist/string.js"></script>
 </body>
 </html>

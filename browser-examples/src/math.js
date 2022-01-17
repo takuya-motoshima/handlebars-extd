@@ -7,6 +7,7 @@ for (let [tpl, opts] of [
   ["{{floor a}}", {a: 5.6}],
   ["{{abs a b}}", {a: -5.6}]
 ]) {
-  const compiled = hbs.compile(tpl)(opts);
-  console.log(`// Output: ${compiled}\nhbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});\n`);
+  const code = `hbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});`
+  const res = hbs.compile(tpl)(opts);
+  console.log(`${code}\u001b[32m => ${res}\u001b[0m`);
 }

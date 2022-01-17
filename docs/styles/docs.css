@@ -6,7 +6,7 @@
 
 .topnav {
   padding: .75rem 0;
-  background-color: #f0772b;
+  background-color: hsl(202deg, 100%, 39%);
 }
 
   .topnav .navbar-toggler {
@@ -24,8 +24,8 @@
   }
 
     .topnav .navbar-nav-svg {
-      width: 1rem;
-      height: 1rem
+      width: 1.5rem;
+      height: 1.5rem
     }
 
 .min-w-150px {
@@ -34,6 +34,10 @@
 
 .min-w-200px {
   min-width: 200px;
+}
+
+.min-w-300px {
+  min-width: 300px;
 }
 
 ul li,
@@ -123,7 +127,7 @@ h4 {
       margin-top: .125rem;
       margin-left: 1.25rem;
       width: fit-content;
-      color: #843909;
+      color: hsl(202deg, 100%, 20%);
       text-decoration: none;
     }
 
@@ -256,13 +260,8 @@ h4 {
   }
 
 .hljs {
-  border-radius: .5em;
-  background: #2e2e42;
+  background: #f8f9fa;
 }
-
-  .hljs-comment {
-    color: #9e8f9e;
-  }
 
 .example {
   margin-bottom: 1rem;

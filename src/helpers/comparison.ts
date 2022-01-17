@@ -218,22 +218,94 @@ function not(expr: any): boolean {
 }
 
 /**
- * Check if an array is empty.
+ * Check if it is empty.
+ * If the value is an array, returns true if there are no elements.
+ * If the value is a string, the leading and trailing spaces are trimmed and then checked.
  *
  * @example
+ * // If the value is an array.
  * // Output: true
- * hbs.compile("{{empty coll}}")({"coll":[]});
- * 
- * // Output: false
- * hbs.compile("{{empty coll}}")({"coll":["foo"]});
+ * hbs.compile("{{empty val}}")({"val":[]});
  *
- * @param {any[]} coll Array/object to be checked.
- * @returns {boolean}
+ * // Output: false
+ * hbs.compile("{{empty val}}")({"val":["foo"]});
+ *
+ * // If the value is an array.
+ * // Output: false
+ * hbs.compile("{{empty val}}")({"val":'Hello'});
+ *
+ * // Output: true
+ * hbs.compile("{{empty val}}")({"val":''});
+ *
+ * // Output: true
+ * hbs.compile("{{empty val}}")({"val":' '});
+ *
+ * @param   {any}     val Character strings, arrays, objects, etc. to be checked.
+ * @returns {boolean}     Returns true if the value is empty, false otherwise.
  */
-function empty(coll: any[]): boolean {
-  if (!utils.isArray(coll))
-    return true;
-  return coll.length === 0;
+function empty(val: any): boolean {
+  if (typeof val === 'string')
+    // Trim if it's a string.
+    val = val.replace(/^[\s　]+|[\s　]+$/g, ''); 
+  else if (Array.isArray(val) && val.length === 0)
+    // Replace value with null if it is an array and has no elements.
+    val = null;
+  return !!!val;
+}
+
+// /**
+//  * Check if an array is empty.
+//  *
+//  * @example
+//  * // Output: true
+//  * hbs.compile("{{empty coll}}")({"coll":[]});
+//  * 
+//  * // Output: false
+//  * hbs.compile("{{empty coll}}")({"coll":["foo"]});
+//  *
+//  * @param {any[]} coll Array/object to be checked.
+//  * @returns {boolean}
+//  */
+// function empty(coll: any[]): boolean {
+//   if (!utils.isArray(coll))
+//     return true;
+//   return coll.length === 0;
+// }
+
+/**
+ * Check that it is not empty.
+ * If the value is an array, returns true if there is an element.
+ * If the value is a string, the leading and trailing spaces are trimmed and then checked.
+ *
+ * @example
+ * // If the value is an array.
+ * // Output: false
+ * hbs.compile("{{notEmpty val}}")({"val":[]});
+ *
+ * // Output: true
+ * hbs.compile("{{notEmpty val}}")({"val":["foo"]});
+ *
+ * // If the value is an array.
+ * // Output: true
+ * hbs.compile("{{notEmpty val}}")({"val":'Hello'});
+ *
+ * // Output: false
+ * hbs.compile("{{notEmpty val}}")({"val":''});
+ *
+ * // Output: false
+ * hbs.compile("{{notEmpty val}}")({"val":' '});
+ *
+ * @param   {any}     value Character strings, arrays, objects, etc. to be checked.
+ * @returns {boolean}       Returns true if the value is not empty, false otherwise.
+ */
+export function notEmpty(val: any): boolean {
+  if (typeof val === 'string')
+    // Trim if it's a string.
+    val = val.replace(/^[\s　]+|[\s　]+$/g, ''); 
+  else if (Array.isArray(val) && val.length === 0)
+    // Replace value with null if it is an array and has no elements.
+    val = null;
+  return !!val;
 }
 
 /**
