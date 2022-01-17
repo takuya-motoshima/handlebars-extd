@@ -298,7 +298,7 @@ function empty(val: any): boolean {
  * @param   {any}     value Character strings, arrays, objects, etc. to be checked.
  * @returns {boolean}       Returns true if the value is not empty, false otherwise.
  */
-export function notEmpty(val: any): boolean {
+function notEmpty(val: any): boolean {
   if (typeof val === 'string')
     // Trim if it's a string.
     val = val.replace(/^[\s　]+|[\s　]+$/g, ''); 
@@ -424,4 +424,4 @@ function includes(coll: any[], val: any, strict: boolean = true): boolean {
   return false;
 }
 
-export {opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, count, and, or, coalesce, includes}
+export {opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, notEmpty, count, and, or, coalesce, includes}

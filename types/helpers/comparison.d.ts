@@ -211,7 +211,7 @@ declare function empty(val: any): boolean;
  * @param   {any}     value Character strings, arrays, objects, etc. to be checked.
  * @returns {boolean}       Returns true if the value is not empty, false otherwise.
  */
-export declare function notEmpty(val: any): boolean;
+declare function notEmpty(val: any): boolean;
 /**
  * Determine the length of an array.
  *
@@ -288,4 +288,4 @@ declare function coalesce(...args: any[]): any;
  * @returns {boolean}
  */
 declare function includes(coll: any[], val: any, strict?: boolean): boolean;
-export { opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, count, and, or, coalesce, includes };
+export { opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, notEmpty, count, and, or, coalesce, includes };

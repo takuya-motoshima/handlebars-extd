@@ -1,4 +1,5 @@
-import hbs from 'handlebars-extd';
+// import hbs from 'handlebars-extd';
+import hbs from '../../dist/build.esm.js';
 
 /**
  * Escape HTML.
