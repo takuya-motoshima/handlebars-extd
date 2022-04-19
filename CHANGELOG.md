@@ -2,12 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2022-04-19
+### Fixed
+- Add string split helper.
+  ```js
+  // Output: <ul>
+  //           <li>a</li>
+  //           <li>b</li>
+  //           <li>c</li>
+  //         </ul>
+  hbs.compile(`<ul>
+                {{#each (split list ',')}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>`)({"list":"a,b,c"});
+  ```
+
 ## [1.0.2] - 2022-01-17
+### Fixed
 - empty view helper can now check any type. Previously I could only check arrays.
 
 ## [1.0.1] - 2022-01-17
+### Fixed
 - empty view helper can now check any type. Previously I could only check arrays.
-  ```html
+  ```js
   // If the value is an array.
   // Output: true
   hbs.compile("{{empty val}}")({"val":[]});
@@ -27,7 +45,7 @@ All notable changes to this project will be documented in this file.
   ```
 
 - Added notEmpty view helper.
-  ```html
+  ```js
   // If the value is an array.
   // Output: false
   hbs.compile("{{notEmpty val}}")({"val":[]});
@@ -52,3 +70,4 @@ All notable changes to this project will be documented in this file.
 
 [1.0.1]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.0...v1.0.1
 [1.0.2]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.1...v1.0.2
+[1.0.3]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.2...v1.0.3

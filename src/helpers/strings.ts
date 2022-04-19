@@ -142,4 +142,34 @@ function join(coll: string[], delim: string): string|boolean {
   return coll.join(delim);
 }
 
-export {slice, nltobr, sprintf, lowercase, uppercase, concat, join};
+/**
+ * Split string by the given character.
+ *
+ * @example
+ * // Output: ['a', 'b', 'c']
+ * hbs.compile("{{split list}}")({"list":"a,b,c"});
+ *
+ * // Output: <ul>
+ * //           <li>a</li>
+ * //           <li>b</li>
+ * //           <li>c</li>
+ * //         </ul>
+ * hbs.compile(`<ul>
+ *               {{#each (split list ',')}}
+ *                 <li>{{this}}</li>
+ *               {{/each}}
+ *             </ul>`)({"list":"a,b,c"});
+ * 
+ * @param  {string} val       The value to split for.
+ * @param  {string} separator A character that delimits the substrings in this string. Default is a comma.
+ * @return {string}
+ */
+function split(val: string, separator: string): string[] {
+  if (!utils.isString(val) || val === '')
+    return [];
+  if (!utils.isString(separator) || val === '')
+    separator = ',';
+  return val.split(separator);
+}
+
+export {slice, nltobr, sprintf, lowercase, uppercase, concat, join, split};

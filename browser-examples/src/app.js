@@ -1,5 +1,5 @@
 // import hbs from 'handlebars-extd';
-import hbs from '../../dist/build.esm.js';
+import hbs from '../node_modules/handlebars-extd/dist/build.esm.js';
 
 /**
  * Escape HTML.
@@ -8,20 +8,12 @@ import hbs from '../../dist/build.esm.js';
  * @returns             Returns escaped HTML.
  */
 function escapeHtml(str) {
-  return str.replace(/[&'`"<>]/g, function(match) {
-    return {
-      '&': '&amp;',
-      "'": '&#x27;',
-      '`': '&#x60;',
-      '"': '&quot;',
-      '<': '&lt;',
-      '>': '&gt;',
-    }[match]
+  return str.replace(/[&'`"<>]/g, match => {
+    return {'&': '&amp;', "'": '&#x27;', '`': '&#x60;', '"': '&quot;', '<': '&lt;', '>': '&gt;'}[match]
   });
 }
 
-const tbl = document.querySelector('#tbl tbody');
-
+const tbody = document.querySelector('#tbody');
 for (let [tpl, opts] of [
   // comparison.opr '==='
   ["{{opr a '===' b}}", {a: '3', b: 3}],
@@ -222,12 +214,15 @@ for (let [tpl, opts] of [
   ["{{concat 'Hello' ' world' '!'}}"],
 
   // strings.join
-  ["{{{join coll ' & '}}}", {coll: ['Hands', 'legs', 'feet']}]
+  ["{{{join coll ' & '}}}", {coll: ['Hands', 'legs', 'feet']}],
+
+  // split
+  ["<ul>{{#each (split list ',')}}<li>{{this}}</li>{{/each}}</ul>", {list: 'a,b,c'}],
 ]) {
   const code = `hbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});`
   const res = hbs.compile(tpl)(opts);
   console.log(`${code}\u001b[32m => ${res}\u001b[0m`);
-  tbl.insertAdjacentHTML('beforeend', `<tr>
+  tbody.insertAdjacentHTML('beforeend', `<tr>
                                         <td><pre><code>${escapeHtml(code)}</code></pre></td>
                                         <td>${escapeHtml(res)}</td>
                                       </tr>`);
