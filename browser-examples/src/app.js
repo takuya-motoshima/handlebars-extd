@@ -1,5 +1,6 @@
 // import hbs from 'handlebars-extd';
-import hbs from '../node_modules/handlebars-extd/dist/build.esm.js';
+// import hbs from '../node_modules/handlebars-extd/dist/build.esm.js';
+import hbs from '../../dist/build.esm.js';
 
 /**
  * Escape HTML.
@@ -219,11 +220,10 @@ for (let [tpl, opts] of [
   // split
   ["<ul>{{#each (split list ',')}}<li>{{this}}</li>{{/each}}</ul>", {list: 'a,b,c'}],
 ]) {
-  const code = `hbs.compile("${tpl}")(${opts ? JSON.stringify(opts) : ''});`
   const res = hbs.compile(tpl)(opts);
-  console.log(`${code}\u001b[32m => ${res}\u001b[0m`);
   tbody.insertAdjacentHTML('beforeend', `<tr>
-                                        <td><pre><code>${escapeHtml(code)}</code></pre></td>
-                                        <td>${escapeHtml(res)}</td>
+                                        <td class="w-100"><pre><code>${escapeHtml(tpl)}</code></pre></td>
+                                        <td class="text-nowrap">${opts ? JSON.stringify(opts) : ''}</td>
+                                        <td class="text-nowrap">${escapeHtml(res)}</td>
                                       </tr>`);
 }

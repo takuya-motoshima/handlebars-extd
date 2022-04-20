@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2022-04-20
+### Fixed
+- Fixed a bug that causes errors in node.js.
+  ```js
+  const hbs = require('handlebars-extd');
+
+  // Output: false
+  hbs.compile("{{opr a '===' b}}")({"a":"3","b":3});
+  ```
+
 ## [1.0.3] - 2022-04-19
 ### Fixed
 - Add string split helper.
@@ -71,3 +81,4 @@ All notable changes to this project will be documented in this file.
 [1.0.1]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.0...v1.0.1
 [1.0.2]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.1...v1.0.2
 [1.0.3]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.2...v1.0.3
+[1.0.4]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.3...v1.0.4

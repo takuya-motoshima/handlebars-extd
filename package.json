@@ -7,12 +7,11 @@
   "browser": "dist/build.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "watch": "rollup -c --watch",
-    "prewatch": "rm -rf dist types",
-    "build": "rollup -c",
     "prebuild": "rm -rf dist types",
-    "test": "jest",
-    "start": "ts-node -r tsconfig-paths/register -P tsconfig.json -O '{\"module\":\"commonjs\"}' -e \"import * as index from '~/index';console.log(index);\""
+    "build": "cross-env NODE_ENV=production rollup -c rollup.esm-and-umd.config.js && cross-env NODE_ENV=production rollup -c rollup.cjs.config.js",
+    "prebuild:dev": "rm -rf dist types",
+    "build:dev": "cross-env NODE_ENV=development rollup -c rollup.esm-and-umd.config.js && cross-env NODE_ENV=development rollup -c rollup.cjs.config.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -52,13 +51,14 @@
   "homepage": "https://github.com/takuya-motoshima/handlebars-extd#readme",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.0.1",
-    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-commonjs": "^21.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.1",
     "@types/jest": "^24.0.23",
     "@types/js-cookie": "^2.2.6",
     "@types/sprintf-js": "^1.1.2",
+    "cross-env": "^7.0.3",
     "fetch-mock": "^8.0.0",
     "jest": "^24.9.0",
     "rollup": "^2.58.0",

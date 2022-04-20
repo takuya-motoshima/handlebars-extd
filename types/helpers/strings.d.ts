@@ -99,7 +99,7 @@ declare function concat(...args: string[]): string;
  */
 declare function join(coll: string[], delim: string): string | boolean;
 /**
- * Split `string` by the given `character`.
+ * Split string by the given character.
  *
  * @example
  * // Output: ['a', 'b', 'c']
@@ -116,9 +116,9 @@ declare function join(coll: string[], delim: string): string | boolean;
  *               {{/each}}
  *             </ul>`)({"list":"a,b,c"});
  *
- * @param  {string} value     String.
+ * @param  {string} val       The value to split for.
  * @param  {string} separator A character that delimits the substrings in this string. Default is a comma.
  * @return {string}
  */
-declare function split(value: string, separator: string): string[];
+declare function split(val: string, separator: string): string[];
 export { slice, nltobr, sprintf, lowercase, uppercase, concat, join, split };
