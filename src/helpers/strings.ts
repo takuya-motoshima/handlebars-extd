@@ -162,7 +162,7 @@ function join(coll: string[], delim: string): string|boolean {
  * 
  * @param  {string} val       The value to split for.
  * @param  {string} separator A character that delimits the substrings in this string. Default is a comma.
- * @return {string}
+ * @return {string[]}         An Array of strings, split at each point where the separator occurs in the given string. The default is a comma.
  */
 function split(val: string, separator: string): string[] {
   if (!utils.isString(val) || val === '')
