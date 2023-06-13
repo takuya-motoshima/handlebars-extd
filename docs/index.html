@@ -106,6 +106,11 @@
             <a class="nav-link" href="#string-join">join</a>
             <a class="nav-link" href="#string-split">split</a>
           </nav>
+          <a class="nav-link" href="#number">Number</a>
+          <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
+            <a class="nav-link" href="#number-summary">Summary</a>
+            <a class="nav-link" href="#number-number2locale">number2locale</a>
+          </nav>
           <a class="nav-link" href="#changelog">Changelog</a>
         </nav>
       </nav>
@@ -136,7 +141,7 @@
               </div>
               <hr class="mx-auto mx-lg-0 my-5">
               <p class="text-muted">
-                Currently <a href="https://github.com/takuya-motoshima/handlebars-extd/releases/tag/v1.0.5" target="_blank">v1.0.5</a>
+                Currently <a href="https://github.com/takuya-motoshima/handlebars-extd/releases/tag/v1.0.6" target="_blank">v1.0.6</a>
                 <span class="px-1">•</span>
                 <a href="#install">Install</a>
                 <span class="px-1">•</span>
@@ -1336,6 +1341,56 @@ hbs.compile(`&lt;ul&gt;
         <!-- end::split -->
       </ul>
       <!-- end::String -->
+
+      <!-- begin::Number -->
+      <h1 id="number">Number</h1>
+      <!-- begin::Summary -->
+      <h2 id="number-summary">Summary</h2>
+      <table class="table">
+        <thead class="table-light">
+          <tr class="text-nowrap">
+            <th>Helper</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap"><a href="#number-number2locale">number2locale</a></td>
+            <td class="w-100">Returns the language-sensitive representation of a number as a string.</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- end::Summary -->
+      <ul class="list-group list-group-flush">
+        <!-- begin::number2locale -->
+        <li class="list-group-item ps-0" id="number-number2locale">
+          <div class="fw-bold"><code class="h2">number2locale</code></div>
+          <div class="ms-3">
+            <p>Returns the language-sensitive representation of a number as a string.</p>
+            <h6>Params:</h6>
+            <ul>
+              <li><code>number|string</code> <strong>val</strong> Target number or numeric string.</li>
+              <li><code>string|undefined</code> <strong>locales</strong> <br>
+                A string with a BCP 47 language tag, or an array of such strings.<br>
+                Corresponds to the <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#locales">locales</a> parameter of the Intl.NumberFormat() constructor.<br>
+                In implementations without Intl.NumberFormat support, this parameter is ignored and the host's locale is usually used.<br>
+              </li>
+            </ul>
+            <h6>Examples</h6>
+            <div class="highlight">
+              <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
+              <pre><code class="js">// Output: 123,456.789
+hbs.compile(&quot;{{number2locale val}}&quot;)({val: 123456.789});
+
+// German uses comma as decimal separator and period for thousands.
+// Output: 123.456,789
+hbs.compile(&quot;{{number2locale val &#039;de-DE&#039;}}&quot;)({val: 123456.789});</code></pre>
+            </div>
+          </div>
+        </li>
+        <!-- end::number2locale -->
+      </ul>
+      <!-- end::Number -->
 
       <!-- begin::Changelog -->
       <h1 id="changelog">Changelog</h1>

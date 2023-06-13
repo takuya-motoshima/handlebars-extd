@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2023/6/14
+### Added
+- Added a helper to convert numeric values to strings with language-sensitive representations.
+    ```js
+    const hbs = require('handlebars-extd');
+
+    // Output: 123,456.789
+    hbs.compile("{{number2locale val}}")({val: 123456.789});
+
+    // German uses comma as decimal separator and period for thousands.
+    // Output: 123.456,789
+    hbs.compile("{{number2locale val 'de-DE'}}")({val: 123456.789});
+    ```
+
 ## [1.0.5] - 2022/12/23
 ### Fixed
 - Resolved moment vulnerabilities. Updated version of moment from 2.29.1 to 2.29.4.  
@@ -86,3 +100,4 @@ All notable changes to this project will be documented in this file.
 [1.0.3]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.2...v1.0.3
 [1.0.4]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.3...v1.0.4
 [1.0.5]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.4...v1.0.5
+[1.0.6]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.5...v1.0.6
