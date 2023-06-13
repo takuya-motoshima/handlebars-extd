@@ -1,6 +1,6 @@
 {
   "name": "handlebars-extd",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This is an extended handlebars package with helpers.",
   "main": "dist/build.common.js",
   "module": "dist/build.esm.js",
