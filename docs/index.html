@@ -12,7 +12,6 @@
   <link href="docs.css" rel="stylesheet">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#sidenav" data-bs-offset="74">
-
   <header class="navbar navbar-expand-md navbar-light bg-white topnav fixed-top">
     <nav class="container-xxl justify-content-start" aria-label="Main navigation">
       <a class="navbar-brand p-0 me-2" href="./" aria-label="Bootstrap">
@@ -42,7 +41,6 @@
       </button>
     </nav>
   </header>
-
   <div class="container-xxl my-md-4 layout">
     <aside data-element="sidebar" class="sidebar" id="sidebar">
       <nav class="sidenav align-items-start navbar navbar-light py-0" id="sidenav">
@@ -90,6 +88,8 @@
             <a class="nav-link" href="#math-summary">Summary</a>
             <a class="nav-link" href="#math-add">add</a>
             <a class="nav-link" href="#math-sub">sub</a>
+            <a class="nav-link" href="#math-multiply">multiply</a>
+            <a class="nav-link" href="#math-divide">divide</a>
             <a class="nav-link" href="#math-ceil">ceil</a>
             <a class="nav-link" href="#math-floor">floor</a>
             <a class="nav-link" href="#math-abs">abs</a>
@@ -141,7 +141,7 @@
               </div>
               <hr class="mx-auto mx-lg-0 my-5">
               <p class="text-muted">
-                Currently <a href="https://github.com/takuya-motoshima/handlebars-extd/releases/tag/v1.0.6" target="_blank">v1.0.6</a>
+                Currently <a href="https://github.com/takuya-motoshima/handlebars-extd/releases/tag/v1.0.7" target="_blank">v1.0.7</a>
                 <span class="px-1">•</span>
                 <a href="#install">Install</a>
                 <span class="px-1">•</span>
@@ -166,7 +166,6 @@
         </div>
       </div>
       <!-- end::Introduction -->
-      
       <!-- begin::Install -->
       <h1 id="install">Install</h1>
       <p>Install with <a href="https://www.npmjs.com/" rel="nofollow" target="_blank">npm</a>:</p>
@@ -175,7 +174,6 @@
         <pre><code class="bash">npm install --save handlebars-extd</code></pre>
       </div>
       <!-- end::Install -->
-
       <!-- begin::Usage -->
       <h1 id="usage">Usage</h1>
       <p>Importing"handlebars-extd" will return an extended "Handlebars" with built-in helpers and more.</p>
@@ -185,10 +183,8 @@
       </div>
       <p>Browser usage is <a href="https://github.com/takuya-motoshima/handlebars-extd/tree/main/browser-examples" target="_blank">here</a></p>
       <!-- end::Usage -->
-
       <!-- begin::Comparison -->
       <h1 id="comparison">Comparison</h1>
-
       <!-- begin::Summary -->
       <h2 id="comparison-summary">Summary</h2>
       <table class="table">
@@ -274,7 +270,6 @@
         </tbody>
       </table>
       <!-- end::Summary -->
-
       <ul class="list-group list-group-flush">
         <!-- begin::opr -->
         <li class="list-group-item ps-0" id="comparison-opr">
@@ -341,7 +336,6 @@ hbs.compile(&quot;{{#if (opr a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&qu
           </div>
         </li>
         <!-- end::opr -->
-
         <!-- begin::eq -->
         <li class="list-group-item ps-0" id="comparison-eq">
           <div class="fw-bold"><code class="h2">eq</code></div>
@@ -364,7 +358,6 @@ hbs.compile(&quot;{{#if (eq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
           </div>
         </li>
         <!-- end::eq -->
-
         <!-- begin::eqw -->
         <li class="list-group-item ps-0" id="comparison-eqw">
           <div class="fw-bold"><code class="h2">eqw</code></div>
@@ -387,7 +380,6 @@ hbs.compile(&quot;{{#if (eqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
           </div>
         </li>
         <!-- end::eqw -->
-      
         <!-- begin::neq -->
         <li class="list-group-item ps-0" id="comparison-neq">
           <div class="fw-bold"><code class="h2">neq</code></div>
@@ -410,7 +402,6 @@ hbs.compile(&quot;{{#if (neq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
           </div>
         </li>
         <!-- end::neq -->
-
         <!-- begin::neqw -->
         <li class="list-group-item ps-0" id="comparison-neqw">
           <div class="fw-bold"><code class="h2">neqw</code></div>
@@ -433,7 +424,6 @@ hbs.compile(&quot;{{#if (neqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quo
           </div>
         </li>
         <!-- end::neqw -->
-
         <!-- begin::lt -->
         <li class="list-group-item ps-0" id="comparison-lt">
           <div class="fw-bold"><code class="h2">lt</code></div>
@@ -456,7 +446,6 @@ hbs.compile(&quot;{{#if (lt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
           </div>
         </li>
         <!-- end::lt -->
-
         <!-- begin::gt -->
         <li class="list-group-item ps-0" id="comparison-gt">
           <div class="fw-bold"><code class="h2">gt</code></div>
@@ -502,7 +491,6 @@ hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&qu
           </div>
         </li>
         <!-- end::lte -->
-
         <!-- begin::gte -->
         <li class="list-group-item ps-0" id="comparison-gte">
           <div class="fw-bold"><code class="h2">gte</code></div>
@@ -525,7 +513,6 @@ hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&qu
           </div>
         </li>
         <!-- end::gte -->
-
         <!-- begin::ifx -->
         <li class="list-group-item ps-0" id="comparison-ifx">
           <div class="fw-bold"><code class="h2">ifx</code></div>
@@ -548,7 +535,6 @@ hbs.compile(&quot;{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;
           </div>
         </li>
         <!-- end::ifx -->
-
         <!-- begin::not -->
         <li class="list-group-item ps-0" id="comparison-not">
           <div class="fw-bold"><code class="h2">not</code></div>
@@ -576,7 +562,6 @@ hbs.compile(&quot;{{#if (not false)}}true{{else}}false{{/if}}&quot;)();</code></
           </div>
         </li>
         <!-- end::not -->
-
         <!-- begin::empty -->
         <li class="list-group-item ps-0" id="comparison-empty">
           <div class="fw-bold"><code class="h2">empty</code></div>
@@ -616,7 +601,6 @@ hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code><
           </div>
         </li>
         <!-- end::empty -->
-
         <!-- begin::notEmpty -->
         <li class="list-group-item ps-0" id="comparison-not-empty">
           <div class="fw-bold"><code class="h2">notEmpty</code></div>
@@ -656,7 +640,6 @@ hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code><
           </div>
         </li>
         <!-- end::notEmpty -->
-
         <!-- begin::count -->
         <li class="list-group-item ps-0" id="comparison-count">
           <div class="fw-bold"><code class="h2">count</code></div>
@@ -675,7 +658,6 @@ hbs.compile(&quot;{{count coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;,&quot
           </div>
         </li>
         <!-- end::count -->
-
         <!-- begin::and -->
         <li class="list-group-item ps-0" id="comparison-and">
           <div class="fw-bold"><code class="h2">and</code></div>
@@ -703,7 +685,6 @@ hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
           </div>
         </li>
         <!-- end::and -->
-
         <!-- begin::or -->
         <li class="list-group-item ps-0" id="comparison-or">
           <div class="fw-bold"><code class="h2">or</code></div>
@@ -731,7 +712,6 @@ hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
           </div>
         </li>
         <!-- end::or -->
-
         <!-- begin::coalesce -->
         <li class="list-group-item ps-0" id="comparison-coalesce">
           <div class="fw-bold"><code class="h2">coalesce</code></div>
@@ -753,7 +733,6 @@ hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&
           </div>
         </li>
         <!-- end::or -->
-
         <!-- begin::includes -->
         <li class="list-group-item ps-0" id="comparison-includes">
           <div class="fw-bold"><code class="h2">includes</code></div>
@@ -797,10 +776,8 @@ hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;
         <!-- end::includes -->
       </ul>
       <!-- end::Comparison -->
-
       <!-- begin::Date -->
       <h1 id="date">Date</h1>
-
       <!-- begin::Summary -->
       <h2 id="date-summary">Summary</h2>
       <table class="table">
@@ -847,7 +824,6 @@ hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot
         <!-- end::formatDate -->
       </ul>
       <!-- end::Date -->
-    
       <!-- begin::HTML -->
       <h1 id="html">HTML</h1>
       <!-- begin::Summary -->
@@ -899,7 +875,6 @@ hbs.compile(&quot;{{classIf expr &#039;foo&#039;}}&quot;)({&quot;expr&quot;:true
           </div>
         </li>
         <!-- end::classIf -->
-
         <!-- begin::selectedIf -->
         <li class="list-group-item ps-0" id="html-selected-if">
           <div class="fw-bold"><code class="h2">selectedIf</code></div>
@@ -918,7 +893,6 @@ hbs.compile(&quot;{{selectedIf expr}}&quot;)({&quot;expr&quot;:true});</code></p
           </div>
         </li>
         <!-- end::selectedIf -->
-
         <!-- begin::checkedIf -->
         <li class="list-group-item ps-0" id="html-checked-if">
           <div class="fw-bold"><code class="h2">checkedIf</code></div>
@@ -937,7 +911,6 @@ hbs.compile(&quot;{{checkedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pr
           </div>
         </li>
         <!-- end::checkedIf -->
-
         <!-- begin::options -->
         <li class="list-group-item ps-0" id="html-options">
           <div class="fw-bold"><code class="h2">options</code></div>
@@ -964,7 +937,6 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
         <!-- end::options -->
       </ul>
       <!-- end::HTML -->
-
       <!-- begin::Math -->
       <h1 id="math">Math</h1>
       <!-- begin::Summary -->
@@ -984,6 +956,14 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
           <tr>
             <td class="text-nowrap"><a href="#math-sub">sub</a></td>
             <td class="w-100">Calculates the difference of the given values.</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap"><a href="#math-multiply">multiply</a></td>
+            <td class="w-100">Calculate the multiplication of the given values.</td>
+          </tr>
+          <tr>
+            <td class="text-nowrap"><a href="#math-divide">divide</a></td>
+            <td class="w-100">Compute the division of the given values.</td>
           </tr>
           <tr>
             <td class="text-nowrap"><a href="#math-ceil">ceil</a></td>
@@ -1020,7 +1000,6 @@ hbs.compile(&quot;{{add a b}}&quot;)({&quot;a&quot;:1,&quot;b&quot;:2});</code><
           </div>
         </li>
         <!-- end::add -->
-
         <!-- begin::sub -->
         <li class="list-group-item ps-0" id="math-sub">
           <div class="fw-bold"><code class="h2">sub</code></div>
@@ -1040,7 +1019,44 @@ hbs.compile(&quot;{{sub a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code><
           </div>
         </li>
         <!-- end::sub -->
-
+        <!-- begin::multiply -->
+        <li class="list-group-item ps-0" id="math-multiply">
+          <div class="fw-bold"><code class="h2">multiply</code></div>
+          <div class="ms-3">
+            <p>Calculate the multiplication of the given values.</p>
+            <h6>Params:</h6>
+            <ul>
+              <li><code>number|string</code> <strong>val1</strong> The first number.</li>
+              <li><code>number|string</code> <strong>val2</strong> The second number.</li>
+            </ul>
+            <h6>Examples</h6>
+            <div class="highlight">
+              <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
+              <pre><code class="js">// Output: 10
+hbs.compile(&quot;{{multiply a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code></pre>
+            </div>
+          </div>
+        </li>
+        <!-- end::multiply -->
+        <!-- begin::divide -->
+        <li class="list-group-item ps-0" id="math-divide">
+          <div class="fw-bold"><code class="h2">divide</code></div>
+          <div class="ms-3">
+            <p>Compute the division of the given values.</p>
+            <h6>Params:</h6>
+            <ul>
+              <li><code>number|string</code> <strong>val1</strong> The first number.</li>
+              <li><code>number|string</code> <strong>val2</strong> The second number.</li>
+            </ul>
+            <h6>Examples</h6>
+            <div class="highlight">
+              <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
+              <pre><code class="js">// Output: 5
+hbs.compile(&quot;{{divide a b}}&quot;)({&quot;a&quot;:10,&quot;b&quot;:2});</code></pre>
+            </div>
+          </div>
+        </li>
+        <!-- end::divide -->
         <!-- begin::ceil -->
         <li class="list-group-item ps-0" id="math-ceil">
           <div class="fw-bold"><code class="h2">ceil</code></div>
@@ -1059,7 +1075,6 @@ hbs.compile(&quot;{{ceil a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
           </div>
         </li>
         <!-- end::ceil -->
-
         <!-- begin::floor -->
         <li class="list-group-item ps-0" id="math-floor">
           <div class="fw-bold"><code class="h2">floor</code></div>
@@ -1078,7 +1093,6 @@ hbs.compile(&quot;{{floor a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
           </div>
         </li>
         <!-- end::floor -->
-
         <!-- begin::abs -->
         <li class="list-group-item ps-0" id="math-abs">
           <div class="fw-bold"><code class="h2">abs</code></div>
@@ -1099,7 +1113,6 @@ hbs.compile(&quot;{{abs a b}}&quot;)({&quot;a&quot;:-5.6});</code></pre>
         <!-- end::abs -->
       </ul>
       <!-- end::Math -->
-    
       <!-- begin::String -->
       <h1 id="string">String</h1>
       <!-- begin::Summary -->
@@ -1178,7 +1191,6 @@ hbs.compile(&quot;{{slice str -4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;}
           </div>
         </li>
         <!-- end::slice -->
-
         <!-- begin::nltobr -->
         <li class="list-group-item ps-0" id="string-nltobr">
           <div class="fw-bold"><code class="h2">nltobr</code></div>
@@ -1197,7 +1209,6 @@ hbs.compile(&quot;{{{nltobr str}}}&quot;)({&quot;str&quot;:&quot;It&#039;s\njust
           </div>
         </li>
         <!-- end::nltobr -->
-
         <!-- begin::sprintf -->
         <li class="list-group-item ps-0" id="string-sprintf">
           <div class="fw-bold"><code class="h2">sprintf</code></div>
@@ -1232,7 +1243,6 @@ hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; name=str}}&quot;)({&quot;
           </div>
         </li>
         <!-- end::sprintf -->
-
         <!-- begin::lowercase -->
         <li class="list-group-item ps-0" id="string-lowercase">
           <div class="fw-bold"><code class="h2">lowercase</code></div>
@@ -1251,7 +1261,6 @@ hbs.compile(&quot;{{lowercase str}}&quot;)({&quot;str&quot;:&quot;JUST WOW&quot;
           </div>
         </li>
         <!-- end::lowercase -->
-
         <!-- begin::uppercase -->
         <li class="list-group-item ps-0" id="string-uppercase">
           <div class="fw-bold"><code class="h2">uppercase</code></div>
@@ -1270,7 +1279,6 @@ hbs.compile(&quot;{{uppercase str}}&quot;)({&quot;str&quot;:&quot;just wow&quot;
           </div>
         </li>
         <!-- end::uppercase -->
-
         <!-- begin::concat -->
         <li class="list-group-item ps-0" id="string-concat">
           <div class="fw-bold"><code class="h2">concat</code></div>
@@ -1289,7 +1297,6 @@ hbs.compile(&quot;{{concat &#039;Hello&#039; &#039; world&#039; &#039;!&#039;}}&
           </div>
         </li>
         <!-- end::concat -->
-
         <!-- begin::join -->
         <li class="list-group-item ps-0" id="string-join">
           <div class="fw-bold"><code class="h2">join</code></div>
@@ -1341,7 +1348,6 @@ hbs.compile(`&lt;ul&gt;
         <!-- end::split -->
       </ul>
       <!-- end::String -->
-
       <!-- begin::Number -->
       <h1 id="number">Number</h1>
       <!-- begin::Summary -->
@@ -1391,14 +1397,12 @@ hbs.compile(&quot;{{number2locale val &#039;de-DE&#039;}}&quot;)({val: 123456.78
         <!-- end::number2locale -->
       </ul>
       <!-- end::Number -->
-
       <!-- begin::Changelog -->
       <h1 id="changelog">Changelog</h1>
       <p>Changelog is available <a href="https://github.com/takuya-motoshima/handlebars-extd/blob/main/CHANGELOG.md" target="_blank">here</a>.</p>
       <!-- end::Changelog -->
     </main>
   </div>
-
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>

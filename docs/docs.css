@@ -1,9 +1,5 @@
 :root {
   --top-spacing: 74px;
-  --nav-link-active-color: #ff725e;
-  --highlight-clipboard-active: #ff725e;
-  /* --code-color: #d60017; */
-  --code-color: #ff725e;
   scroll-padding-top: var(--top-spacing);
 }
 
@@ -110,7 +106,7 @@
     .sidenav a:hover,
     .sidenav .nav-link.active {
       font-weight: 600;
-      color: var(--nav-link-active-color);
+      color: var(--bs-primary);
       background-color: transparent;
     }
 
@@ -205,8 +201,7 @@
 :not(.highlight) :not(pre) > code {
   font-weight: bolder;
   font-family: SF Mono,SFMono-Regular,ui-monospace,Menlo,monospace;
-  color: var(--code-color);
-  /* background-color: #f0f0f4; */
+  color: var(--bs-primary);
   padding: 0.125rem 0.25rem;
   width: fit-content;
 }
@@ -242,7 +237,7 @@
   }
 
   .highlight .btn-clipboard:hover {
-    color: var(--highlight-clipboard-active);
+    color: var(--bs-primary);
   }
 
   .highlight .btn-clipboard:focus:not(:focus-visible) {

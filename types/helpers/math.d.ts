@@ -23,6 +23,30 @@ declare function add(val1: number | string, val2: number | string): number;
  */
 declare function sub(val1: number | string, val2: number | string): number;
 /**
+ * Calculate the multiplication of the given values.
+ *
+ * @example
+ * // Output: 10
+ * hbs.compile("{{multiply a b}}")({"a":5,"b":2});
+ *
+ * @param {number|string} val1 The first number.
+ * @param {number|string} val2 The second number.
+ * @returns {number}
+ */
+declare function multiply(val1: number | string, val2: number | string): number;
+/**
+ * Compute the division of the given values.
+ *
+ * @example
+ * // Output: 5
+ * hbs.compile("{{divide a b}}")({"a":10,"b":2});
+ *
+ * @param {number|string} val1 The first number.
+ * @param {number|string} val2 The second number.
+ * @returns {number}
+ */
+declare function divide(val1: number | string, val2: number | string): number;
+/**
  * Round up the value.
  *
  * @example
@@ -55,4 +79,4 @@ declare function floor(val: number | string): number;
  * @returns {number}
  */
 declare function abs(val: number | string): number;
-export { add, sub, ceil, floor, abs };
+export { add, sub, multiply, divide, ceil, floor, abs };

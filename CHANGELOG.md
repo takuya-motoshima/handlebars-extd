@@ -1,6 +1,18 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
+
+## [1.0.7] - 2023/6/18
+### Added
+- Added helpers to compute multiplication and division of given values.
+    ```js
+    const hbs = require('handlebars-extd');
+
+    // Output: 10
+    hbs.compile("{{multiply a b}}")({"a":5,"b":2});
+
+    // Output: 5
+    hbs.compile("{{divide a b}}")({"a":10,"b":2});
+    ```
 
 ## [1.0.6] - 2023/6/14
 ### Added
@@ -101,3 +113,4 @@ All notable changes to this project will be documented in this file.
 [1.0.4]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.3...v1.0.4
 [1.0.5]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.4...v1.0.5
 [1.0.6]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.5...v1.0.6
+[1.0.7]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.6...v1.0.7
