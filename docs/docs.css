@@ -200,7 +200,7 @@
 
 :not(.highlight) :not(pre) > code {
   font-weight: bolder;
-  font-family: SF Mono,SFMono-Regular,ui-monospace,Menlo,monospace;
+  /* font-family: SF Mono,SFMono-Regular,ui-monospace,Menlo,monospace; */
   color: var(--bs-primary);
   padding: 0.125rem 0.25rem;
   width: fit-content;

@@ -1,16 +1,38 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.8] - 2023/7/1
+### Added
+- Added regular expression comparison helper.
+    ```js
+    const hbs = require('handlebars-extd');
+
+    // results in: false
+    hbs.compile("{{regexMatch 'bar' 'foo'}}")();
+    
+    // results in: true
+    hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
+    
+    // results in: false
+    hbs.compile("{{regexMatch 'foobar' '^foo$'}}")();
+
+    // results in: true
+    hbs.compile("{{regexMatch 'Visit Here' 'here' 'i'}}")();
+    
+    // results in: false
+    hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
+    ```
+
 ## [1.0.7] - 2023/6/18
 ### Added
 - Added helpers to compute multiplication and division of given values.
     ```js
     const hbs = require('handlebars-extd');
 
-    // Output: 10
+    // results in: 10
     hbs.compile("{{multiply a b}}")({"a":5,"b":2});
 
-    // Output: 5
+    // results in: 5
     hbs.compile("{{divide a b}}")({"a":10,"b":2});
     ```
 
@@ -20,11 +42,11 @@ All notable changes to this project will be documented in this file.
     ```js
     const hbs = require('handlebars-extd');
 
-    // Output: 123,456.789
+    // results in: 123,456.789
     hbs.compile("{{number2locale val}}")({val: 123456.789});
 
     // German uses comma as decimal separator and period for thousands.
-    // Output: 123.456,789
+    // results in: 123.456,789
     hbs.compile("{{number2locale val 'de-DE'}}")({val: 123456.789});
     ```
 
@@ -39,7 +61,7 @@ All notable changes to this project will be documented in this file.
     ```js
     const hbs = require('handlebars-extd');
 
-    // Output: false
+    // results in: false
     hbs.compile("{{opr a '===' b}}")({"a":"3","b":3});
     ```
 
@@ -47,11 +69,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Add string split helper.
     ```js
-    // Output: <ul>
-    //           <li>a</li>
-    //           <li>b</li>
-    //           <li>c</li>
-    //         </ul>
+    // results in: <ul><li>a</li><li>b</li><li>c</li></ul>
     hbs.compile(`<ul>
                 {{#each (split list ',')}}
                     <li>{{this}}</li>
@@ -64,20 +82,20 @@ All notable changes to this project will be documented in this file.
 - empty view helper can now check any type. Previously I could only check arrays.
     ```js
     // If the value is an array.
-    // Output: true
+    // results in: true
     hbs.compile("{{empty val}}")({"val":[]});
 
-    // Output: false
+    // results in: false
     hbs.compile("{{empty val}}")({"val":["foo"]});
 
     // If the value is an array.
-    // Output: false
+    // results in: false
     hbs.compile("{{empty val}}")({"val":'Hello'});
 
-    // Output: true
+    // results in: true
     hbs.compile("{{empty val}}")({"val":''});
 
-    // Output: true
+    // results in: true
     hbs.compile("{{empty val}}")({"val":' '});
     ```
 
@@ -86,20 +104,20 @@ All notable changes to this project will be documented in this file.
 - Added notEmpty view helper.
     ```js
     // If the value is an array.
-    // Output: false
+    // results in: false
     hbs.compile("{{notEmpty val}}")({"val":[]});
 
-    // Output: true
+    // results in: true
     hbs.compile("{{notEmpty val}}")({"val":["foo"]});
 
     // If the value is an array.
-    // Output: true
+    // results in: true
     hbs.compile("{{notEmpty val}}")({"val":'Hello'});
 
-    // Output: false
+    // results in: false
     hbs.compile("{{notEmpty val}}")({"val":''});
 
-    // Output: false
+    // results in: false
     hbs.compile("{{notEmpty val}}")({"val":' '});
     ```
 
@@ -114,3 +132,4 @@ All notable changes to this project will be documented in this file.
 [1.0.5]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.4...v1.0.5
 [1.0.6]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.5...v1.0.6
 [1.0.7]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.6...v1.0.7
+[1.0.8]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.7...v1.0.8

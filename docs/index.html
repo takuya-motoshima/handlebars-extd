@@ -69,6 +69,7 @@
             <a class="nav-link" href="#comparison-or">or</a>
             <a class="nav-link" href="#comparison-coalesce">coalesce</a>
             <a class="nav-link" href="#comparison-includes">includes</a>
+            <a class="nav-link" href="#comparison-regex-match">regexMatch</a>
           </nav>
           <a class="nav-link" href="#date">Date</a>
           <nav class="nav nav-pills flex-column flex-nowrap fw-normal small">
@@ -141,7 +142,7 @@
               </div>
               <hr class="mx-auto mx-lg-0 my-5">
               <p class="text-muted">
-                Currently <a href="https://github.com/takuya-motoshima/handlebars-extd/releases/tag/v1.0.7" target="_blank">v1.0.7</a>
+                Currently <a href="https://github.com/takuya-motoshima/handlebars-extd/releases/tag/v1.0.8" target="_blank">v1.0.8</a>
                 <span class="px-1">•</span>
                 <a href="#install">Install</a>
                 <span class="px-1">•</span>
@@ -181,7 +182,6 @@
         <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
         <pre><code class="bash">import hbs from 'handlebars-extd';</code></pre>
       </div>
-      <p>Browser usage is <a href="https://github.com/takuya-motoshima/handlebars-extd/tree/main/browser-examples" target="_blank">here</a></p>
       <!-- end::Usage -->
       <!-- begin::Comparison -->
       <h1 id="comparison">Comparison</h1>
@@ -267,6 +267,10 @@
             <td class="text-nowrap"><a href="#comparison-includes">includes</a></td>
             <td class="w-100">Check for a value inside an array.</td>
           </tr>
+          <tr>
+            <td class="text-nowrap"><a href="#comparison-regex-match">regexMatch</a></td>
+            <td class="w-100">Returns true if the given str matches the given regex.</td>
+          </tr>
         </tbody>
       </table>
       <!-- end::Summary -->
@@ -285,52 +289,52 @@
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{opr a &#039;===&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (opr a &#039;===&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{opr a &#039;==&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (opr a &#039;==&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{opr a &#039;!==&#039; b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (opr a &#039;!==&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{opr a &#039;!=&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (opr a &#039;!=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{opr a &#039;&lt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (opr a &#039;&lt;&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{opr a &#039;&gt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (opr a &#039;&gt;&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{opr a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (opr a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{opr a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (opr a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -349,10 +353,10 @@ hbs.compile(&quot;{{#if (opr a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&qu
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{eq a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (eq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -371,10 +375,10 @@ hbs.compile(&quot;{{#if (eq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{eqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (eqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -393,10 +397,10 @@ hbs.compile(&quot;{{#if (eqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{neq a b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (neq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -415,10 +419,10 @@ hbs.compile(&quot;{{#if (neq a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{neqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (neqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -437,10 +441,10 @@ hbs.compile(&quot;{{#if (neqw a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quo
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{lt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (lt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -459,10 +463,10 @@ hbs.compile(&quot;{{#if (lt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{gt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (gt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -482,10 +486,10 @@ hbs.compile(&quot;{{#if (gt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{lte a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -504,10 +508,10 @@ hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&qu
             <h6>Examples</h6>
             <div class="highlight"> 
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{gte a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code></pre>
             </div>
           </div>
@@ -526,10 +530,10 @@ hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&qu
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: foo
+              <pre><code class="js">// results in: foo
 hbs.compile(&quot;{{ifx true a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});
 
-// Output: bar
+// results in: bar
 hbs.compile(&quot;{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});</code></pre>
             </div>
           </div>
@@ -547,16 +551,16 @@ hbs.compile(&quot;{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: false
+              <pre><code class="js">// results in: false
 hbs.compile(&quot;{{not true}}&quot;)();
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (not true)}}true{{else}}false{{/if}}&quot;)();
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{not false}}&quot;)();
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (not false)}}true{{else}}false{{/if}}&quot;)();</code></pre>
             </div>
           </div>
@@ -579,23 +583,23 @@ hbs.compile(&quot;{{#if (not false)}}true{{else}}false{{/if}}&quot;)();</code></
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
               <pre><code class="js">// If the value is an array.
-// Output: true
+// results in: true
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:[]});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (empty val)}}true{{else}}false{{/if}}&quot;)({&quot;val&quot;:[]});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:[&quot;foo&quot;]});
 
 // If the value is a string.
-// Output: false
+// results in: false
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot;Hello&quot;});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot;&quot;});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code></pre>
             </div>
           </div>
@@ -618,23 +622,23 @@ hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code><
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
               <pre><code class="js">// If the value is an array.
-// Output: false
+// results in: false
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:[]});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (empty val)}}true{{else}}false{{/if}}&quot;)({&quot;val&quot;:[]});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:[&quot;foo&quot;]});
 
 // If the value is a string.
-// Output: true
+// results in: true
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot;Hello&quot;});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot;&quot;});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code></pre>
             </div>
           </div>
@@ -652,7 +656,7 @@ hbs.compile(&quot;{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code><
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 2
+              <pre><code class="js">// results in: 2
 hbs.compile(&quot;{{count coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;,&quot;bar&quot;]});</code></pre>
             </div>
           </div>
@@ -670,16 +674,16 @@ hbs.compile(&quot;{{count coll}}&quot;)({&quot;coll&quot;:[&quot;foo&quot;,&quot
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{and a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{and a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});</code></pre>
             </div>
           </div>
@@ -697,16 +701,16 @@ hbs.compile(&quot;{{#if (and a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{or a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{or a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});</code></pre>
             </div>
           </div>
@@ -724,10 +728,10 @@ hbs.compile(&quot;{{#if (or a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: foo
+              <pre><code class="js">// results in: foo
 hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});
 
-// Output: bar
+// results in: bar
 hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});</code></pre>
             </div>
           </div>
@@ -747,33 +751,65 @@ hbs.compile(&quot;{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:2});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:2});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:10});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:10});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{includes coll a}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
 
-// Output: false
+// results in: false
 hbs.compile(&quot;{{#if (includes coll a)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{includes coll a strict}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});
 
-// Output: true
+// results in: true
 hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;)({&quot;coll&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});</code></pre>
             </div>
           </div>
         </li>
         <!-- end::includes -->
+        <!-- begin::regexMatch -->
+        <li class="list-group-item ps-0" id="comparison-regex-match">
+          <div class="fw-bold"><code class="h2">regexMatch</code></div>
+          <div class="ms-3">
+            <p>Returns true if the given str matches the given regex.</p>
+            <h6>Params:</h6>
+            <ul>
+              <li><code>string</code> <strong>val</strong> The string against which to match the regular expression.</li>
+              <li><code>string</code> <strong>pattern</strong> The text of the regular expression.</li>
+              <li><code>string</code> <strong>flags?</strong> Regular expression flags, such as global and case-insensitive searches. The default is none (undefined).</li>
+            </ul>
+            <h6>Examples</h6>
+            <div class="highlight">
+              <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
+              <pre><code class="js">// results in: false
+hbs.compile(&quot;{{regexMatch &#039;bar&#039; &#039;foo&#039;}}&quot;)();
+
+// results in: true
+hbs.compile(&quot;{{regexMatch &#039;foobar&#039; &#039;foo&#039;}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;{{regexMatch &#039;foobar&#039; &#039;^foo$&#039;}}&quot;)();
+
+// results in: true
+hbs.compile(&quot;{{regexMatch &#039;Visit Here&#039; &#039;here&#039; &#039;i&#039;}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;{{regexMatch &#039;Visit Here&#039; &#039;here&#039;}}&quot;)();</code></pre>
+            </div>
+          </div>
+        </li>
+        <!-- end::regexMatch -->
       </ul>
       <!-- end::Comparison -->
       <!-- begin::Date -->
@@ -810,13 +846,13 @@ hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 2021/10/25
+              <pre><code class="js">// results in: 2021/10/25
 hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
 
-// Output: 2021/10/25
+// results in: 2021/10/25
 hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;jp&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
 
-// Output: 2021/10/25
+// results in: 2021/10/25
 hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});</code></pre>
             </div>
           </div>
@@ -869,7 +905,7 @@ hbs.compile(&quot;{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: foo
+              <pre><code class="js">// results in: foo
 hbs.compile(&quot;{{classIf expr &#039;foo&#039;}}&quot;)({&quot;expr&quot;:true});</code></pre>
             </div>
           </div>
@@ -887,7 +923,7 @@ hbs.compile(&quot;{{classIf expr &#039;foo&#039;}}&quot;)({&quot;expr&quot;:true
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: selected
+              <pre><code class="js">// results in: selected
 hbs.compile(&quot;{{selectedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
             </div>
           </div>
@@ -905,7 +941,7 @@ hbs.compile(&quot;{{selectedIf expr}}&quot;)({&quot;expr&quot;:true});</code></p
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: checked
+              <pre><code class="js">// results in: checked
 hbs.compile(&quot;{{checkedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pre>
             </div>
           </div>
@@ -924,11 +960,11 @@ hbs.compile(&quot;{{checkedIf expr}}&quot;)({&quot;expr&quot;:true});</code></pr
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: &lt;option value=&quot;1&quot;&gt;foo&lt;/option&gt;
+              <pre><code class="js">// results in: &lt;option value=&quot;1&quot;&gt;foo&lt;/option&gt;
 //         &lt;option value=&quot;2&quot; selected&gt;bar&lt;/option&gt;
 hbs.compile(&quot;{{{options data selected=&#039;2&#039;}}}&quot;)({&quot;data&quot;:[{&quot;value&quot;:1,&quot;text&quot;:&quot;foo&quot;},{&quot;value&quot;:2,&quot;text&quot;:&quot;bar&quot;}]});
 
-// Output: &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
+// results in: &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
 //         &lt;option value=&quot;840&quot;&gt;UNITED STATES&lt;/option&gt;
 hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039; text=&#039;name&#039;}}}&quot;)({&quot;data&quot;:[{&quot;code&quot;:392,&quot;name&quot;:&quot;JAPAN&quot;},{&quot;code&quot;:840,&quot;name&quot;:&quot;UNITED STATES&quot;}]});</code></pre>
             </div>
@@ -994,7 +1030,7 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 3
+              <pre><code class="js">// results in: 3
 hbs.compile(&quot;{{add a b}}&quot;)({&quot;a&quot;:1,&quot;b&quot;:2});</code></pre>
             </div>
           </div>
@@ -1013,7 +1049,7 @@ hbs.compile(&quot;{{add a b}}&quot;)({&quot;a&quot;:1,&quot;b&quot;:2});</code><
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 3
+              <pre><code class="js">// results in: 3
 hbs.compile(&quot;{{sub a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code></pre>
             </div>
           </div>
@@ -1032,7 +1068,7 @@ hbs.compile(&quot;{{sub a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code><
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 10
+              <pre><code class="js">// results in: 10
 hbs.compile(&quot;{{multiply a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</code></pre>
             </div>
           </div>
@@ -1051,7 +1087,7 @@ hbs.compile(&quot;{{multiply a b}}&quot;)({&quot;a&quot;:5,&quot;b&quot;:2});</c
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 5
+              <pre><code class="js">// results in: 5
 hbs.compile(&quot;{{divide a b}}&quot;)({&quot;a&quot;:10,&quot;b&quot;:2});</code></pre>
             </div>
           </div>
@@ -1069,7 +1105,7 @@ hbs.compile(&quot;{{divide a b}}&quot;)({&quot;a&quot;:10,&quot;b&quot;:2});</co
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 6
+              <pre><code class="js">// results in: 6
 hbs.compile(&quot;{{ceil a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
             </div>
           </div>
@@ -1087,7 +1123,7 @@ hbs.compile(&quot;{{ceil a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 5
+              <pre><code class="js">// results in: 5
 hbs.compile(&quot;{{floor a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
             </div>
           </div>
@@ -1105,7 +1141,7 @@ hbs.compile(&quot;{{floor a}}&quot;)({&quot;a&quot;:5.6});</code></pre>
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 5.6
+              <pre><code class="js">// results in: 5.6
 hbs.compile(&quot;{{abs a b}}&quot;)({&quot;a&quot;:-5.6});</code></pre>
             </div>
           </div>
@@ -1179,13 +1215,13 @@ hbs.compile(&quot;{{abs a b}}&quot;)({&quot;a&quot;:-5.6});</code></pre>
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: Just
+              <pre><code class="js">// results in: Just
 hbs.compile(&quot;{{slice str 0 4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
 
-// Output: Wow
+// results in: Wow
 hbs.compile(&quot;{{slice str 5}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
 
-// Output:  Wow
+// results in:  Wow
 hbs.compile(&quot;{{slice str -4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});</code></pre>
             </div>
           </div>
@@ -1203,7 +1239,7 @@ hbs.compile(&quot;{{slice str -4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;}
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: It&#039;s&lt;br&gt;just&lt;br&gt;now
+              <pre><code class="js">// results in: It&#039;s&lt;br&gt;just&lt;br&gt;now
 hbs.compile(&quot;{{{nltobr str}}}&quot;)({&quot;str&quot;:&quot;It&#039;s\njust\nnow&quot;});</code></pre>
             </div>
           </div>
@@ -1227,17 +1263,17 @@ hbs.compile(&quot;{{{nltobr str}}}&quot;)({&quot;str&quot;:&quot;It&#039;s\njust
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
               <pre><code class="js">// Argument swapping:
-// Output: Hello Dolly!
+// results in: Hello Dolly!
 hbs.compile(&quot;{{sprintf &#039;%s %s!&#039; str1 str2}}&quot;)({&quot;str1&quot;:&quot;Hello&quot;,&quot;str2&quot;:&quot;Dolly&quot;});
 
-// Output: foo bar 55 baz 20
+// results in: foo bar 55 baz 20
 hbs.compile(&quot;{{sprintf &#039;%s %s %d %s %d&#039; &#039;foo&#039; &#039;bar&#039; 55 &#039;baz&#039; &#039;20&#039;}}&quot;)();
 
 // Named arguments:
-// Output: Hello Dolly
+// results in: Hello Dolly
 hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; user}}&quot;)({&quot;user&quot;:{&quot;name&quot;:&quot;Dolly&quot;}});
 
-// Output: Hello Dolly
+// results in: Hello Dolly
 hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; name=str}}&quot;)({&quot;str&quot;:&quot;Dolly&quot;});</code></pre>
             </div>
           </div>
@@ -1255,7 +1291,7 @@ hbs.compile(&quot;{{sprintf &#039;Hello %(name)s&#039; name=str}}&quot;)({&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: just wow
+              <pre><code class="js">// results in: just wow
 hbs.compile(&quot;{{lowercase str}}&quot;)({&quot;str&quot;:&quot;JUST WOW&quot;});</code></pre>
             </div>
           </div>
@@ -1273,7 +1309,7 @@ hbs.compile(&quot;{{lowercase str}}&quot;)({&quot;str&quot;:&quot;JUST WOW&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: JUST WOW
+              <pre><code class="js">// results in: JUST WOW
 hbs.compile(&quot;{{uppercase str}}&quot;)({&quot;str&quot;:&quot;just wow&quot;});</code></pre>
             </div>
           </div>
@@ -1291,7 +1327,7 @@ hbs.compile(&quot;{{uppercase str}}&quot;)({&quot;str&quot;:&quot;just wow&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: Hello world!
+              <pre><code class="js">// results in: Hello world!
 hbs.compile(&quot;{{concat &#039;Hello&#039; &#039; world&#039; &#039;!&#039;}}&quot;)();</code></pre>
             </div>
           </div>
@@ -1310,7 +1346,7 @@ hbs.compile(&quot;{{concat &#039;Hello&#039; &#039; world&#039; &#039;!&#039;}}&
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: Hands &amp; legs &amp; feet
+              <pre><code class="js">// results in: Hands &amp; legs &amp; feet
 hbs.compile(&quot;{{{join coll &#039; &amp; &#039;}}}&quot;)({&quot;coll&quot;:[&quot;Hands&quot;,&quot;legs&quot;,&quot;feet&quot;]});</code></pre>
             </div>
           </div>
@@ -1329,10 +1365,10 @@ hbs.compile(&quot;{{{join coll &#039; &amp; &#039;}}}&quot;)({&quot;coll&quot;:[
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]
+              <pre><code class="js">// results in: [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]
 hbs.compile(&quot;{{split list}}&quot;)({&quot;list&quot;:&quot;a,b,c&quot;});
 
-// Output: &lt;ul&gt;
+// results in: &lt;ul&gt;
 //           &lt;li&gt;a&lt;/li&gt;
 //           &lt;li&gt;b&lt;/li&gt;
 //           &lt;li&gt;c&lt;/li&gt;
@@ -1385,11 +1421,11 @@ hbs.compile(`&lt;ul&gt;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// Output: 123,456.789
+              <pre><code class="js">// results in: 123,456.789
 hbs.compile(&quot;{{number2locale val}}&quot;)({val: 123456.789});
 
 // German uses comma as decimal separator and period for thousands.
-// Output: 123.456,789
+// results in: 123.456,789
 hbs.compile(&quot;{{number2locale val &#039;de-DE&#039;}}&quot;)({val: 123456.789});</code></pre>
             </div>
           </div>

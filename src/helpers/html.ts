@@ -2,7 +2,7 @@
  * Set the CSS classes if the condition is true.
  *
  * @example
- * // Output: foo
+ * // results in: foo
  * hbs.compile("{{classIf expr 'foo'}}")({"expr":true});
  *
  * @param {boolean} expr Condition to be checked.
@@ -17,7 +17,7 @@
  * Sets the selected attribute if the condition is true.
  *
  * @example
- * // Output: selected
+ * // results in: selected
  * hbs.compile("{{selectedIf expr}}")({"expr":true});
  *
  * @param {boolean} expr Condition to be checked.
@@ -31,7 +31,7 @@ function selectedIf(expr: boolean): string {
  * Sets the checked attribute if the condition is true.
  *
  * @example
- * // Output: checked
+ * // results in: checked
  * hbs.compile("{{checkedIf expr}}")({"expr":true});
  *
  * @param {boolean} expr Condition to be checked.
@@ -46,7 +46,7 @@ function checkedIf(expr: boolean): string {
  *
  * @example
  * A simple example:
- * // Output: <option value="1">foo</option>
+ * // results in: <option value="1">foo</option>
  * //         <option value="2" selected>bar</option>
  * hbs.compile("{{{options data selected='2'}}}")({
  *   "data":[
@@ -56,7 +56,7 @@ function checkedIf(expr: boolean): string {
  * });
  *
  * You can also override the default key names for 'value' & 'text' using the 'value' & 'text' options in the helper.
- * // Output: <option value="392" selected>JAPAN</option>
+ * // results in: <option value="392" selected>JAPAN</option>
  *            <option value="840">UNITED STATES</option>
  * hbs.compile("{{{options data selected='392' value='code' text='name'}}}")({
  *   "data":[

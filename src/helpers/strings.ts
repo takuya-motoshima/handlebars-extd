@@ -5,13 +5,13 @@ import {vsprintf} from 'sprintf-js';
  * Extract a portion of a string.
  *
  * @example
- * // Output: Just
+ * // results in: Just
  * hbs.compile("{{slice str 0 4}}")({"str":"Just Wow"});
  * 
- * // Output: Wow
+ * // results in: Wow
  * hbs.compile("{{slice str 5}}")({"str":"Just Wow"});
  * 
- * // Output:  Wow
+ * // results in:  Wow
  * hbs.compile("{{slice str -4}}")({"str":"Just Wow"});
  *
  * @param {string} val Target string.
@@ -33,7 +33,7 @@ function slice(val: string, beginIdx: number, endIdx?: number) {
  * Replace \n with <br> tags.
  *
  * @example
- * // Output: It's<br>just<br>now
+ * // results in: It's<br>just<br>now
  * hbs.compile("{{{nltobr str}}}")({"str":"It's\njust\nnow"});
  * 
  * @param {string} val Target string.
@@ -50,17 +50,17 @@ function nltobr(val: string): string {
  *
  * @example
  * // Argument swapping:
- * // Output: Hello Dolly!
+ * // results in: Hello Dolly!
  * hbs.compile("{{sprintf '%s %s!' str1 str2}}")({"str1":"Hello","str2":"Dolly"});
  * 
- * // Output: foo bar 55 baz 20
+ * // results in: foo bar 55 baz 20
  * hbs.compile("{{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}")();
  * 
  * // Named arguments:
- * // Output: Hello Dolly
+ * // results in: Hello Dolly
  * hbs.compile("{{sprintf 'Hello %(name)s' user}}")({"user":{"name":"Dolly"}});
  * 
- * // Output: Hello Dolly
+ * // results in: Hello Dolly
  * hbs.compile("{{sprintf 'Hello %(name)s' name=str}}")({"str":"Dolly"});
  *
  * @param {string} format Format string.
@@ -82,7 +82,7 @@ function sprintf(format: string, ...args: any[]): string {
  * Changes the string to lowercase.
  *
  * @example
- * // Output: just wow
+ * // results in: just wow
  * hbs.compile("{{lowercase str}}")({"str":"JUST WOW"});
  *
  * @param {string} val Target string.
@@ -96,7 +96,7 @@ function lowercase(val: string): string {
  * Changes the string to uppercase.
  *
  * @example
- * // Output: JUST WOW
+ * // results in: JUST WOW
  * hbs.compile("{{uppercase str}}")({"str":"just wow"});
  *
  * @param {string} val Target string.
@@ -110,7 +110,7 @@ function uppercase(val: string): string {
  * Concat two or more strings.
  *
  * @example
- * // Output: Hello world!
+ * // results in: Hello world!
  * hbs.compile("{{concat 'Hello' ' world' '!'}}")();
  *
  * @param {...string} args Any number of string arguments.
@@ -127,7 +127,7 @@ function concat(...args: string[]) {
  * Join the elements of an array using a delimeter.
  *
  * @example
- * // Output: Hands & legs & feet
+ * // results in: Hands & legs & feet
  * hbs.compile("{{{join coll ' & '}}}")({"coll":["Hands","legs","feet"]});
  * 
  * @param {string[]} coll An array of elements to be joined.
@@ -146,10 +146,10 @@ function join(coll: string[], delim: string): string|boolean {
  * Split string by the given character.
  *
  * @example
- * // Output: ['a', 'b', 'c']
+ * // results in: ['a', 'b', 'c']
  * hbs.compile("{{split list}}")({"list":"a,b,c"});
  *
- * // Output: <ul>
+ * // results in: <ul>
  * //           <li>a</li>
  * //           <li>b</li>
  * //           <li>c</li>
@@ -160,9 +160,9 @@ function join(coll: string[], delim: string): string|boolean {
  *               {{/each}}
  *             </ul>`)({"list":"a,b,c"});
  * 
- * @param  {string} val       The value to split for.
- * @param  {string} separator A character that delimits the substrings in this string. Default is a comma.
- * @return {string[]}         An Array of strings, split at each point where the separator occurs in the given string. The default is a comma.
+ * @param {string} val The value to split for.
+ * @param {string} separator A character that delimits the substrings in this string. Default is a comma.
+ * @return {string[]} An Array of strings, split at each point where the separator occurs in the given string. The default is a comma.
  */
 function split(val: string, separator: string): string[] {
   if (!utils.isString(val) || val === '')

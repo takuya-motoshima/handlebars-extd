@@ -23,8 +23,7 @@
     "CHANGELOG.md",
     "dist/*.js",
     "types/*.d.ts",
-    "package.json",
-    "browser-examples"
+    "package.json"
   ],
   "keywords": [
     "browser",

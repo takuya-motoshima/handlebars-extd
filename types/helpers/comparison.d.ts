@@ -2,28 +2,28 @@
  * Compare two values using operators.
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{opr a '===' b}}")({"a":"3","b":3});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{opr a '==' b}}")({"a":"3","b":3});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{opr a '!==' b}}")({"a":4,"b":3});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{opr a '!=' b}}")({"a":"3","b":3});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{opr a '<' b}}")({"a":2,"b":3});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{opr a '>' b}}")({"a":2,"b":3});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{opr a '<=' b}}")({"a":2,"b":3});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{opr a '>=' b}}")({"a":3,"b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -36,7 +36,7 @@ declare function opr(val1: any, opr: '==' | '===' | '!=' | '!==' | '<' | '>' | '
  * Determine whether or not two values are equal (===).
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{eq a b}}")({"a":"3","b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -48,7 +48,7 @@ declare function eq(val1: any, val2: any): boolean;
  * Determine whether or not two values are equal (==) i.e weak checking.
  *
  * @example
- * // Output: true
+ * // results in: true
  * hbs.compile("{{eqw a b}}")({"a":"3","b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -60,7 +60,7 @@ declare function eqw(val1: any, val2: any): boolean;
  * Determine whether or not two values are not equal (!==).
  *
  * @example
- * // Output: true
+ * // results in: true
  * hbs.compile("{{neq a b}}")({"a":4,"b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -72,7 +72,7 @@ declare function neq(val1: any, val2: any): boolean;
  * Determine whether or not two values are not equal (!=) weak checking.
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{neqw a b}}")({"a":"3","b":3});
  *
  * @param {any} val1
@@ -84,7 +84,7 @@ declare function neqw(val1: any, val2: any): boolean;
  * Check for less than condition (a < b).
  *
  * @example
- * // Output: true
+ * // results in: true
  * hbs.compile("{{lt a b}}")({"a":2,"b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -96,7 +96,7 @@ declare function lt(val1: any, val2: any): boolean;
  * Check for greater than condition (a > b).
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{gt a b}}")({"a":2,"b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -108,7 +108,7 @@ declare function gt(val1: any, val2: any): boolean;
  * Check for less than or equals condition (a <= b).
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{lte a '<=' b}}")({"a":2,"b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -120,7 +120,7 @@ declare function lte(val1: any, val2: any): boolean;
  * Check for greater than or equals condition (a >= b).
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{gte a '>=' b}}")({"a":3,"b":3});
  *
  * @param {any} val1 First value to be compared with second.
@@ -132,10 +132,10 @@ declare function gte(val1: any, val2: any): boolean;
  * Helper to imitate the ternary '?:' conditional operator.
  *
  * @example
- * // Output: foo
+ * // results in: foo
  * hbs.compile("{{ifx true a b}}")({"a":"foo","b":"bar"});
  *
- * // Output: bar
+ * // results in: bar
  * hbs.compile("{{ifx false a b}}")({"a":"foo","b":"bar"});
  *
  * @param {boolean} cond
@@ -148,10 +148,10 @@ declare function ifx(cond: boolean, val1: any, val2: any): any;
  * Logical NOT of any expression.
  *
  * @example
- * // Output: false
+ * // results in: false
  * hbs.compile("{{not true}}")();
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{not false}}")();
  *
  * @param {any} expr Any expression.
@@ -165,24 +165,24 @@ declare function not(expr: any): boolean;
  *
  * @example
  * // If the value is an array.
- * // Output: true
+ * // results in: true
  * hbs.compile("{{empty val}}")({"val":[]});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{empty val}}")({"val":["foo"]});
  *
  * // If the value is an array.
- * // Output: false
+ * // results in: false
  * hbs.compile("{{empty val}}")({"val":'Hello'});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{empty val}}")({"val":''});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{empty val}}")({"val":' '});
  *
- * @param   {any}     val Character strings, arrays, objects, etc. to be checked.
- * @returns {boolean}     Returns true if the value is empty, false otherwise.
+ * @param {any} val Character strings, arrays, objects, etc. to be checked.
+ * @returns {boolean} Returns true if the value is empty, false otherwise.
  */
 declare function empty(val: any): boolean;
 /**
@@ -192,31 +192,31 @@ declare function empty(val: any): boolean;
  *
  * @example
  * // If the value is an array.
- * // Output: false
+ * // results in: false
  * hbs.compile("{{notEmpty val}}")({"val":[]});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{notEmpty val}}")({"val":["foo"]});
  *
  * // If the value is an array.
- * // Output: true
+ * // results in: true
  * hbs.compile("{{notEmpty val}}")({"val":'Hello'});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{notEmpty val}}")({"val":''});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{notEmpty val}}")({"val":' '});
  *
- * @param   {any}     value Character strings, arrays, objects, etc. to be checked.
- * @returns {boolean}       Returns true if the value is not empty, false otherwise.
+ * @param {any} value Character strings, arrays, objects, etc. to be checked.
+ * @returns {boolean} Returns true if the value is not empty, false otherwise.
  */
 declare function notEmpty(val: any): boolean;
 /**
  * Determine the length of an array.
  *
  * @example
- * // Output: 2
+ * // results in: 2
  * hbs.compile("{{count coll}}")({"coll":["foo","bar"]});
  *
  * @param {any[]} coll Array whose elements to be counted.
@@ -227,10 +227,10 @@ declare function count(coll: any[]): number | false;
  * Returns the boolean AND of two or more parameters passed i.e it is true iff all the parameters are true.
  *
  * @example
- * // Output: true
+ * // results in: true
  * hbs.compile("{{and a b}}")({"a":true,"b":true});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{and a b}}")({"a":false,"b":true});
  *
  * @param {...any} args Any number of boolean parameters.
@@ -241,10 +241,10 @@ declare function and(...args: any[]): boolean;
  * Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.
  *
  * @example
- * // Output: true
+ * // results in: true
  * hbs.compile("{{or a b}}")({"a":true,"b":false});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{or a b}}")({"a":false,"b":false});
  *
  * @param {...any} args Any number of boolean parameters.
@@ -256,10 +256,10 @@ declare function or(...args: any[]): boolean;
  * Checks for the first non-false parameter.
  *
  * @example
- * // Output: foo
+ * // results in: foo
  * hbs.compile("{{coalesce a b c}}")({"a":"foo","b":"bar","c":"baz"});
  *
- * // Output: bar
+ * // results in: bar
  * hbs.compile("{{coalesce a b c}}")({"a":"","b":"bar","c":"baz"});
  *
  * @param {...any} args Any number of parameters.
@@ -270,16 +270,16 @@ declare function coalesce(...args: any[]): any;
  * Returns true if the array contains a particular value, false if it does not.
  *
  * @example
- * // Output: true
+ * // results in: true
  * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":2});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":10});
  *
- * // Output: false
+ * // results in: false
  * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":"3"});
  *
- * // Output: true
+ * // results in: true
  * hbs.compile("{{includes coll a strict}}")({"coll":[1,2,3,4],"a":"3","strict":false});
  *
  * @param {any[]} coll The array.
@@ -288,4 +288,29 @@ declare function coalesce(...args: any[]): any;
  * @returns {boolean}
  */
 declare function includes(coll: any[], val: any, strict?: boolean): boolean;
-export { opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, notEmpty, count, and, or, coalesce, includes };
+/**
+ * Returns true if the given str matches the given regex.
+ *
+ * @example
+ * // results in: false
+ * hbs.compile("{{regexMatch 'bar' 'foo'}}")();
+ *
+ * // results in: true
+ * hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
+ *
+ * // results in: false
+ * hbs.compile("{{regexMatch 'foobar' '^foo$'}}")();
+ *
+ * // results in: true
+ * hbs.compile("{{regexMatch 'Visit Here' 'here' 'i'}}")();
+ *
+ * // results in: false
+ * hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
+ *
+ * @param {string} val The string against which to match the regular expression.
+ * @param {string} pattern The text of the regular expression.
+ * @param {string} flags? Regular expression flags, such as global and case-insensitive searches. The default is none (undefined).
+ * @returns {boolean} true if there is a match between the regular expression and the string str. Otherwise, false.
+ */
+declare function regexMatch(val: string, pattern: string, flags?: string): boolean;
+export { opr, eq, eqw, neq, neqw, lt, gt, gte, lte, ifx, not, empty, notEmpty, count, and, or, coalesce, includes, regexMatch };
