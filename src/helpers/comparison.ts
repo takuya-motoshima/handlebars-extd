@@ -443,6 +443,9 @@ function includes(coll: any[], val: any, strict: boolean = true): boolean {
  * // results in: false
  * hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
  *
+ * // results in: true
+ * hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}true{{/if}}")();
+ *
  * @param {string} val The string against which to match the regular expression.
  * @param {string} pattern The text of the regular expression.
  * @param {string} flags? Regular expression flags, such as global and case-insensitive searches. The default is none (undefined).
