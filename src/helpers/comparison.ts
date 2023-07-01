@@ -223,14 +223,12 @@ function not(expr: any): boolean {
  * If the value is a string, the leading and trailing spaces are trimmed and then checked.
  *
  * @example
- * // If the value is an array.
  * // results in: true
  * hbs.compile("{{empty val}}")({"val":[]});
  *
  * // results in: false
  * hbs.compile("{{empty val}}")({"val":["foo"]});
  *
- * // If the value is an array.
  * // results in: false
  * hbs.compile("{{empty val}}")({"val":'Hello'});
  *
@@ -278,14 +276,12 @@ function empty(val: any): boolean {
  * If the value is a string, the leading and trailing spaces are trimmed and then checked.
  *
  * @example
- * // If the value is an array.
  * // results in: false
  * hbs.compile("{{notEmpty val}}")({"val":[]});
  *
  * // results in: true
  * hbs.compile("{{notEmpty val}}")({"val":["foo"]});
  *
- * // If the value is an array.
  * // results in: true
  * hbs.compile("{{notEmpty val}}")({"val":'Hello'});
  *

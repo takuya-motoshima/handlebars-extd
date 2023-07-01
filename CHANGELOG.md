@@ -7,11 +7,11 @@ All notable changes to this project will be documented in this file.
     ```js
     const hbs = require('handlebars-extd');
 
-    // results in: false
-    hbs.compile("{{regexMatch 'bar' 'foo'}}")();
-    
     // results in: true
     hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
+    
+    // results in: false
+    hbs.compile("{{regexMatch 'bar' 'foo'}}")();
     
     // results in: false
     hbs.compile("{{regexMatch 'foobar' '^foo$'}}")();
@@ -21,6 +21,9 @@ All notable changes to this project will be documented in this file.
     
     // results in: false
     hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
+
+    // results in: Match
+    hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}Match{{/if}}")();
     ```
 
 ## [1.0.7] - 2023/6/18
