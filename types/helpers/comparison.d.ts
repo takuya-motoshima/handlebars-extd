@@ -292,11 +292,11 @@ declare function includes(coll: any[], val: any, strict?: boolean): boolean;
  * Returns true if the given str matches the given regex.
  *
  * @example
- * // results in: false
- * hbs.compile("{{regexMatch 'bar' 'foo'}}")();
- *
  * // results in: true
  * hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
+ *
+ * // results in: false
+ * hbs.compile("{{regexMatch 'bar' 'foo'}}")();
  *
  * // results in: false
  * hbs.compile("{{regexMatch 'foobar' '^foo$'}}")();
@@ -306,6 +306,9 @@ declare function includes(coll: any[], val: any, strict?: boolean): boolean;
  *
  * // results in: false
  * hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
+ *
+ * // results in: Match
+ * hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}Match{{/if}}")();
  *
  * @param {string} val The string against which to match the regular expression.
  * @param {string} pattern The text of the regular expression.

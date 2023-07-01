@@ -792,11 +792,11 @@ hbs.compile(&quot;{{#if (includes coll a strict)}}true{{else}}false{{/if}}&quot;
             <h6>Examples</h6>
             <div class="highlight">
               <button type="button" class="btn-clipboard" title="Copy to clipboard"><i class="far fa-clone"></i></button>
-              <pre><code class="js">// results in: false
-hbs.compile(&quot;{{regexMatch &#039;bar&#039; &#039;foo&#039;}}&quot;)();
-
-// results in: true
+              <pre><code class="js">// results in: true
 hbs.compile(&quot;{{regexMatch &#039;foobar&#039; &#039;foo&#039;}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;{{regexMatch &#039;bar&#039; &#039;foo&#039;}}&quot;)();
 
 // results in: false
 hbs.compile(&quot;{{regexMatch &#039;foobar&#039; &#039;^foo$&#039;}}&quot;)();
@@ -805,7 +805,10 @@ hbs.compile(&quot;{{regexMatch &#039;foobar&#039; &#039;^foo$&#039;}}&quot;)();
 hbs.compile(&quot;{{regexMatch &#039;Visit Here&#039; &#039;here&#039; &#039;i&#039;}}&quot;)();
 
 // results in: false
-hbs.compile(&quot;{{regexMatch &#039;Visit Here&#039; &#039;here&#039;}}&quot;)();</code></pre>
+hbs.compile(&quot;{{regexMatch &#039;Visit Here&#039; &#039;here&#039;}}&quot;)();
+
+// results in: Match
+hbs.compile(&quot;{{#if (regexMatch &#039;foobar&#039; &#039;foo&#039;)}}Match{{/if}}&quot;)();</code></pre>
             </div>
           </div>
         </li>

@@ -64,7 +64,7 @@ describe('regexMatch()', () => {
   });
 
   test('"foobar" with the if syntax should match "foo"', () => {
-    const actual = hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}true{{/if}}")();
-    expect(actual).toBe('true');
+    const actual = hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}Match{{/if}}")();
+    expect(actual).toBe('Match');
   });
 });
