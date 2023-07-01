@@ -7,10 +7,10 @@ import {vsprintf} from 'sprintf-js';
  * @example
  * // results in: Just
  * hbs.compile("{{slice str 0 4}}")({"str":"Just Wow"});
- * 
+ *
  * // results in: Wow
  * hbs.compile("{{slice str 5}}")({"str":"Just Wow"});
- * 
+ *
  * // results in:  Wow
  * hbs.compile("{{slice str -4}}")({"str":"Just Wow"});
  *
@@ -35,7 +35,7 @@ function slice(val: string, beginIdx: number, endIdx?: number) {
  * @example
  * // results in: It's<br>just<br>now
  * hbs.compile("{{{nltobr str}}}")({"str":"It's\njust\nnow"});
- * 
+ *
  * @param {string} val Target string.
  * @returns {string}
  */
@@ -52,14 +52,14 @@ function nltobr(val: string): string {
  * // Argument swapping:
  * // results in: Hello Dolly!
  * hbs.compile("{{sprintf '%s %s!' str1 str2}}")({"str1":"Hello","str2":"Dolly"});
- * 
+ *
  * // results in: foo bar 55 baz 20
  * hbs.compile("{{sprintf '%s %s %d %s %d' 'foo' 'bar' 55 'baz' '20'}}")();
- * 
+ *
  * // Named arguments:
  * // results in: Hello Dolly
  * hbs.compile("{{sprintf 'Hello %(name)s' user}}")({"user":{"name":"Dolly"}});
- * 
+ *
  * // results in: Hello Dolly
  * hbs.compile("{{sprintf 'Hello %(name)s' name=str}}")({"str":"Dolly"});
  *
@@ -129,7 +129,7 @@ function concat(...args: string[]) {
  * @example
  * // results in: Hands & legs & feet
  * hbs.compile("{{{join coll ' & '}}}")({"coll":["Hands","legs","feet"]});
- * 
+ *
  * @param {string[]} coll An array of elements to be joined.
  * @param {string} delim A delimiter that joins array elements.
  * @returns {string|boolean}
@@ -159,7 +159,7 @@ function join(coll: string[], delim: string): string|boolean {
  *                 <li>{{this}}</li>
  *               {{/each}}
  *             </ul>`)({"list":"a,b,c"});
- * 
+ *
  * @param {string} val The value to split for.
  * @param {string} separator A character that delimits the substrings in this string. Default is a comma.
  * @return {string[]} An Array of strings, split at each point where the separator occurs in the given string. The default is a comma.

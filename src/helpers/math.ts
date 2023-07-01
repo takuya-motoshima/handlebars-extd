@@ -92,7 +92,7 @@ function floor(val: number|string): number {
  * @example
  * // results in: 5.6
  * hbs.compile("{{abs a b}}")({"a":-5.6});
- * 
+ *
  * @param {number} val Number to perform absolute value operation on.
  * @returns {number}
  */

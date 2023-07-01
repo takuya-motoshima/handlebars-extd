@@ -38,14 +38,14 @@ describe('opr()', () => {
 });
 
 describe('regexMatch()', () => {
-  test('"bar" should not match "foo"', () => {
-    const actual = hbs.compile("{{regexMatch 'bar' 'foo'}}")();
-    expect(actual).toBe('false');
-  });
-
   test('"foobar" should match "foo"', () => {
     const actual = hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
     expect(actual).toBe('true');
+  });
+
+  test('"bar" should not match "foo"', () => {
+    const actual = hbs.compile("{{regexMatch 'bar' 'foo'}}")();
+    expect(actual).toBe('false');
   });
 
   test('"foobar" should not match "^foo$"', () => {
@@ -61,5 +61,10 @@ describe('regexMatch()', () => {
   test('"Visit Here" should not match "here"', () => {
     const actual = hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
     expect(actual).toBe('false');
+  });
+
+  test('"foobar" with the if syntax should match "foo"', () => {
+    const actual = hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}true{{/if}}")();
+    expect(actual).toBe('true');
   });
 });

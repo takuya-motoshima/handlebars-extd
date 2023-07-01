@@ -64,7 +64,7 @@ function checkedIf(expr: boolean): string {
  *     {"code":840,"name":"UNITED STATES"}
  *   ]
  * });
- * 
+ *
  * @param {{[key: string]: string}[]} data List of data.
  * @param {object} opts Key names for the selected and displayed values of option in the data element (Optional).
  * @returns {string}

@@ -2,32 +2,32 @@ import * as utils from '../utils';
 
 /**
  * Compare two values using operators.
- * 
+ *
  * @example
  * // results in: false
  * hbs.compile("{{opr a '===' b}}")({"a":"3","b":3});
- * 
+ *
  * // results in: true
  * hbs.compile("{{opr a '==' b}}")({"a":"3","b":3});
- * 
+ *
  * // results in: true
  * hbs.compile("{{opr a '!==' b}}")({"a":4,"b":3});
- * 
+ *
  * // results in: false
  * hbs.compile("{{opr a '!=' b}}")({"a":"3","b":3});
- * 
+ *
  * // results in: true
  * hbs.compile("{{opr a '<' b}}")({"a":2,"b":3});
- * 
+ *
  * // results in: false
  * hbs.compile("{{opr a '>' b}}")({"a":2,"b":3});
- * 
+ *
  * // results in: true
  * hbs.compile("{{opr a '<=' b}}")({"a":2,"b":3});
- * 
+ *
  * // results in: true
  * hbs.compile("{{opr a '>=' b}}")({"a":3,"b":3});
- * 
+ *
  * @param {any} val1 First value to be compared with second.
  * @param {'=='|'==='|'!='|'!=='|'<'|'>'|'<='|'>='} opr  The operator to use. Operators must be enclosed in quotes: `">"`, `"="`, `"<="`, and so on.
  * @param {any} val2 Second value to be compared with first.
@@ -180,7 +180,7 @@ function gte(val1: any, val2: any): boolean {
  * @example
  * // results in: foo
  * hbs.compile("{{ifx true a b}}")({"a":"foo","b":"bar"});
- * 
+ *
  * // results in: bar
  * hbs.compile("{{ifx false a b}}")({"a":"foo","b":"bar"});
  *
@@ -206,7 +206,7 @@ function ifx(cond: boolean, val1: any, val2: any): any {
  * @example
  * // results in: false
  * hbs.compile("{{not true}}")();
- * 
+ *
  * // results in: true
  * hbs.compile("{{not false}}")();
  *
@@ -330,7 +330,7 @@ function count(coll: any[]): number|false {
  * @example
  * // results in: true
  * hbs.compile("{{and a b}}")({"a":true,"b":true});
- * 
+ *
  * // results in: false
  * hbs.compile("{{and a b}}")({"a":false,"b":true});
  *
@@ -353,10 +353,10 @@ function and(...args: any[]): boolean {
  * @example
  * // results in: true
  * hbs.compile("{{or a b}}")({"a":true,"b":false});
- * 
+ *
  * // results in: false
  * hbs.compile("{{or a b}}")({"a":false,"b":false});
- * 
+ *
  * @param {...any} args Any number of boolean parameters.
  * @returns {boolean}
  */
@@ -377,7 +377,7 @@ function or(...args: any[]): boolean {
  * @example
  * // results in: foo
  * hbs.compile("{{coalesce a b c}}")({"a":"foo","b":"bar","c":"baz"});
- * 
+ *
  * // results in: bar
  * hbs.compile("{{coalesce a b c}}")({"a":"","b":"bar","c":"baz"});
  *
@@ -400,16 +400,16 @@ function coalesce(...args: any[]): any {
  * @example
  * // results in: true
  * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":2});
- * 
+ *
  * // results in: false
  * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":10});
- * 
+ *
  * // results in: false
  * hbs.compile("{{includes coll a}}")({"coll":[1,2,3,4],"a":"3"});
- * 
+ *
  * // results in: true
  * hbs.compile("{{includes coll a strict}}")({"coll":[1,2,3,4],"a":"3","strict":false});
- * 
+ *
  * @param {any[]} coll The array.
  * @param {any} val The value to search for.
  * @param {boolean} strict FALSE for non-strict checking. TRUE by default.
@@ -428,21 +428,21 @@ function includes(coll: any[], val: any, strict: boolean = true): boolean {
  * Returns true if the given str matches the given regex.
  *
  * @example
- * // results in: false
- * hbs.compile("{{regexMatch 'bar' 'foo'}}")();
- * 
  * // results in: true
  * hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
- * 
+ *
+ * // results in: false
+ * hbs.compile("{{regexMatch 'bar' 'foo'}}")();
+ *
  * // results in: false
  * hbs.compile("{{regexMatch 'foobar' '^foo$'}}")();
- * 
+ *
  * // results in: true
  * hbs.compile("{{regexMatch 'Visit Here' 'here' 'i'}}")();
- * 
+ *
  * // results in: false
  * hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
- * 
+ *
  * @param {string} val The string against which to match the regular expression.
  * @param {string} pattern The text of the regular expression.
  * @param {string} flags? Regular expression flags, such as global and case-insensitive searches. The default is none (undefined).

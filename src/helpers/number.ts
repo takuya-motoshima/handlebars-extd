@@ -6,7 +6,7 @@ import * as utils from '../utils';
  * @example
  * // results in: 123,456.789
  * hbs.compile("{{number2locale val}}")({val: 123456.789});
- * 
+ *
  * // German uses comma as decimal separator and period for thousands.
  * // results in: 123.456,789
  * hbs.compile("{{number2locale val 'de-DE'}}")({val: 123456.789});
