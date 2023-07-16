@@ -5,11 +5,12 @@ This is an extended handlebars package with helpers.
 * [Introduction](https://takuya-motoshima.github.io/handlebars-extd/#introduction)
 * [Install](https://takuya-motoshima.github.io/handlebars-extd/#install)
 * [Usage](https://takuya-motoshima.github.io/handlebars-extd/#usage)
-* [Comparison helper API](https://takuya-motoshima.github.io/handlebars-extd/#comparison)
-* [Date helper API](https://takuya-motoshima.github.io/handlebars-extd/#date)
-* [HTML helper API](https://takuya-motoshima.github.io/handlebars-extd/#html)
-* [Math helper API](https://takuya-motoshima.github.io/handlebars-extd/#math)
-* [String helper API](https://takuya-motoshima.github.io/handlebars-extd/#string)
+* [Comparison helper](https://takuya-motoshima.github.io/handlebars-extd/#comparison)
+* [Date helper](https://takuya-motoshima.github.io/handlebars-extd/#date)
+* [HTML helper](https://takuya-motoshima.github.io/handlebars-extd/#html)
+* [Math helper](https://takuya-motoshima.github.io/handlebars-extd/#math)
+* [String helper](https://takuya-motoshima.github.io/handlebars-extd/#string)
+* [Number helper](https://takuya-motoshima.github.io/handlebars-extd/#number)
 * [Changelog](https://takuya-motoshima.github.io/handlebars-extd/#changelog)
 
 ## Author
