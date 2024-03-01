@@ -1,0 +1,292 @@
+{{!< default}}
+{{#contentFor 'title'}}HTML Helper{{/contentFor}}
+{{#contentFor 'sidenav'}}
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#summary" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">Summary</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#classIf" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">classIf</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#selectedIf" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">selectedIf</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#checkedIf" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">checkedIf</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#options" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">options</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+{{/contentFor}}
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="summary" data-kt-scroll-offset="100">
+    <a href="#summary"></a>HTML Helper
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Table-->
+  <div class="pt-5">
+    <div class="table-responsive border rounded">
+      <table class="table table-striped table-flush align-middle mb-0">
+        <!--begin::Block-->
+        <thead>
+          <tr class="fs-4 fw-bold text-gray-900 p-6">
+            <th class="min-w-300px">Helper</th>
+            <th class="min-w-600px">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-5">
+            <td><a href="#classIf">classIf</a></td>
+            <td>Set the CSS classes if the condition is true.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#selectedIf">selectedIf</a></td>
+            <td>Sets the selected attribute if the condition is true.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#">checkedIf</a></td>
+            <td>Sets the checked attribute if the condition is true.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#options">options</a></td>
+            <td>Generates a select drop-down option list.</td>
+          </tr>
+        </tbody>
+        <!--end::Block-->
+      </table>
+    </div>
+  </div>
+  <!--end::Table-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="classIf" data-kt-scroll-offset="100">
+    <a href="#classIf"></a>classIf
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Set the CSS classes if the condition is true.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>expression: boolean</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Condition to be checked.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>clazz: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          CSS class to set if the condition is true.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: foo
+hbs.compile(&quot;\{{classIf expression &#039;foo&#039;}}&quot;)({&quot;expression&quot;:true});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="selectedIf" data-kt-scroll-offset="100">
+    <a href="#selectedIf"></a>selectedIf
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Sets the selected attribute if the condition is true.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>expression: boolean</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Condition to be checked.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: selected
+hbs.compile(&quot;\{{selectedIf expression}}&quot;)({&quot;expression&quot;:true});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="checkedIf" data-kt-scroll-offset="100">
+    <a href="#checkedIf"></a>checkedIf
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Sets the checked attribute if the condition is true.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>expression: boolean</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Condition to be checked.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: checked
+hbs.compile(&quot;\{{checkedIf expression}}&quot;)({&quot;expression&quot;:true});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="options" data-kt-scroll-offset="100">
+    <a href="#options"></a>options
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Generates a select drop-down option list.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>data: {[key: string]: string}[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          List of data.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>options: {value: string, text: string}</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Key names for the selected and displayed values of option in the data element (Optional).
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in:
+// &lt;option value=&quot;1&quot;&gt;foo&lt;/option&gt;
+// &lt;option value=&quot;2&quot; selected&gt;bar&lt;/option&gt;
+hbs.compile(&quot;\{{{options data selected=&#039;2&#039;}}}&quot;)({&quot;data&quot;:[{&quot;value&quot;:1,&quot;text&quot;:&quot;foo&quot;},{&quot;value&quot;:2,&quot;text&quot;:&quot;bar&quot;}]});
+
+// results in:
+// &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
+// &lt;option value=&quot;840&quot;&gt;UNITED STATES&lt;/option&gt;
+hbs.compile(&quot;\{{{options data selected=&#039;392&#039; value=&#039;code&#039; text=&#039;name&#039;}}}&quot;)({&quot;data&quot;:[{&quot;code&quot;:392,&quot;name&quot;:&quot;JAPAN&quot;},{&quot;code&quot;:840,&quot;name&quot;:&quot;UNITED STATES&quot;}]});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->

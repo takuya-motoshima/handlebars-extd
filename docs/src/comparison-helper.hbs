@@ -1,0 +1,1422 @@
+{{!< default}}
+{{#contentFor 'title'}}Comparison Helper{{/contentFor}}
+{{#contentFor 'sidenav'}}
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#summary" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">Summary</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#opr" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">opr</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#eq" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">eq</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#eqw" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">eqw</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#neq" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">neq</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#neqw" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">neqw</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#lt" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">lt</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#gt" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">gt</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#lte" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">lte</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#gte" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">gte</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#ifx" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">ifx</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#not" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">not</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#empty" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">empty</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#notEmpty" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">notEmpty</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#count" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">count</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#and" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">and</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#or" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">or</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#coalesce" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">coalesce</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#includes" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">includes</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#regexMatch" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">regexMatch</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+{{/contentFor}}
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="summary" data-kt-scroll-offset="100">
+    <a href="#summary"></a>Comparison Helper
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Table-->
+  <div class="pt-5">
+    <div class="table-responsive border rounded">
+      <table class="table table-striped table-flush align-middle mb-0">
+        <!--begin::Block-->
+        <thead>
+          <tr class="fs-4 fw-bold text-gray-900 p-6">
+            <th class="min-w-300px">Helper</th>
+            <th class="min-w-600px">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-5">
+            <td><a href="#opr">opr</a></td>
+            <td>Compare two values using operators.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#eq">eq</a></td>
+            <td>Strict equality <code>===</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#eqw">eqw</a></td>
+            <td>Equality <code>==</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#neq">neq</a></td>
+            <td>Strict inequality <code>!==</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#neqw">neqw</a></td>
+            <td>Inequality <code>!=</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#lt">lt</a></td>
+            <td>Less than <code>&lt;</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#gt">gt</a></td>
+            <td>Greater than <code>&gt;</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#lte">lte</a></td>
+            <td>Less than or equal <code>&lt;=</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#gte">gte</a></td>
+            <td>Greater than or equal <code>&gt;=</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#ifx">ifx</a></td>
+            <td>Imitates conditional operator <code>?:</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#not">not</a></td>
+            <td>Not <code>!</code>.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#empty">empty</a></td>
+            <td>Check if it is empty.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#not-empty">notEmpty</a></td>
+            <td>Check that it is not empty.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#count">count</a></td>
+            <td>Length of an array.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#and">and</a></td>
+            <td>Logical AND operation.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#or">or</a></td>
+            <td>Logical OR operation.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#coalesce">coalesce</a></td>
+            <td>Returns first non-falsy value from list of parameters.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#includes">includes</a></td>
+            <td>Check for a value inside an array.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#regex-match">regexMatch</a></td>
+            <td>Returns true if the given str matches the given regex.</td>
+          </tr>
+        </tbody>
+        <!--end::Block-->
+      </table>
+    </div>
+  </div>
+  <!--end::Table-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="opr" data-kt-scroll-offset="100">
+    <a href="#opr"></a>opr
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Compare two values using operators.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>opr: &#039;==&#039;|&#039;===&#039;|&#039;!=&#039;|&#039;!==&#039;|&#039;&lt;&#039;|&#039;&gt;&#039;|&#039;&lt;=&#039;|&#039;&gt;=&#039;</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The operator to use. Operators must be enclosed in quotes: `&quot;&gt;&quot;`, `&quot;=&quot;`, `&quot;&lt;=&quot;`, and so on.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{opr a &#039;===&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (opr a &#039;===&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{opr a &#039;==&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (opr a &#039;==&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{opr a &#039;!==&#039; b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (opr a &#039;!==&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{opr a &#039;!=&#039; b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (opr a &#039;!=&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{opr a &#039;&lt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (opr a &#039;&lt;&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{opr a &#039;&gt;&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (opr a &#039;&gt;&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{opr a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (opr a &#039;&lt;=&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{opr a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (opr a &#039;&gt;=&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="eq" data-kt-scroll-offset="100">
+    <a href="#eq"></a>eq
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Determine whether or not two values are equal (===).</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{eq a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (eq a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="eqw" data-kt-scroll-offset="100">
+    <a href="#eqw"></a>eqw
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Determine whether or not two values are equal (==) i.e weak checking.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{eqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (eqw a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="neq" data-kt-scroll-offset="100">
+    <a href="#neq"></a>neq
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Determine whether or not two values are not equal (!==).</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{neq a b}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (neq a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:4,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="neqw" data-kt-scroll-offset="100">
+    <a href="#neqw"></a>neqw
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Determine whether or not two values are not equal (!=) weak checking.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{neqw a b}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (neqw a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:&quot;3&quot;,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="lt" data-kt-scroll-offset="100">
+    <a href="#lt"></a>lt
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Check for less than condition (a &lt; b).</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{lt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: true
+hbs.compile(&quot;\{{#if (lt a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="gt" data-kt-scroll-offset="100">
+    <a href="#gt"></a>gt
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Check for greater than condition (a &gt; b).</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{gt a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (gt a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="lte" data-kt-scroll-offset="100">
+    <a href="#lte"></a>lte
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Check for less than or equals condition (a &lt;= b).</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{lte a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (lte a &#039;&lt;=&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="gte" data-kt-scroll-offset="100">
+    <a href="#gte"></a>gte
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Check for greater than or equals condition (a &gt;= b).</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          First value to be compared with second.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Second value to be compared with first.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{gte a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
+
+// results in: false
+hbs.compile(&quot;\{{#if (gte a &#039;&gt;=&#039; b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="ifx" data-kt-scroll-offset="100">
+    <a href="#ifx"></a>ifx
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Helper to imitate the ternary &#039;?:&#039; conditional operator.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>condition: boolean</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Satisfying condition for getting first value. Either true of false. (Required).
+        </div>
+        <!--end::Block-->
+      </li>
+
+      <li class="py-2"><code>val1: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Value to return when the condition holds true.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val2: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Value to return when the condition is false (Optional).
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: foo
+hbs.compile(&quot;\{{ifx true a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});
+
+// results in: bar
+hbs.compile(&quot;\{{ifx false a b}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="not" data-kt-scroll-offset="100">
+    <a href="#not"></a>not
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Logical NOT of any expression.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>expression: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Any expression.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: false
+hbs.compile(&quot;\{{not true}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;\{{#if (not true)}}true\{{else}}false\{{/if}}&quot;)();
+
+// results in: true
+hbs.compile(&quot;\{{not false}}&quot;)();
+
+// results in: true
+hbs.compile(&quot;\{{#if (not false)}}true\{{else}}false\{{/if}}&quot;)();</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="empty" data-kt-scroll-offset="100">
+    <a href="#empty"></a>empty
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">
+    Check if it is empty.<br>
+    If the value is an array, returns true if there are no elements.<br>
+    If the value is a string, the leading and trailing spaces are trimmed and then checked.
+  </div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Character strings, arrays, objects, etc. to be checked.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// If the value is an array.
+// results in: true
+hbs.compile(&quot;\{{empty val}}&quot;)({&quot;val&quot;:[]});
+
+// results in: true
+hbs.compile(&quot;\{{#if (empty val)}}true\{{else}}false\{{/if}}&quot;)({&quot;val&quot;:[]});
+
+// results in: false
+hbs.compile(&quot;\{{empty val}}&quot;)({&quot;val&quot;:[&quot;foo&quot;]});
+
+// If the value is a string.
+// results in: false
+hbs.compile(&quot;\{{empty val}}&quot;)({&quot;val&quot;:&quot;Hello&quot;});
+
+// results in: true
+hbs.compile(&quot;\{{empty val}}&quot;)({&quot;val&quot;:&quot;&quot;});
+
+// results in: true
+hbs.compile(&quot;\{{empty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="notEmpty" data-kt-scroll-offset="100">
+    <a href="#notEmpty"></a>notEmpty
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">
+    Check that it is not empty.<br>
+    If the value is an array, returns true if there is an element.<br>
+    If the value is a string, the leading and trailing spaces are trimmed and then checked.
+  </div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Character strings, arrays, objects, etc. to be checked.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// If the value is an array.
+// results in: false
+hbs.compile(&quot;\{{notEmpty val}}&quot;)({&quot;val&quot;:[]});
+
+// results in: false
+hbs.compile(&quot;\{{#if (notEmpty val)}}true\{{else}}false\{{/if}}&quot;)({&quot;val&quot;:[]});
+
+// results in: true
+hbs.compile(&quot;\{{notEmpty val}}&quot;)({&quot;val&quot;:[&quot;foo&quot;]});
+
+// If the value is a string.
+// results in: true
+hbs.compile(&quot;\{{notEmpty val}}&quot;)({&quot;val&quot;:&quot;Hello&quot;});
+
+// results in: false
+hbs.compile(&quot;\{{notEmpty val}}&quot;)({&quot;val&quot;:&quot;&quot;});
+
+// results in: false
+hbs.compile(&quot;\{{notEmpty val}}&quot;)({&quot;val&quot;:&quot; &quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="count" data-kt-scroll-offset="100">
+    <a href="#count"></a>count
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Determine the length of an array.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>collection: any[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Array whose elements to be counted.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: 2
+hbs.compile(&quot;\{{count collection}}&quot;)({&quot;collection&quot;:[&quot;foo&quot;,&quot;bar&quot;]});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="and" data-kt-scroll-offset="100">
+    <a href="#and"></a>and
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Returns the boolean AND of two or more parameters passed i.e it is true iff all the parameters are true.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>args: ...any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Any number of boolean parameters.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{and a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
+
+// results in: true
+hbs.compile(&quot;\{{#if (and a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:true});
+
+// results in: false
+hbs.compile(&quot;\{{and a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});
+
+// results in: false
+hbs.compile(&quot;\{{#if (and a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:true});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="or" data-kt-scroll-offset="100">
+    <a href="#or"></a>or
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>args: ...any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Any number of boolean parameters.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{or a b}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
+
+// results in: true
+hbs.compile(&quot;\{{#if (or a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:true,&quot;b&quot;:false});
+
+// results in: false
+hbs.compile(&quot;\{{or a b}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});
+
+// results in: false
+hbs.compile(&quot;\{{#if (or a b)}}true\{{else}}false\{{/if}}&quot;)({&quot;a&quot;:false,&quot;b&quot;:false});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="coalesce" data-kt-scroll-offset="100">
+    <a href="#coalesce"></a>coalesce
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">
+    Returns the first non-falsy value from the parameter list.<br>
+    Checks for the first non-false parameter.
+  </div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>args: ...any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Any number of parameters.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: foo
+hbs.compile(&quot;\{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;foo&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});
+
+// results in: bar
+hbs.compile(&quot;\{{coalesce a b c}}&quot;)({&quot;a&quot;:&quot;&quot;,&quot;b&quot;:&quot;bar&quot;,&quot;c&quot;:&quot;baz&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="includes" data-kt-scroll-offset="100">
+    <a href="#includes"></a>includes
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Returns true if the array contains a particular value, false if it does not.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>collection: any[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The array.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>val: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The value to search for.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>strict: boolean</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          FALSE for non-strict checking. TRUE by default.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{includes collection a}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:2});
+
+// results in: true
+hbs.compile(&quot;\{{#if (includes collection a)}}true\{{else}}false\{{/if}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:2});
+
+// results in: false
+hbs.compile(&quot;\{{includes collection a}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:10});
+
+// results in: false
+hbs.compile(&quot;\{{#if (includes collection a)}}true\{{else}}false\{{/if}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:10});
+
+// results in: false
+hbs.compile(&quot;\{{includes collection a}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
+
+// results in: false
+hbs.compile(&quot;\{{#if (includes collection a)}}true\{{else}}false\{{/if}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;});
+
+// results in: true
+hbs.compile(&quot;\{{includes collection a strict}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});
+
+// results in: true
+hbs.compile(&quot;\{{#if (includes collection a strict)}}true\{{else}}false\{{/if}}&quot;)({&quot;collection&quot;:[1,2,3,4],&quot;a&quot;:&quot;3&quot;,&quot;strict&quot;:false});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="regexMatch" data-kt-scroll-offset="100">
+    <a href="#regexMatch"></a>regexMatch
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Returns true if the given str matches the given regex.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The string against which to match the regular expression.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>pattern: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The text of the regular expression.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>flags?: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Regular expression flags, such as global and case-insensitive searches. The default is none (undefined).
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: true
+hbs.compile(&quot;\{{regexMatch &#039;foobar&#039; &#039;foo&#039;}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;\{{regexMatch &#039;bar&#039; &#039;foo&#039;}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;\{{regexMatch &#039;foobar&#039; &#039;^foo$&#039;}}&quot;)();
+
+// results in: true
+hbs.compile(&quot;\{{regexMatch &#039;Visit Here&#039; &#039;here&#039; &#039;i&#039;}}&quot;)();
+
+// results in: false
+hbs.compile(&quot;\{{regexMatch &#039;Visit Here&#039; &#039;here&#039;}}&quot;)();
+
+// results in: Match
+hbs.compile(&quot;\{{#if (regexMatch &#039;foobar&#039; &#039;foo&#039;)}}Match\{{/if}}&quot;)();</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->

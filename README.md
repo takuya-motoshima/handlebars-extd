@@ -1,17 +1,31 @@
-# handlebars-extd
+# Handlebars extension
 This is an extended handlebars package with helpers.
 
+- [Handlebars extension](#handlebars-extension)
+  - [Documentation](#documentation)
+  - [Installation](#installation)
+  - [Release Notes](#release-notes)
+  - [Testing](#testing)
+  - [Author](#author)
+  - [License](#license)
+
 ## Documentation
-* [Introduction](https://takuya-motoshima.github.io/handlebars-extd/#introduction)
-* [Install](https://takuya-motoshima.github.io/handlebars-extd/#install)
-* [Usage](https://takuya-motoshima.github.io/handlebars-extd/#usage)
-* [Comparison helper](https://takuya-motoshima.github.io/handlebars-extd/#comparison)
-* [Date helper](https://takuya-motoshima.github.io/handlebars-extd/#date)
-* [HTML helper](https://takuya-motoshima.github.io/handlebars-extd/#html)
-* [Math helper](https://takuya-motoshima.github.io/handlebars-extd/#math)
-* [String helper](https://takuya-motoshima.github.io/handlebars-extd/#string)
-* [Number helper](https://takuya-motoshima.github.io/handlebars-extd/#number)
-* [Changelog](https://takuya-motoshima.github.io/handlebars-extd/#changelog)
+Handlebars extension documentation can be found [here](https://takuya-motoshima.github.io/handlebars-extd/v1/).
+
+## Installation
+```sh
+npm i handlebars-extd
+```
+
+## Release Notes
+All changes can be found [here](CHANGELOG.md).
+
+## Testing
+With [npm](http://npmjs.org) do:
+
+```sh
+npm test
+```
 
 ## Author
 **Takuya Motoshima**

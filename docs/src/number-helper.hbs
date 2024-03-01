@@ -1,0 +1,113 @@
+{{!< default}}
+{{#contentFor 'title'}}Number Helper{{/contentFor}}
+{{#contentFor 'sidenav'}}
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#summary" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">Summary</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#number2locale" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">number2locale</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+{{/contentFor}}
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="summary" data-kt-scroll-offset="100">
+    <a href="#summary"></a>Number Helper
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Table-->
+  <div class="pt-5">
+    <div class="table-responsive border rounded">
+      <table class="table table-striped table-flush align-middle mb-0">
+        <!--begin::Block-->
+        <thead>
+          <tr class="fs-4 fw-bold text-gray-900 p-6">
+            <th class="min-w-300px">Helper</th>
+            <th class="min-w-600px">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-5">
+            <td><a href="#number2locale">number2locale</a></td>
+            <td>Returns the language-sensitive representation of a number as a string.</td>
+          </tr>
+        </tbody>
+        <!--end::Block-->
+      </table>
+    </div>
+  </div>
+  <!--end::Table-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="number2locale" data-kt-scroll-offset="100">
+    <a href="#number2locale"></a>number2locale
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Returns the language-sensitive representation of a number as a string.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: number|string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Target number or numeric string.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>locales: string|undefined</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          A string with a BCP 47 language tag, or an array of such strings.<br>
+          Corresponds to the <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#locales">locales</a> parameter of the Intl.NumberFormat() constructor.<br>
+          In implementations without Intl.NumberFormat support, this parameter is ignored and the host's locale is usually used.<br>
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: 123,456.789
+hbs.compile(&quot;\{{number2locale val}}&quot;)({val: 123456.789});
+
+// German uses comma as decimal separator and period for thousands.
+// results in: 123.456,789
+hbs.compile(&quot;\{{number2locale val &#039;de-DE&#039;}}&quot;)({val: 123456.789});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->

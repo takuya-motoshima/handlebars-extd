@@ -1,0 +1,120 @@
+{{!< default}}
+{{#contentFor 'title'}}Date Helper{{/contentFor}}
+{{#contentFor 'sidenav'}}
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#summary" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">Summary</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#formatDate" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">formatDate</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+{{/contentFor}}
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="summary" data-kt-scroll-offset="100">
+    <a href="#summary"></a>Date Helper
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Table-->
+  <div class="pt-5">
+    <div class="table-responsive border rounded">
+      <table class="table table-striped table-flush align-middle mb-0">
+        <!--begin::Block-->
+        <thead>
+          <tr class="fs-4 fw-bold text-gray-900 p-6">
+            <th class="min-w-300px">Helper</th>
+            <th class="min-w-600px">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-5">
+            <td><a href="#formatDate">formatDate</a></td>
+            <td>Use moment to format the date.</td>
+          </tr>
+        </tbody>
+        <!--end::Block-->
+      </table>
+    </div>
+  </div>
+  <!--end::Table-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="formatDate" data-kt-scroll-offset="100">
+    <a href="#formatDate"></a>formatDate
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Use moment to format the date.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>format: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          A format string based on <a href="https://momentjs.com/docs/#/parsing/string-format/" target="_blank">moment</a>.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>date: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Date string to format.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>locale: string|string[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Language or language-country locale string (or array of strings) available in <a href="https://github.com/moment/moment/tree/develop/locale" target="_blank">https://github.com/moment/moment/tree/develop/locale</a>.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: 2021/10/25
+hbs.compile(&quot;\{{formatDate &#039;YYYY/MM/DD&#039; date}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
+
+// results in: 2021/10/25
+hbs.compile(&quot;\{{formatDate &#039;YYYY/MM/DD&#039; date &#039;jp&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});
+
+// results in: 2021/10/25
+hbs.compile(&quot;\{{formatDate &#039;YYYY/MM/DD&#039; date &#039;es&#039;}}&quot;)({&quot;date&quot;:&quot;2021-10-24T23:11:14.275Z&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->

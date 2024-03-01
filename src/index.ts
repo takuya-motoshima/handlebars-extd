@@ -1,5 +1,5 @@
 import hbs from 'handlebars';
-import * as comparison from './helpers/comparison';
+import * as comparison from '~/helpers/comparison';
 import * as date from './helpers/date';
 import * as html from './helpers/html';
 import * as math from './helpers/math';

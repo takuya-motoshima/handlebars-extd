@@ -1,0 +1,570 @@
+{{!< default}}
+{{#contentFor 'title'}}String Helper{{/contentFor}}
+{{#contentFor 'sidenav'}}
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#summary" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">Summary</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#slice" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">slice</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#nltobr" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">nltobr</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#sprintf" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">sprintf</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#lowercase" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">lowercase</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#uppercase" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">uppercase</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#concat" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">concat</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#join" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">join</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#split" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">split</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+{{/contentFor}}
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="summary" data-kt-scroll-offset="100">
+    <a href="#summary"></a>String Helper
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Table-->
+  <div class="pt-5">
+    <div class="table-responsive border rounded">
+      <table class="table table-striped table-flush align-middle mb-0">
+        <!--begin::Block-->
+        <thead>
+          <tr class="fs-4 fw-bold text-gray-900 p-6">
+            <th class="min-w-300px">Helper</th>
+            <th class="min-w-600px">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-5">
+            <td><a href="#slice">slice</a></td>
+            <td>Extract a portion of a string.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#nltobr">nltobr</a></td>
+            <td>Replace \n with &lt;br&gt; tags.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#sprintf">sprintf</a></td>
+            <td>
+              Returns a string produced according to the formatting string format.<br>
+              It uses sprintf-js internally.<br>
+              Check <a href="https://github.com/alexei/sprintf.js" target="_blank">https://github.com/alexei/sprintf.js</a> for more information.
+            </td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#lowercase">lowercase</a></td>
+            <td>Changes the string to lowercase.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#uppercase">uppercase</a></td>
+            <td>Changes the string to uppercase.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#concat">concat</a></td>
+            <td>Concat two or more strings.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#join">join</a></td>
+            <td>Join the elements of an array with the specified separator.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#split">split</a></td>
+            <td>Split a string into an array by the specified characters.</td>
+          </tr>
+        </tbody>
+        <!--end::Block-->
+      </table>
+    </div>
+  </div>
+  <!--end::Table-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="slice" data-kt-scroll-offset="100">
+    <a href="#slice"></a>slice
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Extract a portion of a string.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Target string.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>start: number</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The zero-based index at which to begin extraction.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>end: number</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The zero-based index before which to end extraction. The character at this index will not be included.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: Just
+hbs.compile(&quot;\{{slice str 0 4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
+
+// results in: Wow
+hbs.compile(&quot;\{{slice str 5}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});
+
+// results in:  Wow
+hbs.compile(&quot;\{{slice str -4}}&quot;)({&quot;str&quot;:&quot;Just Wow&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="nltobr" data-kt-scroll-offset="100">
+    <a href="#nltobr"></a>nltobr
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Replace \n with &lt;br&gt; tags.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Target string.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: It&#039;s&lt;br&gt;just&lt;br&gt;now
+hbs.compile(&quot;\{{{nltobr str}}}&quot;)({&quot;str&quot;:&quot;It&#039;s\njust\nnow&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="sprintf" data-kt-scroll-offset="100">
+    <a href="#sprintf"></a>sprintf
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">
+    Returns a string produced according to the formatting string format.<br>
+    It uses sprintf-js internally.<br>
+    Check <a href="https://github.com/alexei/sprintf.js" target="_blank">https://github.com/alexei/sprintf.js</a> for more information.
+  </div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>format: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Format string.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>args: ...any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Any number of parameters/values.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// Argument swapping:
+// results in: Hello Dolly!
+hbs.compile(&quot;\{{sprintf &#039;%s %s!&#039; str1 str2}}&quot;)({&quot;str1&quot;:&quot;Hello&quot;,&quot;str2&quot;:&quot;Dolly&quot;});
+
+// results in: foo bar 55 baz 20
+hbs.compile(&quot;\{{sprintf &#039;%s %s %d %s %d&#039; &#039;foo&#039; &#039;bar&#039; 55 &#039;baz&#039; &#039;20&#039;}}&quot;)();
+
+// Named arguments:
+// results in: Hello Dolly
+hbs.compile(&quot;\{{sprintf &#039;Hello %(name)s&#039; user}}&quot;)({&quot;user&quot;:{&quot;name&quot;:&quot;Dolly&quot;}});
+
+// results in: Hello Dolly
+hbs.compile(&quot;\{{sprintf &#039;Hello %(name)s&#039; name=str}}&quot;)({&quot;str&quot;:&quot;Dolly&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="lowercase" data-kt-scroll-offset="100">
+    <a href="#lowercase"></a>lowercase
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Changes the string to lowercase.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Target string.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: just wow
+hbs.compile(&quot;\{{lowercase str}}&quot;)({&quot;str&quot;:&quot;JUST WOW&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="uppercase" data-kt-scroll-offset="100">
+    <a href="#uppercase"></a>uppercase
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Changes the string to uppercase.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Target string.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: JUST WOW
+hbs.compile(&quot;\{{uppercase str}}&quot;)({&quot;str&quot;:&quot;just wow&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="concat" data-kt-scroll-offset="100">
+    <a href="#concat"></a>concat
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Concat two or more strings.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>args: ...string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Any number of string arguments.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: Hello world!
+hbs.compile(&quot;\{{concat &#039;Hello&#039; &#039; world&#039; &#039;!&#039;}}&quot;)();</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="join" data-kt-scroll-offset="100">
+    <a href="#join"></a>join
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Join the elements of an array with the specified separator.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>collection: string[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Array.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>separator: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          A string to separate each pair of adjacent elements of the array. If omitted, the array elements are separated with a comma (&quot;,&quot;).
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: Hands &amp; legs &amp; feet
+hbs.compile(&quot;\{{{join collection &#039; &amp; &#039;}}}&quot;)({&quot;collection&quot;:[&quot;Hands&quot;,&quot;legs&quot;,&quot;feet&quot;]});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="split" data-kt-scroll-offset="100">
+    <a href="#split"></a>split
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Split a string into an array by the specified characters.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>val: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The value to split for.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>separator: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          Separator. Default is a comma (&quot;,&quot;).
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: [&#039;a&#039;, &#039;b&#039;, &#039;c&#039;]
+hbs.compile(&quot;\{{split list}}&quot;)({&quot;list&quot;:&quot;a,b,c&quot;});
+
+// results in: &lt;ul&gt;
+//           &lt;li&gt;a&lt;/li&gt;
+//           &lt;li&gt;b&lt;/li&gt;
+//           &lt;li&gt;c&lt;/li&gt;
+//         &lt;/ul&gt;
+hbs.compile(`&lt;ul&gt;
+              \{{#each (split list &#039;,&#039;)}}
+                &lt;li&gt;\{{this}}&lt;/li&gt;
+              \{{/each}}
+            &lt;/ul&gt;`)({&quot;list&quot;:&quot;a,b,c&quot;});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
