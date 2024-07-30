@@ -1,4 +1,3 @@
-declare const _default: (val: number | string) => number;
 /**
  * Returns an absolute value.
  *
@@ -9,4 +8,5 @@ declare const _default: (val: number | string) => number;
  * @param {number} val Number to perform absolute value operation on.
  * @returns {number}
  */
+declare const _default: (val: number | string) => number;
 export default _default;

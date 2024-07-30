@@ -1,4 +1,3 @@
-declare const _default: (...args: string[]) => string;
 /**
  * Concat two or more strings.
  *
@@ -9,4 +8,5 @@ declare const _default: (...args: string[]) => string;
  * @param {...string} args Any number of string arguments.
  * @returns {string}
  */
+declare const _default: (...args: string[]) => string;
 export default _default;

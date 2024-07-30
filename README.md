@@ -1,24 +1,14 @@
 # Handlebars extension
-This is an extended handlebars package with helpers.
-
-- [Handlebars extension](#handlebars-extension)
-  - [Documentation](#documentation)
-  - [Installation](#installation)
-  - [Release Notes](#release-notes)
-  - [Testing](#testing)
-  - [Author](#author)
-  - [License](#license)
-
-## Documentation
-Handlebars extension documentation can be found [here](https://takuya-motoshima.github.io/handlebars-extd/v1/).
+This is an extended handlebars package with helpers.  
+Click [here](CHANGELOG.md) to see the change log.
 
 ## Installation
 ```sh
-npm i handlebars-extd
+npm install --save handlebars-extd
 ```
 
-## Release Notes
-All changes can be found [here](CHANGELOG.md).
+## API
+API reference is [here](https://takuya-motoshima.github.io/handlebars-extd/v1/).
 
 ## Testing
 With [npm](http://npmjs.org) do:

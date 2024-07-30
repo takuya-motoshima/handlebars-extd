@@ -1,4 +1,3 @@
-declare const _default: (val1: any, opr: '==' | '===' | '!=' | '!==' | '<' | '>' | '<=' | '>=', val2: any) => boolean;
 /**
  * Compare two values using operators.
  *
@@ -32,4 +31,5 @@ declare const _default: (val1: any, opr: '==' | '===' | '!=' | '!==' | '<' | '>'
  * @param {any} val2 Second value to be compared with first.
  * @returns {boolean}
  */
+declare const _default: (val1: any, opr: "==" | "===" | "!=" | "!==" | "<" | ">" | "<=" | ">=", val2: any) => boolean;
 export default _default;

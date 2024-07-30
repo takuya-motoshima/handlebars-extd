@@ -1,4 +1,3 @@
-declare const _default: (val: any) => boolean;
 /**
  * Check that it is not empty.
  * If the value is an array, returns true if there is an element.
@@ -23,4 +22,5 @@ declare const _default: (val: any) => boolean;
  * @param {any} value Character strings, arrays, objects, etc. to be checked.
  * @returns {boolean} Returns true if the value is not empty, false otherwise.
  */
+declare const _default: (val: any) => boolean;
 export default _default;

@@ -1,4 +1,3 @@
-declare const _default: (collection: any[]) => number | false;
 /**
  * Determine the length of an array.
  *
@@ -9,4 +8,5 @@ declare const _default: (collection: any[]) => number | false;
  * @param {any[]} collection Array whose elements to be counted.
  * @returns {number|false}
  */
+declare const _default: (collection: any[]) => number | false;
 export default _default;

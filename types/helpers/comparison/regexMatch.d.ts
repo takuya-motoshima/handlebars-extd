@@ -1,4 +1,3 @@
-declare const _default: (val: string, pattern: string, flags?: string | undefined) => boolean;
 /**
  * Returns true if the given str matches the given regex.
  *
@@ -26,4 +25,5 @@ declare const _default: (val: string, pattern: string, flags?: string | undefine
  * @param {string} flags? Regular expression flags, such as global and case-insensitive searches. The default is none (undefined).
  * @returns {boolean} true if there is a match between the regular expression and the string str. Otherwise, false.
  */
+declare const _default: (val: string, pattern: string, flags?: string) => boolean;
 export default _default;

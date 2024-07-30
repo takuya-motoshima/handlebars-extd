@@ -1,4 +1,3 @@
-declare const _default: (expression: any) => boolean;
 /**
  * Logical NOT of any expression.
  *
@@ -12,4 +11,5 @@ declare const _default: (expression: any) => boolean;
  * @param {any} expression Any expression.
  * @returns {boolean}
  */
+declare const _default: (expression: any) => boolean;
 export default _default;

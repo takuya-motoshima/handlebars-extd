@@ -11,7 +11,9 @@ common.plugins.unshift(
   })
 );
 common.output = [
-  // CommonJS (for Node) build.
-  {format: 'cjs', file: pkg.main}
+  {
+    format: 'cjs',
+    file: pkg.main
+  }
 ];
 export default  common;

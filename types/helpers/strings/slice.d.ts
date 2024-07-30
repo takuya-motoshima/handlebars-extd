@@ -1,4 +1,3 @@
-declare const _default: (val: string, start: number, end?: number | undefined) => string;
 /**
  * Extract a portion of a string.
  *
@@ -17,4 +16,5 @@ declare const _default: (val: string, start: number, end?: number | undefined) =
  * @param {number} end The zero-based index before which to end extraction. The character at this index will not be included.
  * @returns {string}
  */
+declare const _default: (val: string, start: number, end?: number) => string;
 export default _default;

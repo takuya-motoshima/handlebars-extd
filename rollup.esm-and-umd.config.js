@@ -11,13 +11,16 @@ common.plugins.unshift(
   })
 );
 common.output = [
-  // ES module (for bundlers) build.
-  {format: 'esm', file: pkg.module},
-
-  // browser-friendly UMD build
-  {format: 'umd', file: pkg.browser, name: pkg.name
-    .replace(/^.*\/|\.js$/g, '')
-    .replace(/([-_][a-z])/g, (group) => group.toUpperCase().replace('-', '').replace('_', ''))
+  {
+    format: 'esm',
+    file: pkg.module
+  },
+  {
+    format: 'umd',
+    file: pkg.browser,
+    name: pkg.name
+      .replace(/^.*\/|\.js$/g, '')
+      .replace(/([-_][a-z])/g, (group) => group.toUpperCase().replace('-', '').replace('_', ''))
   }
 ];
 export default  common;

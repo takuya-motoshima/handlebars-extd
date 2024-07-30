@@ -1,4 +1,3 @@
-declare const _default: (collection: any[], val: any, strict?: boolean) => boolean;
 /**
  * Returns true if the array contains a particular value, false if it does not.
  *
@@ -20,4 +19,5 @@ declare const _default: (collection: any[], val: any, strict?: boolean) => boole
  * @param {boolean} strict FALSE for non-strict checking. TRUE by default.
  * @returns {boolean}
  */
+declare const _default: (collection: any[], val: any, strict?: boolean) => boolean;
 export default _default;

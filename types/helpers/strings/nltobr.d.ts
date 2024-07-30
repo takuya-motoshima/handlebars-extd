@@ -1,4 +1,3 @@
-declare const _default: (val: string) => string;
 /**
  * Replace \n with <br> tags.
  *
@@ -9,4 +8,5 @@ declare const _default: (val: string) => string;
  * @param {string} val Target string.
  * @returns {string}
  */
+declare const _default: (val: string) => string;
 export default _default;

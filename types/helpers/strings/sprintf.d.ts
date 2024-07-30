@@ -1,4 +1,3 @@
-declare const _default: (format: string, ...args: any[]) => string;
 /**
  * Returns a string produced according to the formatting string format.
  * It uses sprintf-js internally.
@@ -23,4 +22,5 @@ declare const _default: (format: string, ...args: any[]) => string;
  * @param {...any} args Any number of parameters/values.
  * @returns {string}
  */
+declare const _default: (format: string, ...args: any[]) => string;
 export default _default;

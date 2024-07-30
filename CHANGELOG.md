@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.10] - 2024/7/31
+### Fixed
+- Fix `TypeError: Cannot read properties of undefined (reading 'Symbol')` error in executing each function on an object
+
 ## [1.0.9] - 2024/3/1
 ### Changed
 - Helpers have been moved to the directory by category. No change in functionality.
@@ -141,3 +145,4 @@ All notable changes to this project will be documented in this file.
 [1.0.7]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.6...v1.0.7
 [1.0.8]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.7...v1.0.8
 [1.0.9]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.8...v1.0.9
+[1.0.10]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.9...v1.0.10

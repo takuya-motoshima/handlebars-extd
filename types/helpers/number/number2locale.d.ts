@@ -1,4 +1,3 @@
-declare const _default: (val: number | string, locales?: string | undefined) => string;
 /**
  * Returns the language-sensitive representation of a number as a string.
  *
@@ -16,4 +15,5 @@ declare const _default: (val: number | string, locales?: string | undefined) => 
  *                                    In implementations without Intl.NumberFormat support, this parameter is ignored and the host's locale is usually used.
  * @returns {string} A string with a language-sensitive representation of the given number.
  */
+declare const _default: (val: number | string, locales?: string) => string;
 export default _default;

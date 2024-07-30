@@ -1,4 +1,3 @@
-declare const _default: (val1: number | string, val2: number | string) => number;
 /**
  * Calculate the multiplication of the given values.
  *
@@ -10,4 +9,5 @@ declare const _default: (val1: number | string, val2: number | string) => number
  * @param {number|string} val2 The second number.
  * @returns {number}
  */
+declare const _default: (val1: number | string, val2: number | string) => number;
 export default _default;

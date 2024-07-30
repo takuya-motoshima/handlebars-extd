@@ -1,4 +1,3 @@
-declare const _default: (expression: boolean, clazz: string) => string;
 /**
  * Set the CSS classes if the condition is true.
  *
@@ -10,4 +9,5 @@ declare const _default: (expression: boolean, clazz: string) => string;
  * @param {string} clazz CSS class to set if the condition is true.
  * @returns {string}
  */
+declare const _default: (expression: boolean, clazz: string) => string;
 export default _default;

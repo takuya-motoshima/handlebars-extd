@@ -1,4 +1,3 @@
-declare const _default: (format: string, date: string, locale: string | string[]) => string;
 /**
  * Use moment to format the date.
  *
@@ -17,4 +16,5 @@ declare const _default: (format: string, date: string, locale: string | string[]
  * @param {string|string[]} locale Language or language-country locale string (or array of strings) available in https://github.com/moment/moment/tree/develop/locale .
  * @returns {string}
  */
+declare const _default: (format: string, date: string, locale: string | string[]) => string;
 export default _default;

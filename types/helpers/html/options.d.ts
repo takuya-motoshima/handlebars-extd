@@ -1,10 +1,3 @@
-declare const _default: (data: {
-    [key: string]: string;
-}[], options: {
-    hash: {
-        [key: string]: string;
-    };
-}) => string;
 /**
  * Generates a select drop-down option list.
  *
@@ -35,4 +28,11 @@ declare const _default: (data: {
  * @param {object} options Key names for the selected and displayed values of option in the data element (Optional).
  * @returns {string}
  */
+declare const _default: (data: {
+    [key: string]: string;
+}[], options: {
+    hash: {
+        [key: string]: string;
+    };
+}) => string;
 export default _default;

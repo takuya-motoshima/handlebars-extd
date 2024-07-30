@@ -1,4 +1,3 @@
-declare const _default: (val: number | string) => number;
 /**
  * Rounds down a number.
  *
@@ -9,4 +8,5 @@ declare const _default: (val: number | string) => number;
  * @param {number|string} val Number to be rounded to nearest lower integer.
  * @returns {number}
  */
+declare const _default: (val: number | string) => number;
 export default _default;

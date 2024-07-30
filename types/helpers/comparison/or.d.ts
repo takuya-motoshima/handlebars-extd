@@ -1,4 +1,3 @@
-declare const _default: (...args: any[]) => boolean;
 /**
  * Returns the boolean OR of two or more parameters passed i.e it is true if any of the parameters is true.
  *
@@ -12,4 +11,5 @@ declare const _default: (...args: any[]) => boolean;
  * @param {...any} args Any number of boolean parameters.
  * @returns {boolean}
  */
+declare const _default: (...args: any[]) => boolean;
 export default _default;

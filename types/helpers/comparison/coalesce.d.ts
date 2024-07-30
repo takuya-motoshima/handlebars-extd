@@ -1,4 +1,3 @@
-declare const _default: (...args: any[]) => any;
 /**
  * Returns the first non-falsy value from the parameter list.
  * Checks for the first non-false parameter.
@@ -13,4 +12,5 @@ declare const _default: (...args: any[]) => any;
  * @param {...any} args Any number of parameters.
  * @returns {any}
  */
+declare const _default: (...args: any[]) => any;
 export default _default;

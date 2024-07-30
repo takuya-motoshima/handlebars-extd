@@ -1,4 +1,3 @@
-declare const _default: (val: string, separator: string) => string[];
 /**
  * Split a string into an array by the specified characters.
  *
@@ -21,4 +20,5 @@ declare const _default: (val: string, separator: string) => string[];
  * @param {string} separator Separator. Default is a comma (",").
  * @return {string[]} An Array of strings, split at each point where the separator occurs in the given string. The default is a comma.
  */
+declare const _default: (val: string, separator: string) => string[];
 export default _default;

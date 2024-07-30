@@ -1,4 +1,3 @@
-declare const _default: (condition: boolean, val1: any, val2: any) => any;
 /**
  * Helper to imitate the ternary '?:' conditional operator.
  *
@@ -14,4 +13,5 @@ declare const _default: (condition: boolean, val1: any, val2: any) => any;
  * @param {any} val2 Value to return when the condition is false (Optional).
  * @returns {any}
  */
+declare const _default: (condition: boolean, val1: any, val2: any) => any;
 export default _default;

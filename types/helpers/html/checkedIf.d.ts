@@ -1,4 +1,3 @@
-declare const _default: (expression: boolean) => string;
 /**
  * Sets the checked attribute if the condition is true.
  *
@@ -9,4 +8,5 @@ declare const _default: (expression: boolean) => string;
  * @param {boolean} expression Condition to be checked.
  * @returns {string}
  */
+declare const _default: (expression: boolean) => string;
 export default _default;
