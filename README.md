@@ -1,4 +1,4 @@
-# Handlebars extension
+# handlebars-extd
 This is an extended handlebars package with helpers.  
 Click [here](CHANGELOG.md) to see the change log.
 

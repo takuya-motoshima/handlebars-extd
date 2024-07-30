@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.10] - 2024/7/31
 ### Fixed
-- Fix `TypeError: Cannot read properties of undefined (reading 'Symbol')` error in executing each function on an object
+- Fix `TypeError: Cannot read properties of undefined (reading 'Symbol')` error in executing each function on an object.
 
 ## [1.0.9] - 2024/3/1
 ### Changed
