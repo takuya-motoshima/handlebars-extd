@@ -1,6 +1,8 @@
 /**
  * Generates a select drop-down option list.
- *
+ * @param {{[key: string]: string}[]} data List of data.
+ * @param {object} options Key names for the selected and displayed values of option in the data element (Optional).
+ * @return {string}
  * @example
  * A simple example:
  * // results in:
@@ -23,10 +25,6 @@
  *     {"code":840,"name":"UNITED STATES"}
  *   ]
  * });
- *
- * @param {{[key: string]: string}[]} data List of data.
- * @param {object} options Key names for the selected and displayed values of option in the data element (Optional).
- * @returns {string}
  */
 export default (data: {[key: string]: string}[], options: {hash: {[key: string]: string}}): string => {
   // The value & text for the <option>

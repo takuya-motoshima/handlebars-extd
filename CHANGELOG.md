@@ -1,6 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.11] - 2025/1/14
+### Added
+- **`findObjectInArray` Handlebars helper:** This helper allows you to find an object in an array based on a specified field name and value.
+    ```js
+    // results in: "Item A"
+    const items = [{id: 123, name: 'Item A'}, {id: 456, name: 'Item B'}];
+    hbs.compile(
+        `{{#each items}}
+            {{#if (eq id 123)}}
+                {{lookup (findObjectInArray ../items 'id' id) 'name'}}
+            {{/if}}
+        {{/each}}`)({items});
+
+
 ## [1.0.10] - 2024/7/31
 ### Fixed
 - Fix `TypeError: Cannot read properties of undefined (reading 'Symbol')` error in executing each function on an object.
@@ -146,3 +160,4 @@ All notable changes to this project will be documented in this file.
 [1.0.8]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.7...v1.0.8
 [1.0.9]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.8...v1.0.9
 [1.0.10]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.9...v1.0.10
+[1.0.11]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.10...v1.0.11

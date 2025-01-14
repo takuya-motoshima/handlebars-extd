@@ -1,0 +1,128 @@
+{{!< default}}
+{{#contentFor 'title'}}Array Helper{{/contentFor}}
+{{#contentFor 'sidenav'}}
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#summary" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">Summary</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#find-object-in-array" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">findObjectInArray</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+{{/contentFor}}
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="summary" data-kt-scroll-offset="100">
+    <a href="#summary"></a>Array Helper
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Table-->
+  <div class="pt-5">
+    <div class="table-responsive border rounded">
+      <table class="table table-striped table-flush align-middle mb-0">
+        <!--begin::Block-->
+        <thead>
+          <tr class="fs-4 fw-bold text-gray-900 p-6">
+            <th class="min-w-300px">Helper</th>
+            <th class="min-w-600px">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="p-5">
+            <td><a href="#find-object-in-array">findObjectInArray</a></td>
+            <td>Finds an object in an array based on the specified field name and value.</td>
+          </tr>
+        </tbody>
+        <!--end::Block-->
+      </table>
+    </div>
+  </div>
+  <!--end::Table-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="find-object-in-array" data-kt-scroll-offset="100">
+    <a href="#find-object-in-array"></a>findObjectInArray
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Finds an object in an array based on the specified field name and value.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>array: Array&lt;{[key: string]: any}&gt;</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The array of objects to search.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>fieldName: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The name of the field to search.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>fieldValue: any</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The value to search for.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Return:</h5>
+    <!--end::Heading-->
+    <!--begin::Return-->
+    <ul class="list-style-none">
+      <li class="py-2"><code>object|null</code> The first object in the array that matches the criteria, or null if no match is found.</li>
+    </ul>
+    <!--end::Return-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: &quot;Item A&quot;
+const items = [{id: 123, name: 'Item A'}, {id: 456, name: 'Item B'}];
+hbs.compile(
+`\{{#each items}}
+  \{{#if (eq id 123)}}
+    \{{lookup (findObjectInArray ../items 'id' id) 'name'}}
+  \{{/if}}
+\{{/each}}`)({items});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->

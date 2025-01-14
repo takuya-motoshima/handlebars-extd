@@ -1,11 +1,17 @@
 const hbs = require('../../dist/build.common');
 
-test('If the locale is omitted, numbers should be formatted correctly in the default locale', () => {
-  const actual = hbs.compile("{{number2locale val}}")({val: 123456.789});
-  expect(actual).toBe('123,456.789');
-});
+describe('number2locale Handlebars helper', () => {
+  const testCases = [
+    { locale: undefined, value: 123456.789, expected: '123,456.789' }, // Default locale
+    { locale: 'de-DE', value: 123456.789, expected: '123.456,789' }, // German locale
+  ];
 
-test('Numbers should be formatted in German locale', () => {
-  const actual = hbs.compile("{{number2locale val 'de-DE'}}")({val: 123456.789});
-  expect(actual).toBe('123.456,789');
+  testCases.forEach(({ locale, value, expected }, index) => {
+    const localeDescription = locale ? `in ${locale} locale` : 'in the default locale';
+    it(`should format ${value} correctly ${localeDescription} (test case ${index + 1})`, () => {
+      const template = hbs.compile(`{{number2locale val locale}}`);
+      const actual = template({ val: value, locale: locale });
+      expect(actual).toBe(expected);
+    });
+  });
 });

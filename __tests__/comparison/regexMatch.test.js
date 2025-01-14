@@ -1,31 +1,20 @@
 const hbs = require('../../dist/build.common');
 
-test('"foobar" should match "foo"', () => {
-  const actual = hbs.compile("{{regexMatch 'foobar' 'foo'}}")();
-  expect(actual).toBe('true');
-});
+describe('regexMatch Handlebars helper', () => {
+  const testCases = [
+    {text: 'foobar', pattern: 'foo', flags: undefined, expected: 'true'},
+    {text: 'bar', pattern: 'foo', flags: undefined, expected: 'false'},
+    {text: 'foobar', pattern: '^foo$', flags: undefined, expected: 'false'},
+    {text: 'Visit Here', pattern: 'here', flags: 'i', expected: 'true'},
+    {text: 'Visit Here', pattern: 'here', flags: undefined, expected: 'false'},
+    {text: 'foobar', pattern: 'foo', flags: undefined, expected: 'Match', template: '{{#if (regexMatch text pattern flags)}}Match{{/if}}'}, // if syntax
+  ];
 
-test('"bar" should not match "foo"', () => {
-  const actual = hbs.compile("{{regexMatch 'bar' 'foo'}}")();
-  expect(actual).toBe('false');
-});
-
-test('"foobar" should not match "^foo$"', () => {
-  const actual = hbs.compile("{{regexMatch 'foobar' '^foo$'}}")();
-  expect(actual).toBe('false');
-});
-
-test('"Visit Here" should match "here" with the i flag', () => {
-  const actual = hbs.compile("{{regexMatch 'Visit Here' 'here' 'i'}}")();
-  expect(actual).toBe('true');
-});
-
-test('"Visit Here" should not match "here"', () => {
-  const actual = hbs.compile("{{regexMatch 'Visit Here' 'here'}}")();
-  expect(actual).toBe('false');
-});
-
-test('"foobar" with the if syntax should match "foo"', () => {
-  const actual = hbs.compile("{{#if (regexMatch 'foobar' 'foo')}}Match{{/if}}")();
-  expect(actual).toBe('Match');
+  testCases.forEach(({ text, pattern, flags, expected, template }, index) => {
+    it(`should return ${expected} for "${text}" matching "${pattern}" with flags "${flags}" (test case ${index + 1})`, () => {
+      const compiledTemplate = hbs.compile(template || '{{regexMatch text pattern flags}}'); // Use custom template if provided
+      const actual = compiledTemplate({ text, pattern, flags });
+      expect(actual).toBe(expected);
+    });
+  });
 });

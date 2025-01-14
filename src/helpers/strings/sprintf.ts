@@ -5,7 +5,9 @@ import {vsprintf} from 'sprintf-js';
  * Returns a string produced according to the formatting string format.
  * It uses sprintf-js internally.
  * Check https://github.com/alexei/sprintf.js for more information.
- *
+ * @param {string} format Format string.
+ * @param {...any} args Any number of parameters/values.
+ * @return {string}
  * @example
  * // Argument swapping:
  * // results in: Hello Dolly!
@@ -20,10 +22,6 @@ import {vsprintf} from 'sprintf-js';
  *
  * // results in: Hello Dolly
  * hbs.compile("{{sprintf 'Hello %(name)s' name=str}}")({"str":"Dolly"});
- *
- * @param {string} format Format string.
- * @param {...any} args Any number of parameters/values.
- * @returns {string}
  */
 export default (format: string, ...args: any[]): string => {
   // Normalize all the parameters before passing it to the sprintf/vsprintf function

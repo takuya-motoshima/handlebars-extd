@@ -1,8 +1,7 @@
 /**
  * Check if param is a function.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isFunction(thing: any): boolean {
   return typeof thing === 'function';
@@ -10,9 +9,8 @@ function isFunction(thing: any): boolean {
 
 /**
  * Check if param is a string.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isString(thing: any): boolean {
   return typeof thing === 'string';
@@ -20,9 +18,8 @@ function isString(thing: any): boolean {
 
 /**
  * Check if param is undefined.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isUndefined(thing: any): boolean {
   return typeof thing === 'undefined';
@@ -30,9 +27,8 @@ function isUndefined(thing: any): boolean {
 
 /**
  * Check if param is not undefined.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isDefined(thing: any): boolean {
   return !isUndefined(thing);
@@ -40,9 +36,8 @@ function isDefined(thing: any): boolean {
 
 /**
  * Check if param is an object.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isObject(thing: any): boolean {
   return typeof thing === 'object' && thing !== null && !Array.isArray(thing);
@@ -50,9 +45,8 @@ function isObject(thing: any): boolean {
 
 /**
  * Check if param is an array.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isArray(thing: any): boolean {
   return Object.prototype.toString.call(thing) === '[object Array]';
@@ -60,9 +54,8 @@ function isArray(thing: any): boolean {
 
 /**
  * Check if the value is numeric.
- *
  * @param {any} thing
- * @returns {boolean}
+ * @return {boolean}
  */
 function isNumeric(thing: any): boolean {
   return !isNaN(parseFloat(thing)) && isFinite(thing);

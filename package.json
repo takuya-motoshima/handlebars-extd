@@ -1,7 +1,7 @@
 {
   "name": "handlebars-extd",
-  "version": "1.0.9",
-  "description": "This is an extended handlebars package with helpers.",
+  "version": "1.0.10",
+  "description": "This package provides a set of powerful and convenient Handlebars helpers to enhance your templating experience. It simplifies common tasks and adds useful functionalities to your Handlebars templates.",
   "main": "dist/build.common.js",
   "module": "dist/build.esm.js",
   "browser": "dist/build.js",

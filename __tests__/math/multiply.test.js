@@ -1,6 +1,9 @@
 const hbs = require('../../dist/build.common');
 
-test('5 * 2 should be 10', () => {
-  const actual = hbs.compile("{{multiply a b}}")({a:5, b:2});;
-  expect(actual).toBe('10');
+describe('multiply Handlebars helper', () => {
+  it('should correctly multiply two numbers', () => {
+    const template = hbs.compile('{{multiply a b}}');
+    const actual = template({ a: 5, b: 2 });
+    expect(actual).toBe('10');
+  });
 });
