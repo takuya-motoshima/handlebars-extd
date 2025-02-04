@@ -14,6 +14,8 @@ npm install --save handlebars-extd
 ## Release Notes
 All changes can be found [here](CHANGELOG.md).
 
+- [1.0.13] - 2025/2/4
+    - Fixed a typo in the stripTags sample code.
 - [1.0.12] - 2025/2/4
     - Added a helper to replace HTML tags in a string. See the [stripTags documentation](https://takuya-motoshima.github.io/handlebars-extd/v1/html-helper.html#strip-tags) for more details.
 
@@ -21,18 +23,18 @@ All changes can be found [here](CHANGELOG.md).
 
         ```js
         // results in: lorem ipsum dolor sit amet
-        hbs.compile("{{stripTags html}}")({
+        hbs.compile("{{{stripTags html}}}")({
             html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
         });
         
         // results in: lorem ipsum <strong>dolor</strong> sit amet
-        hbs.compile("{{stripTags html allowedTags}}")({
+        hbs.compile("{{{stripTags html allowedTags}}}")({
             html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
             allowedTags: ['strong'],
         });
         
         // results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
-        hbs.compile("{{stripTags html allowedTags replacement}}")({
+        hbs.compile("{{{stripTags html allowedTags replacement}}}")({
             html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
             allowedTags: [],
             replacement: '🍩',

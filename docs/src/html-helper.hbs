@@ -360,18 +360,18 @@ hbs.compile(&quot;\{{{options data selected=&#039;392&#039; value=&#039;code&#03
       <div class="highlight-code">
         <pre class="language-javascript">
           <code class="language-javascript">// results in: lorem ipsum dolor sit amet           
-hbs.compile(&quot;\{{stripTags html}}&quot;)({
+hbs.compile(&quot;\{{{stripTags html}}}&quot;)({
   html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
 });
 
 // results in: lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet
-hbs.compile(&quot;\{{stripTags html allowedTags}}&quot;)({
+hbs.compile(&quot;\{{{stripTags html allowedTags}}}&quot;)({
   html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
   allowedTags: ['strong'],
 });
 
 // results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
-hbs.compile(&quot;\{{stripTags html allowedTags replacement}}&quot;)({
+hbs.compile(&quot;\{{{stripTags html allowedTags replacement}}}&quot;)({
   html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
   allowedTags: [],
   replacement: '🍩',

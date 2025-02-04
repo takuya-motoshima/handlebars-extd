@@ -85,7 +85,7 @@
               <div class="page-title d-flex flex-column flex-lg-row align-items-lg-center py-5 mb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_app_content_container', 'lg': '#kt_app_header_title'}">
                 <!--begin::Title-->
                 <h1 class="d-flex align-items-center text-dark my-1 fs-4">
-                  Documentation <a href="#!" class="badge fw-semibold fs-9 px-2 ms-2 bg-body text-dark text-hover-primary shadow-sm">v1.0.12</a>
+                  Documentation <a href="#!" class="badge fw-semibold fs-9 px-2 ms-2 bg-body text-dark text-hover-primary shadow-sm">v1.0.13</a>
                 </h1>
                 <!--end::Title-->
               </div>
@@ -643,18 +643,18 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
       <div class="highlight-code">
         <pre class="language-javascript">
           <code class="language-javascript">// results in: lorem ipsum dolor sit amet           
-hbs.compile(&quot;{{stripTags html}}&quot;)({
+hbs.compile(&quot;{{{stripTags html}}}&quot;)({
   html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
 });
 
 // results in: lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet
-hbs.compile(&quot;{{stripTags html allowedTags}}&quot;)({
+hbs.compile(&quot;{{{stripTags html allowedTags}}}&quot;)({
   html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
   allowedTags: ['strong'],
 });
 
 // results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
-hbs.compile(&quot;{{stripTags html allowedTags replacement}}&quot;)({
+hbs.compile(&quot;{{{stripTags html allowedTags replacement}}}&quot;)({
   html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
   allowedTags: [],
   replacement: '🍩',

@@ -8,18 +8,18 @@ import striptags from 'striptags';
  * @return {string} The string with HTML tags removed.
  * @example
  * // results in: lorem ipsum dolor sit amet
- * hbs.compile("{{stripTags html}}")({
+ * hbs.compile("{{{stripTags html}}}")({
  *   html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
  * });
  * 
  * // results in: lorem ipsum <strong>dolor</strong> sit amet
- * hbs.compile("{{stripTags html allowedTags}}")({
+ * hbs.compile("{{{stripTags html allowedTags}}}")({
  *   html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
  *   allowedTags: ['strong'],
  * });
  * 
  * // results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
- * hbs.compile("{{stripTags html allowedTags replacement}}")({
+ * hbs.compile("{{{stripTags html allowedTags replacement}}}")({
  *   html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
  *   allowedTags: [],
  *   replacement: '🍩',
