@@ -10,10 +10,10 @@ describe('regexMatch Handlebars helper', () => {
     {text: 'foobar', pattern: 'foo', flags: undefined, expected: 'Match', template: '{{#if (regexMatch text pattern flags)}}Match{{/if}}'}, // if syntax
   ];
 
-  testCases.forEach(({ text, pattern, flags, expected, template }, index) => {
+  testCases.forEach(({text, pattern, flags, expected, template}, index) => {
     it(`should return ${expected} for "${text}" matching "${pattern}" with flags "${flags}" (test case ${index + 1})`, () => {
       const compiledTemplate = hbs.compile(template || '{{regexMatch text pattern flags}}'); // Use custom template if provided
-      const actual = compiledTemplate({ text, pattern, flags });
+      const actual = compiledTemplate({text, pattern, flags});
       expect(actual).toBe(expected);
     });
   });

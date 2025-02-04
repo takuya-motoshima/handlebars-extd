@@ -85,7 +85,7 @@
               <div class="page-title d-flex flex-column flex-lg-row align-items-lg-center py-5 mb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_app_content_container', 'lg': '#kt_app_header_title'}">
                 <!--begin::Title-->
                 <h1 class="d-flex align-items-center text-dark my-1 fs-4">
-                  Documentation <a href="#!" class="badge fw-semibold fs-9 px-2 ms-2 bg-body text-dark text-hover-primary shadow-sm">v1.0.11</a>
+                  Documentation <a href="#!" class="badge fw-semibold fs-9 px-2 ms-2 bg-body text-dark text-hover-primary shadow-sm">v1.0.12</a>
                 </h1>
                 <!--end::Title-->
               </div>
@@ -392,6 +392,10 @@
             <td><a href="#options">options</a></td>
             <td>Generates a select drop-down option list.</td>
           </tr>
+          <tr class="p-5">
+            <td><a href="#strip-tags">stripTags</a></td>
+            <td>Removes HTML tags from a string, optionally allowing specific tags.</td>
+          </tr>
         </tbody>
         <!--end::Block-->
       </table>
@@ -585,6 +589,84 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
   <!--end::Block-->
 </div>
 <!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="strip-tags" data-kt-scroll-offset="100">
+    <a href="#strip-tags"></a>stripTags
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Removes HTML tags from a string, optionally allowing specific tags.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>str: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The string to remove HTML tags from.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>allowedTags: string|string[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          An array of allowed HTML tags. Default is an empty array.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>replacement: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The string to replace HTML tags with. Default is blank.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Return:</h5>
+    <!--end::Heading-->
+    <!--begin::Return-->
+    <ul class="list-style-none">
+      <li class="py-2"><code>string</code> The string with HTML tags removed.</li>
+    </ul>
+    <!--end::Return-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: lorem ipsum dolor sit amet           
+hbs.compile(&quot;{{stripTags html}}&quot;)({
+  html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
+});
+
+// results in: lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet
+hbs.compile(&quot;{{stripTags html allowedTags}}&quot;)({
+  html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
+  allowedTags: ['strong'],
+});
+
+// results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
+hbs.compile(&quot;{{stripTags html allowedTags replacement}}&quot;)({
+  html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
+  allowedTags: [],
+  replacement: '🍩',
+});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
                     </div>
                     <!--end::Card Body-->
                   </div>
@@ -662,6 +744,18 @@ hbs.compile(&quot;{{{options data selected=&#039;392&#039; value=&#039;code&#039
       <span class="bullet bullet-dot"></span>
     </span>
     <span class="menu-title">options</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#strip-tags" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">stripTags</span>
   </a>
   <!--end::Link-->
 </li>

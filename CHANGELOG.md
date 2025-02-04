@@ -1,6 +1,32 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.12] - 2025/2/4
+### Added
+- Added a helper to replace HTML tags in a string. See the [stripTags documentation](https://takuya-motoshima.github.io/handlebars-extd/v1/html-helper.html#strip-tags) for more details.
+
+    Example:
+
+    ```js
+    // results in: lorem ipsum dolor sit amet
+    hbs.compile("{{stripTags html}}")({
+        html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
+    });
+    
+    // results in: lorem ipsum <strong>dolor</strong> sit amet
+    hbs.compile("{{stripTags html allowedTags}}")({
+        html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
+        allowedTags: ['strong'],
+    });
+    
+    // results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
+    hbs.compile("{{stripTags html allowedTags replacement}}")({
+        html: '<a href="https://example.com">lorem ipsum <strong>dolor</strong> <em>sit</em> amet</a>',
+        allowedTags: [],
+        replacement: '🍩',
+    });
+    ```
+
 ## [1.0.11] - 2025/1/14
 ### Added
 - **`findObjectInArray` Handlebars helper:** This helper allows you to find an object in an array based on a specified field name and value.
@@ -161,3 +187,4 @@ All notable changes to this project will be documented in this file.
 [1.0.9]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.8...v1.0.9
 [1.0.10]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.9...v1.0.10
 [1.0.11]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.10...v1.0.11
+[1.0.12]: https://github.com/takuya-motoshima/handlebars-extd/compare/v1.0.10...v1.0.12

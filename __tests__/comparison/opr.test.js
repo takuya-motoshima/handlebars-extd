@@ -11,10 +11,10 @@ describe('opr Handlebars helper', () => {
     {operator: '!==', a: 3, b: 3, expected: 'false'},
   ];
 
-  testCases.forEach(({ operator, a, b, expected }, index) => {
+  testCases.forEach(({operator, a, b, expected}, index) => {
     it(`should return ${expected} for ${a} ${operator} ${b} (test case ${index + 1})`, () => {
       const template = hbs.compile(`{{opr a '${operator}' b}}`);
-      const actual = template({ a, b });
+      const actual = template({a, b});
       expect(actual).toBe(expected);
     });
   });

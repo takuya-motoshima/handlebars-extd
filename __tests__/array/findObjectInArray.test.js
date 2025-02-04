@@ -9,7 +9,7 @@ describe('findObjectInArray Handlebars helper', () => {
   });
 
   it('should return an empty string if no matching object is found', () => {
-    const items = [{id: 123, name: 'Item A' }, { id: 456, name: 'Item B'}];
+    const items = [{id: 123, name: 'Item A' }, {id: 456, name: 'Item B'}];
     const template = hbs.compile(`{{#each items}}{{#if (eq id 999)}}{{lookup (findObjectInArray ../items 'id' id) 'name'}}{{/if}}{{/each}}`);
     const actual = template({items});
     expect(actual).toBe('');

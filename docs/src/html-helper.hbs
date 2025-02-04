@@ -61,6 +61,18 @@
   <!--end::Link-->
 </li>
 <!--end::Item-->
+<!--begin::Item-->
+<li class="menu-item py-2 px-3">
+  <!--begin::Link-->
+  <a href="#strip-tags" data-kt-scroll-toggle="true" class="menu-link p-0 nav-link">
+    <span class="menu-bullet">
+      <span class="bullet bullet-dot"></span>
+    </span>
+    <span class="menu-title">stripTags</span>
+  </a>
+  <!--end::Link-->
+</li>
+<!--end::Item-->
 {{/contentFor}}
 <!--begin::Section-->
 <div class="pb-10">
@@ -96,6 +108,10 @@
           <tr class="p-5">
             <td><a href="#options">options</a></td>
             <td>Generates a select drop-down option list.</td>
+          </tr>
+          <tr class="p-5">
+            <td><a href="#strip-tags">stripTags</a></td>
+            <td>Removes HTML tags from a string, optionally allowing specific tags.</td>
           </tr>
         </tbody>
         <!--end::Block-->
@@ -282,6 +298,84 @@ hbs.compile(&quot;\{{{options data selected=&#039;2&#039;}}}&quot;)({&quot;data&
 // &lt;option value=&quot;392&quot; selected&gt;JAPAN&lt;/option&gt;
 // &lt;option value=&quot;840&quot;&gt;UNITED STATES&lt;/option&gt;
 hbs.compile(&quot;\{{{options data selected=&#039;392&#039; value=&#039;code&#039; text=&#039;name&#039;}}}&quot;)({&quot;data&quot;:[{&quot;code&quot;:392,&quot;name&quot;:&quot;JAPAN&quot;},{&quot;code&quot;:840,&quot;name&quot;:&quot;UNITED STATES&quot;}]});</code>
+        </pre>
+      </div>
+    </div>
+    <!--end::Highlight-->
+  </div>
+  <!--end::Block-->
+</div>
+<!--end::Section-->
+<!--begin::Section-->
+<div class="pb-10">
+  <!--begin::Heading-->
+  <h1 class="anchor fw-bold mb-5" id="strip-tags" data-kt-scroll-offset="100">
+    <a href="#strip-tags"></a>stripTags
+  </h1>
+  <!--end::Heading-->
+  <!--begin::Block-->
+  <div class="py-5">Removes HTML tags from a string, optionally allowing specific tags.</div>
+  <!--end::Block-->
+  <!--begin::Block-->
+  <div class="my-5">
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Parameters:</h5>
+    <!--end::Heading-->
+    <!--begin::Parameters-->
+    <ul>
+      <li class="py-2"><code>str: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The string to remove HTML tags from.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>allowedTags: string|string[]</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          An array of allowed HTML tags. Default is an empty array.
+        </div>
+        <!--end::Block-->
+      </li>
+      <li class="py-2"><code>replacement: string</code>
+        <!--begin::Block-->
+        <div class="pt-3">
+          The string to replace HTML tags with. Default is blank.
+        </div>
+        <!--end::Block-->
+      </li>
+    </ul>
+    <!--end::Parameters-->
+    <!--begin::Heading-->
+    <h5 class="py-2 mb-0">Return:</h5>
+    <!--end::Heading-->
+    <!--begin::Return-->
+    <ul class="list-style-none">
+      <li class="py-2"><code>string</code> The string with HTML tags removed.</li>
+    </ul>
+    <!--end::Return-->
+    <!--begin::Highlight-->
+    <div class="highlight">
+      <button class="highlight-copy btn" data-bs-toggle="tooltip" title="Copy code">copy</button>
+      <div class="highlight-code">
+        <pre class="language-javascript">
+          <code class="language-javascript">// results in: lorem ipsum dolor sit amet           
+hbs.compile(&quot;\{{stripTags html}}&quot;)({
+  html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
+});
+
+// results in: lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; sit amet
+hbs.compile(&quot;\{{stripTags html allowedTags}}&quot;)({
+  html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
+  allowedTags: ['strong'],
+});
+
+// results in: 🍩lorem ipsum 🍩dolor🍩 🍩sit🍩 amet🍩
+hbs.compile(&quot;\{{stripTags html allowedTags replacement}}&quot;)({
+  html: '&lt;a href=&quot;https://example.com&quot;&gt;lorem ipsum &lt;strong&gt;dolor&lt;/strong&gt; &lt;em&gt;sit&lt;/em&gt; amet&lt;/a&gt;',
+  allowedTags: [],
+  replacement: '🍩',
+});</code>
         </pre>
       </div>
     </div>
