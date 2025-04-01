@@ -905,10 +905,10 @@ hbs.compile(&quot;{{#if (gt a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;
       <div class="highlight-code">
         <pre class="language-javascript">
           <code class="language-javascript">// results in: false
-hbs.compile(&quot;{{lte a &#039;&lt;=&#039; b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
+hbs.compile(&quot;{{lte a b}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});
 
 // results in: false
-hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code>
+hbs.compile(&quot;{{#if (lte a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:2,&quot;b&quot;:3});</code>
         </pre>
       </div>
     </div>
@@ -956,10 +956,10 @@ hbs.compile(&quot;{{#if (lte a &#039;&lt;=&#039; b)}}true{{else}}false{{/if}}&qu
       <div class="highlight-code">
         <pre class="language-javascript">
           <code class="language-javascript">// results in: false
-hbs.compile(&quot;{{gte a &#039;&gt;=&#039; b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
+hbs.compile(&quot;{{gte a b}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});
 
 // results in: false
-hbs.compile(&quot;{{#if (gte a &#039;&gt;=&#039; b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code>
+hbs.compile(&quot;{{#if (gte a b)}}true{{else}}false{{/if}}&quot;)({&quot;a&quot;:3,&quot;b&quot;:3});</code>
         </pre>
       </div>
     </div>

@@ -5,7 +5,7 @@
  * @return {boolean}
  * @example
  * // results in: false
- * hbs.compile("{{gte a '>=' b}}")({"a":3,"b":3});
+ * hbs.compile("{{gte a b}}")({"a":3,"b":3});
  */
 export default (val1: any, val2: any): boolean => {
   return val1 >= val2;
